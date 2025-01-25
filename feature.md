@@ -52,7 +52,6 @@ Below is the structure of the project, the user story specifictions or approved 
   - Ensure the menu toggles the visibility of navigation links.
   - Ensure clicking the each link redirects the user to the page (`/`).
 
-### Testing Tasks
 - [ ] **Test Header Links**
   - Verify that all header links (Home, Book Now, Login, About) work correctly.
   - Test the header on desktop and mobile devices.
@@ -65,7 +64,15 @@ Below is the structure of the project, the user story specifictions or approved 
   - Ensure the footer looks good on desktop and mobile devices.
   - Add a link to the about page in the footer and the link find us in the footer must view the section map.
      
-### Testing Tasks
 - [ ] **Test Footer Links**
   - Verify that all footer links (Social Links, Find Us, Book Now, Log Out, Sign-Up) work correctly.
   - Test the footer on desktop and mobile devices.
+    
+### Home app
+
+- Create home app, then the two sections required for the home page.
+- Create models for the content
+
+- [ ] **Testing Tasks**
+ - Test features and functionality of the content
+ - Verify that the pictures and text displayed in the main section are fetched from the database.
