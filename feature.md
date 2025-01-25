@@ -42,3 +42,17 @@ Below is the structure of the project, the user story specifictions or approved 
 
 ---
 
+### Tasks breakdown
+
+### Header Implementation Tasks
+- [ ] **Create Header HTML**
+      
+  - Add a header section to `base.html` with navigation links (Home, Book Now, Login, About).
+  - Ensure the header is responsive and works on all screen sizes.
+  - Ensure the menu toggles the visibility of navigation links.
+  - Ensure clicking the each link redirects the user to the page (`/`).
+
+### Testing Tasks
+- [ ] **Test Header Links**
+  - Verify that all header links (Home, Book Now, Login, About) work correctly.
+  - Test the header on desktop and mobile devices.
