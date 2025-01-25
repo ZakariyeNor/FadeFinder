@@ -81,7 +81,7 @@ Below is the structure of the project, the user story specifictions or approved 
 
 ---
 
-### Admin Login (Back-end)
+### Admin Login
 
 - Configure Django's admin interface for site administration.  
   - Implement Role-Based Access Control (RBAC) for restricting access to admin-only features outside the admin panel.  
@@ -93,7 +93,7 @@ Below is the structure of the project, the user story specifictions or approved 
 
 ---
 
-### Email & SMS Confirmation (Back-end)
+### Email & SMS Confirmation
 
 - Integrate email services such as SendGrid for sending confirmation emails.  
 - Integrate SMS services like Twilio for sending verification codes to users.  
@@ -105,7 +105,7 @@ Below is the structure of the project, the user story specifictions or approved 
 
 ---
 
-### Logout, Login, Guest Login, and Register Page (Back-end)
+### Logout, Login, Guest Login, and Register Page
 
 - Use Django Allauth for handling user authentication, registration, and session management.  
   - Make the logout button visible only when a user is logged in.  
@@ -120,7 +120,7 @@ Below is the structure of the project, the user story specifictions or approved 
 
 ---
 
-### Booking Page - Calendar (Back-end)
+### Booking Page - Calendar
 
   - Create a back-end model for storing booking information (e.g., user, date, time, and status).
   - Implement logic for checking booking availability based on selected dates and times.
@@ -137,4 +137,16 @@ Below is the structure of the project, the user story specifictions or approved 
   - Ensure booking status is correctly saved and reflected in the database.
 
 ---
+
+### About page 
+
+  - Build models for both image and content
+  - Use cloud storage to store pictures
+  - Build contact form modal
+  - Build Google map api
+
+- [ ] **Tests:**
+  - Test the content modal if admin user can upload pictures
+  - Test if the cloud connection is working
+  - Test map api
 
