@@ -56,3 +56,16 @@ Below is the structure of the project, the user story specifictions or approved 
 - [ ] **Test Header Links**
   - Verify that all header links (Home, Book Now, Login, About) work correctly.
   - Test the header on desktop and mobile devices.
+    
+### Footer Implementation Tasks
+- [ ] **Create Footer HTML**
+      
+  - Add a footer section to `base.html` with links (Social Links, Find Us, Book Now, Log Out, Sign-Up).
+  - Ensure the footer is responsive and works on all screen sizes.
+  - Ensure the footer looks good on desktop and mobile devices.
+  - Add a link to the about page in the footer and the link find us in the footer must view the section map.
+     
+### Testing Tasks
+- [ ] **Test Footer Links**
+  - Verify that all footer links (Social Links, Find Us, Book Now, Log Out, Sign-Up) work correctly.
+  - Test the footer on desktop and mobile devices.
