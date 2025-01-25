@@ -44,8 +44,8 @@ Below is the structure of the project, the user story specifictions or approved 
 
 ### Tasks breakdown
 
-### Header Implementation Tasks
-- [ ] **Create Header HTML**
+
+### Create Header HTML
       
   - Add a header section to `base.html` with navigation links (Home, Book Now, Login, About).
   - Ensure the header is responsive and works on all screen sizes.
@@ -56,8 +56,8 @@ Below is the structure of the project, the user story specifictions or approved 
   - Verify that all header links (Home, Book Now, Login, About) work correctly.
   - Test the header on desktop and mobile devices.
     
-### Footer Implementation Tasks
-- [ ] **Create Footer HTML**
+
+### Create Footer HTML
       
   - Add a footer section to `base.html` with links (Social Links, Find Us, Book Now, Log Out, Sign-Up).
   - Ensure the footer is responsive and works on all screen sizes.
@@ -119,3 +119,22 @@ Below is the structure of the project, the user story specifictions or approved 
   - Confirm that guest accounts have limited access and expire after a set time.  
 
 ---
+
+### Booking Page - Calendar (Back-end)
+
+  - Create a back-end model for storing booking information (e.g., user, date, time, and status).
+  - Implement logic for checking booking availability based on selected dates and times.
+  - Ensure booking data is saved securely in the database, and prevent duplicate bookings.
+  - Design and implement a responsive calendar interface where users can pick a booking date and time.
+  - Display available slots visually, with unavailable times grayed out or disabled.
+  - Show confirmation or error messages upon successfully submitting or failing to book a slot.
+
+- [ ] **Testing Tasks:**  
+  - Verify that booking data is correctly saved in the database.  
+  - Test the booking availability logic to ensure users cannot book the same time slot twice.
+  - Verify that the calendar UI displays available and unavailable slots correctly.
+  - Ensure cancel/reschedule functionality works seamlessly.
+  - Ensure booking status is correctly saved and reflected in the database.
+
+---
+
