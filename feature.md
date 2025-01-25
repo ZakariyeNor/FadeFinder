@@ -68,11 +68,54 @@ Below is the structure of the project, the user story specifictions or approved 
   - Verify that all footer links (Social Links, Find Us, Book Now, Log Out, Sign-Up) work correctly.
   - Test the footer on desktop and mobile devices.
     
-### Home app
+### Home App
 
-- Create home app, then the two sections required for the home page.
-- Create models for the content
+- Create a `home` app for the project.  
+  - Add a main section and an additional content section to the home page.  
+  - Create models for the main section and content to manage pictures and text dynamically.  
+  - Populate the database with initial data for testing purposes.  
 
-- [ ] **Testing Tasks**
- - Test features and functionality of the content
- - Verify that the pictures and text displayed in the main section are fetched from the database.
+- [ ] **Testing Tasks:**  
+  - Verify that pictures and text in the main section are fetched from the database.  
+  - Ensure all features and functionalities of the content sections are working as expected.  
+
+---
+
+### Admin Login (Back-end)
+
+- Configure Django's admin interface for site administration.  
+  - Implement Role-Based Access Control (RBAC) for restricting access to admin-only features outside the admin panel.  
+  - Customize the admin panel if needed for better usability.  
+
+- [ ] **Testing Tasks:**  
+  - Ensure admins can log in securely via the Django admin panel.  
+  - Test that admin-only routes are accessible only by authenticated admin users.  
+
+---
+
+### Email & SMS Confirmation (Back-end)
+
+- Integrate email services such as SendGrid for sending confirmation emails.  
+- Integrate SMS services like Twilio for sending verification codes to users.  
+- Create endpoints for sending and verifying email and SMS confirmation codes.  
+
+- [ ] **Testing Tasks:**  
+  - Ensure email confirmation links are sent during user registration.  
+  - Verify that SMS confirmation codes are sent to the user's phone upon request.  
+
+---
+
+### Logout, Login, Guest Login, and Register Page (Back-end)
+
+- Use Django Allauth for handling user authentication, registration, and session management.  
+  - Make the logout button visible only when a user is logged in.  
+  - Design a front-end login form with a sign-up option.  
+  - Create a front-end registration form for new users.  
+  - Generate temporary guest accounts with limited access for guest users.  
+
+- [ ] **Testing Tasks:**  
+  - Verify that users cannot access protected routes after logging out.  
+  - Ensure front-end forms validate inputs before submission.  
+  - Confirm that guest accounts have limited access and expire after a set time.  
+
+---
