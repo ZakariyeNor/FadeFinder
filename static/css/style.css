@@ -8,7 +8,7 @@
 }
 
 .primary-bg {
-    background-color: #2c2c2c;
+    background-color: #71b9bd;
 }
 
 /* Secondary Color: #ffffff (Background and Text Containers) */
@@ -43,6 +43,9 @@
     color: #000000;
 }
 
+.text-color-sec {
+    color: #ffffff;
+}
 /* Typography Styles */
 /* Headings: Montserrat Bold, Dark Gray (#2c2c2c) - App Titles and Section Headings */
 h1, h2, h3, h4, h5, h6 {
@@ -81,3 +84,4 @@ body, p, span, a {
     border-radius: 5px;
     cursor: pointer;
 }
+
