@@ -62,16 +62,18 @@
 
     {% endblock %}
     
-    <footer class="container-fluid primary-bg text-color-sec pt-4">
-        <div class="row">
+    <!-- Footer -->
+    <footer class="container-fluid text-color-sec pt-4">
+        <!-- Desktop footer -->
+        <div class="row desktop-footer primary-bg">
             <!-- Logo Section -->
             <div class="col-12 col-md-3">
                 <h2>Barber Booking</h2>
             </div>
             <!-- Links Section -->
-            <div class="col-12 col-md-3" id="list-links">
-                <h5>Navigation</h5>
-                <div class="row">
+            <div class="col-12 col-md-3 list-links">
+                <h5 class="nav-heading">Navigation</h5>
+                <div class="row nav-links">
                     <div class="col-6">
                         <li><a href="#" class="text-color-sec footer-link">Book</a></li>
                     </div>
@@ -136,8 +138,16 @@
                 <p>Sockenvägen 3A<br>Gothenburg, SE 41716<br>(123) 456-7890</p>
             </div>
         </div>
+        <!-- Mobile Footer -->
+  <div class="mobile-footer ">
+    <a href="#" class="text-color-sec"><i class="fa-solid fa-house"></i></a>
+    <a href="#" class="text-color-sec"><i class="fa-solid fa-calendar-plus"></i></a>
+    <a href="#" class="text-color-sec"><i class="fa-solid fa-user"></i></a>
+    <a href="#" class="text-color-sec"><i class="fa-solid fa-location-dot"></i></a>
+  </div>
     </footer>
     
+    <!-- External CDN links and custom file path -->
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/44dbf25b5c.js" crossorigin="anonymous"></script>
 

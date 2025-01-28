@@ -1,7 +1,9 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* Color Classes */
+
+
+/* Global Color Classes */
 /* Primary Color: #2c2c2c (Headers, Navigation, and Primary UI Elements) */
 .primary-color {
     color: #1f5a5e;
@@ -38,6 +40,9 @@
     background-color: #e8f6f7;
 }
 
+
+
+/* Global Text Classes */
 /* Text and Icons: Black (#000000) */
 .text-color {
     color: #2a2a2a;
@@ -46,45 +51,38 @@
 .text-color-sec {
     color: #ffffff;
 }
-/* Typography Styles */
+
+
+
+/* Global Typography Styles */
 /* Headings: Montserrat Bold, Dark Gray (#2c2c2c) - App Titles and Section Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700; /* Bold */
-    color: #1f5a5e; /* Dark Gray */
+    font-weight: 700;
+    color: #1f5a5e;
 }
 
 /* Body Text: Lato Regular, Black (#000000) - Body Text and Regular Fonts */
-body, p, span, a {
+body,
+p,
+span,
+a {
     font-family: 'Lato', sans-serif;
-    font-weight: 400; /* Regular */
-    color: #2a2a2a; /* Black */
-}
-
-body {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-}
-
-.secti {
-    flex: 1;
-  }
-
-  /* Footer always at the bottom */
-footer {
-    background-color: #71b9bd;
-    color: white;
-    padding: 10px 0;
+    font-weight: 400;
+    color: #2a2a2a;
 }
 
 /* Call-to-Action Buttons: Poppins Semi-Bold, Gold (#ffd700) on Dark Gray (#2c2c2c) */
 .cta-button {
     font-family: 'Poppins', sans-serif;
-    font-weight: 600; /* Semi-Bold */
-    color: #ffc107; /* Muted gold */
-    background-color: #71b9bd; /* Teal */
+    font-weight: 600;
+    color: #ffc107;
+    background-color: #71b9bd;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -94,38 +92,68 @@ footer {
 /* Secondary Buttons: Roboto Regular, Light Gray (#f5f5f5) on White (#ffffff) */
 .secondary-button {
     font-family: 'Roboto', sans-serif;
-    font-weight: 400; /* Regular */
-    color: #e8f6f7; /* Light teal */
-    background-color: #ffffff; /* White */
+    font-weight: 400;
+    color: #e8f6f7;
+    background-color: #ffffff;
     padding: 10px 20px;
-    border: 1px solid #e8f6f7; /* Light teal border */
+    border: 1px solid #e8f6f7;
     border-radius: 5px;
     cursor: pointer;
 
 }
-/* Footer */
-/* General Anchor Styles */
+
+
+
+/* General sizing */
+/* Body and footer */
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.secti {
+    flex: 1;
+}
+
+/* Footer always at the bottom */
+.desktop-footer,
+.mobile-footer {
+    background-color: #71b9bd;
+    color: white;
+    padding: 10px 0;
+}
+
+
+
+/* General Anchor & list Styles */
 .footer-link {
-    color: #ffffff; /* White text */
+    color: #ffffff;
     list-style-type: none;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
 }
 
-#list-links li {
+.list-links li {
     list-style-type: none;
 }
 
+.list-links a {
+    list-style-type: none;
+    text-decoration: none;
+}
+
 .footer-link:hover {
-    font-weight: 500; /* Semi-bold on hover */
-    color: #ffc107; /* Muted gold */
-    transform: scale(1.05); /* Slight growth */
+    font-weight: 500;
+    color: #ffc107;
+    transform: scale(1.05);
 }
 
 /* General Social Link Styles */
 .social-link {
-    color: #ffffff; /* White icon color */
-    font-size: 1.5rem; /* Base size of icons */
+    color: #ffffff;
+    font-size: 1.5rem;
     transition: all 0.3s ease-in-out;
 }
 
@@ -155,3 +183,48 @@ footer {
     transform: scale(1.2);
 }
 
+
+
+/* Mobile footer, show only under 580 media query and hide it over 580*/
+/* Media query for small screens */
+@media (max-width: 580px) {
+
+    /* hide desktop footer */
+    .desktop-footer {
+        display: none;
+    }
+
+    .mobile-footer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #71b9bd;
+        color: #fff;
+        padding: 0.5rem 0;
+        z-index: 1000;
+    }
+
+    .container-fluid {
+
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .mobile-footer a {
+        font-size: 1.5rem;
+    }
+
+    .mobile-footer a i:hover {
+        color: #ffc107;
+        font-weight: 600;
+        transform: scale(1.2);
+    }
+}
+
+
+/* hide mobile footer */
+@media (min-width: 581px) {
+    .mobile-footer {
+        display: none;
+    }
+}
