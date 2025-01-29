@@ -226,3 +226,9 @@ body {
         display: none;
     }
 }
+
+#logo {
+    font-weight: 600;
+    font-size: 100px;
+    cursor: pointer;
+}
