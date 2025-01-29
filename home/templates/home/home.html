@@ -1,37 +1,51 @@
 {% extends 'base.html' %}
 {% block title %}Barber Booking{% endblock %}
 {% block content %}
-    <div class="row">
-        {% for barber in barberinfo %}
-            <div class="col-6">
-                <div class="baber-name">
-                    {{ barber.title }}
-                    <p>{{ barber.description | safe }}</p>
+    <!-- Barber Info Section -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Barber Information</h2>
+        <div class="row">
+            {% for barber in barberinfo %}
+                <!-- Barber Info - Name and Description -->
+                <div class="col-md-6 mb-4">
+                    <div class="barber-info">
+                        <h3>{{ barber.title }}</h3>
+                        <p>{{ barber.description | safe }}</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-6">
-                <div class="baber-image">
-                    <img src="{{  MEDIA_URL }}{{ barber.image.url }}" alt="{{ barber.title }} Image" class="img-fluid">
+
+                <!-- Barber Info - Image with Updated on Date Underneath -->
+                <div class="col-md-6 mb-4">
+                    <div class="barber-image">
+                        <img src="{{ MEDIA_URL }}{{ barber.image.url }}" alt="{{ barber.title }} Image" class="img-fluid rounded">
+                        <small class="d-block text-muted mt-2">Updated on: {{ barber.created_on }}</small>
+                    </div>
                 </div>
-                <p>{{ barber.created_on }}</p>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 
-    <div class="row">
-        {% for service in servicedescription %}
-            <div class="col-6">
-                <div class="baber-image">
-                    <img src="{{  MEDIA_URL }}{{ service.image.url }}" alt="{{ service.title }} Image" class="img-fluid">
+    <!-- Services Section -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Our Services</h2>
+        <div class="row">
+            {% for service in servicedescription %}
+                <!-- Service - Image with Updated on Date Underneath -->
+                <div class="col-md-6 mb-4">
+                    <div class="service-image">
+                        <img src="{{ MEDIA_URL }}{{ service.image.url }}" alt="{{ service.title }} Image" class="img-fluid rounded">
+                        <small class="d-block text-muted mt-2">Updated on: {{ service.created_on }}</small>
+                    </div>
                 </div>
-                <p>{{ service.created_on }}</p>
-            </div>
-            <div class="col-6">
-                <div class="baber-name">
-                    {{ service.title }}
-                    <p>{{ service.services | safe }}</p>
+
+                <!-- Service - Title and Description -->
+                <div class="col-md-6 mb-4">
+                    <div class="service-info">
+                        <h3>{{ service.title }}</h3>
+                        <p>{{ service.services | safe }}</p>
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
