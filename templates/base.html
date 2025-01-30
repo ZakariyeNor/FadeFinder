@@ -47,7 +47,7 @@
                             </a>
                             <ul class="dropdown-menu primary-bg">
                                 {% if user.is_authenticated %}
-                                        <li><a class="dropdown-item text-color-sec" href="{% url 'account_logout' %}">Logout</a></li>
+                                        <li><a class="dropdown-item text-color-sec" href="{% url 'account_logout' %}">Log-out</a></li>
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
@@ -58,7 +58,7 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item text-color-sec" href="{% url 'admin:index' %}" target="_blank">Admin Log-in</a></li>
+                                    <li><a class="dropdown-item text-color-sec" href="{% url 'admin:index' %}" target="_blank">Admin log-in</a></li>
                                 {% endif %}
                             </ul>
                         </li>
@@ -76,7 +76,7 @@
     {% endblock %}
     
     <!-- Footer -->
-    <footer class="container-fluid text-color-sec pt-4">
+    <footer class="container-fluid text-color-sec pt-4 fixed-bottom">
         <!-- Desktop footer -->
         <div class="row desktop-footer primary-bg">
             <!-- Logo Section -->
