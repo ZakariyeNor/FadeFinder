@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load account socialaccount %}
+{% block head_title %}
+    {% trans "Sign Out" %}
+{% endblock head_title %}
+
+{% block content %}
+    <div class="container logout-container">
+        <div class="row">
+            <div class="col-md-8 mt-5 offset-md-2">
+                <h3 class="action-color primary-color logout-title">
+                    {% trans "Sign Out" %}
+                </h3>
+
+                <p class="text-color logout-text">
+                    {% trans 'Are you sure you want to sign out?' %}
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 mt-5 offset-md-2">
+                {% url 'account_logout' as action_url %}
+                <form method="POST" action="{{ action_url }}" class="logout-form">
+                    {% csrf_token %}
+                    {{ redirect_field }}
+                    <button class="btn btn-signout text-color action-bg logout-btn" type="submit">
+                        {% trans 'Sign Out' %}
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
