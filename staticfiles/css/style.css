@@ -31,6 +31,10 @@
     background-color: #ffc107;
 }
 
+.action-bg:hover {
+    background-color: #7eda22;
+}
+
 /* Accent Color: #f5f5f5 (Secondary Buttons like Cancel) */
 .accent-color {
     color: #e8f6f7;
@@ -48,8 +52,22 @@
     color: #2a2a2a;
 }
 
+.text-color:hover {
+    color: #353030;
+    font-weight: 500;
+    font-size: 18px;
+}
+
 .text-color-sec {
     color: #ffffff;
+}
+
+.hilo:hover {
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 4px;
+    height: 20px;
+    width: 18px;
 }
 
 
@@ -110,7 +128,7 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    padding-bottom: 249px;
 }
 
 
@@ -118,8 +136,6 @@ body {
 /* Footer always at the bottom */
 .desktop-footer,
 .mobile-footer {
-    background-color: #71b9bd;
-    color: white;
     padding: 10px 0;
 }
 
@@ -182,7 +198,6 @@ body {
 }
 
 
-
 /* Mobile footer, show only under 580 media query and hide it over 580*/
 /* Media query for small screens */
 @media (max-width: 580px) {
@@ -224,5 +239,18 @@ body {
 @media (min-width: 581px) {
     .mobile-footer {
         display: none;
+    }
+}
+
+#logo {
+    font-weight: 600;
+    font-size: 100px;
+    cursor: pointer;
+}
+
+/* Media query for mid large screen */
+@media (min-width: 581px) {
+    .container {
+        margin-bottom: 360px;
     }
 }
