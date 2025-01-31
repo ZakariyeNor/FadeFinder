@@ -3,6 +3,7 @@
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
+{% url 'book' as book_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +39,7 @@
                             <a class="nav-link active text-color-sec" aria-current="page" href="{% url 'home' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-color-sec" href="#">Book</a>
+                            <a class="nav-link text-color-sec" href="{% url 'book' %}">Book</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-color-sec" href="#" role="button" data-bs-toggle="dropdown"
@@ -98,7 +99,7 @@
                 <h5 class="nav-heading">Navigation</h5>
                 <div class="row nav-links">
                     <div class="col-6">
-                        <li><a href="#" class="text-color-sec footer-link">Book</a></li>
+                        <li><a href="{% url 'book' %}" class="text-color-sec footer-link">Book</a></li>
                     </div>
                     <div class="col-6">
                         {% if user.is_authenticated %}
