@@ -51,14 +51,18 @@
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
-                                        <li><a class="dropdown-item text-color-sec" href="{% url 'admin:index' %}" target="_blank">Admin</a></li>
                                 {% else %}
                                         <li><a class="dropdown-item text-color-sec" href="{% url 'account_login' %}">Login</a></li>
-                                    <li><a class="dropdown-item text-color-sec" href="{% url 'account_signup' %}">Register</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item text-color-sec" href="{% url 'admin:index' %}" target="_blank">Admin log-in</a></li>
+                                        <li><a class="dropdown-item text-color-sec" href="{% url 'account_signup' %}">Register</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                {% endif %}
+                                
+                                {% if user.is_authenticated %}
+                                    <li><a class="dropdown-item text-color-sec" href="{% url 'admin:index' %}" target="_blank">Admin</a></li>
+                                {% else %}
+                                    <li><a href="{% url 'admin:login' %}" class="text-color-sec dropdown-item" target="_blank">Admin login</a></li>
                                 {% endif %}
                             </ul>
                         </li>
@@ -97,7 +101,11 @@
                         <li><a href="#" class="text-color-sec footer-link">Book</a></li>
                     </div>
                     <div class="col-6">
-                        <li><a href="#" class="text-color-sec footer-link">Login</a></li>
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'account_logout' %}" class="text-color-sec footer-link">Logout</a></li>
+                        {% else %}
+                            <li><a href="{% url 'account_login' %}" class="text-color-sec footer-link">Login</a></li>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="row">
@@ -105,7 +113,11 @@
                         <li><a href="#" class="text-color-sec footer-link">About</a></li>
                     </div>
                     <div class="col-6">
-                        <li><a href="{% url 'admin:index' %}" class="text-color-sec footer-link" target="_blank">Admin</a></li>
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'admin:logout' %}" class="text-color-sec footer-link" target="_blank">Admin</a></li>
+                        {% else %}
+                            <li><a href="{% url 'admin:login' %}" class="text-color-sec footer-link" target="_blank">Admin login</a></li>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -161,7 +173,7 @@
   <div class="mobile-footer ">
     <a href="{% url 'home' as home_url %}" class="text-color-sec"><i class="fa-solid fa-house"></i></a>
     <a href="#" class="text-color-sec"><i class="fa-solid fa-calendar-plus"></i></a>
-    <a href="#" class="text-color-sec"><i class="fa-solid fa-user"></i></a>
+    <a href="{% url 'account_login' %}" class="text-color-sec"><i class="fa-solid fa-user"></i></a>
     <a href="#" class="text-color-sec"><i class="fa-solid fa-location-dot"></i></a>
   </div>
     </footer>
