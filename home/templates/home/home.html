@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}Barber Booking{% endblock %}
 {% block content %}
     <!-- Barber Info Section -->
@@ -17,8 +18,13 @@
                 <!-- Barber Info - Image with Updated on Date Underneath -->
                 <div class="col-md-6 mb-4">
                     <div class="barber-image">
-                        <img src="{{ MEDIA_URL }}{{ barber.image.url }}" alt="{{ barber.title }} Image" class="img-fluid rounded">
-                        <small class="d-block text-muted mt-2">Updated on: {{ barber.created_on }}</small>
+                        {% if "placeholder" in barber.image.url %}
+                            <img src="{% static 'images/cover.jpg' %}" alt="Placeholder Image" class="card-img-top">
+                            <small class="d-block text-muted mt-2">Updated on: {{ barber.created_on }}</small>
+                        {% else %}
+                            <img src="{{ barber.image.url }}" alt="{{ barber.title }} Image" class="card-img-top">
+                            <small class="d-block text-muted mt-2">Updated on: {{ barber.created_on }}</small>
+                        {% endif %}
                     </div>
                 </div>
             {% endfor %}

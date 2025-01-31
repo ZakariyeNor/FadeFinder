@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class BarberInfo(models.Model):
@@ -7,7 +8,7 @@ class BarberInfo(models.Model):
     description = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    image = models.ImageField(upload_to='description_images/')
+    image = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
         return self.title
@@ -20,7 +21,7 @@ class ServicesDes(models.Model):
     services = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    image = models.ImageField(upload_to='services_images/')
+    image = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
         return self.title
