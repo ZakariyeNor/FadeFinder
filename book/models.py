@@ -6,7 +6,7 @@ from cloudinary.models import CloudinaryField
 class BookCover(models.Model):
     #The cover image for the booking page
     cover_image = CloudinaryField('image', default='placeholder')
-    booking_intro = TextField(max_length=200, nullable=False)
+    booking_intro = models.TextField(max_length=200, null=False, blank=False)
 
     def __str__(self):
         #Represent
