@@ -2,24 +2,18 @@
 {% load static %}
 {% block content %}
 <div class="container-fluid">
-    <div class="row">
+    <div class="row mt-3" id="cover-image">
         {% for bookcover in bookingcover %}
-    <div class="col-12 position-relative">
-        <!-- Content Positioned Over the Image -->
-        <div id="booking-content">
-            <h2>Book Now</h2>
-            <p>{{ bookcover.booking_intro | safe }}</p>
-            <button type="submit" class="btn btn-black">Book</button>
-        </div>
-
         <!-- Booking Cover Image -->
         {% if "placeholder" in bookcover.cover_image.url %}
-            <img id="cover-image" src="{% static 'images/cover.jpg' %}" class="img-fluid" alt="Placeholder image">
+            <img src="{% static 'images/cover.jpg' %}" class="img-fluid" alt="Placeholder image">
         {% else %}
-            <img id="cover-image" src="{{ bookcover.cover_image.url }}" class="img-fluid" alt="Booking cover image">
+            <img src="{{ bookcover.cover_image.url }}" class="img-fluid" alt="Booking cover image">
         {% endif %}
-    </div>
-{% endfor %}
+        <div class="col-12 mt-5">
+            <h2>Book Now</h2>
+        </div>
+        {% endfor %}
 
     </div>
 </div>
