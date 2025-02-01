@@ -197,6 +197,15 @@ body {
     transform: scale(1.2);
 }
 
+/* Booking app  */
+/* Cover image and book button */
+#cover-image {
+    border-radius: 3px;
+    margin: 0 auto;
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
 
 /* Mobile footer, show only under 580 media query and hide it over 580*/
 /* Media query for small screens */

@@ -56,12 +56,12 @@ INSTALLED_APPS = [
     'book',
 ]
 
-
+#Redirect user if he/she logged or out
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-
+#Middleware
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -105,11 +105,12 @@ WSGI_APPLICATION = 'fadefinder.wsgi.application'
 #     }
 # }
 
+#Postgres DB
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DB_URL"))
 }
 
-
+#Trusted webs 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/",
     "https://*.herokuapp.com/",
@@ -134,6 +135,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#Don't use email verification
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 
