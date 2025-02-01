@@ -203,7 +203,8 @@ body {
     border-radius: 3px;
     margin: 0 auto;
     width: 100%;
-    height: 5%;
+    height: 30vh;
+    object-fit: cover;
 }
 
 /* Mobile footer, show only under 580 media query and hide it over 580*/

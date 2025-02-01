@@ -10,9 +10,10 @@
         {% else %}
             <img src="{{ bookcover.cover_image.url }}" class="img-fluid" alt="Booking cover image">
         {% endif %}
-        <div class="col-12 mt-5">
+        
             <h2>Book Now</h2>
-        </div>
+            <p>{{ bookcover.booking_intro | safe }}</p>
+            <button type="submit" class="btn btn-black">Book</button>
         {% endfor %}
 
     </div>
