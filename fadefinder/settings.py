@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-zakariyenor-fadefinder-6wk0ajb85v8.ws.codeinstitute-ide.net','.herokuapp.com']
 
