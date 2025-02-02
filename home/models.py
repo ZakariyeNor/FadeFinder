@@ -10,8 +10,11 @@ class BarberInfo(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     image = CloudinaryField('image', default='placeholder')
 
+    class Meta:
+        ordering = ['-created_on']
+
     def __str__(self):
-        return self.title
+        return f"Created by | {self.title}"
 
 
 #Model for services description
@@ -23,5 +26,8 @@ class ServicesDes(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     image = CloudinaryField('image', default='placeholder')
 
+    class Meta:
+        ordering = ['-created_on']
+
     def __str__(self):
-        return self.title
+        return f"{self.title}"
