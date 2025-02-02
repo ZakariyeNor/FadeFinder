@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="container-fluid">
-    <div class="row mt-3" id="cover-image">
+<div class="container">
+    <div class="row g-0 mt-3" id="cover-image">
         {% for bookcover in bookingcover %}
         <!-- Booking Cover Image -->
         {% if "placeholder" in bookcover.cover_image.url %}
@@ -10,12 +10,15 @@
         {% else %}
             <img src="{{ bookcover.cover_image.url }}" class="img-fluid" alt="Booking cover image">
         {% endif %}
-            <!-- Booking intro -->
-            <h2>Book Now</h2>
-            <p>{{ bookcover.booking_intro | safe }}</p>
-            <button type="submit" class="btn btn-black">Book</button>
-        {% endfor %}
 
+            <!-- Booking intro -->
+        <div class="cover-text text-center">
+            <h2>Book Now</h2>
+            {{ bookcover.booking_intro | safe }}
+            <button type="submit" class="btn text-color action-bg">Book</button>
+        </div>
+        {% endfor %}
+        
     </div>
 </div>
 {% endblock %}
