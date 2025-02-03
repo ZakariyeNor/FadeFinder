@@ -305,7 +305,7 @@ body {
 
 /* Media query for mid large screen */
 @media (min-width: 581px) {
-    .container {
+    .container-home {
         margin-bottom: 360px;
     }
 }
