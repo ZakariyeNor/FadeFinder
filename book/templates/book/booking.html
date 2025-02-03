@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
 {% load crispy_forms_tags %}
+{% load i18n %}
 <div class="container">
     <div class="row g-0 mt-3" id="cover-image">
         {% for bookcover in bookingcover %}
@@ -24,4 +25,30 @@
 </div>
 
 <!-- Booking form -->
+
+<div class="container">
+    <div class="row">
+        <h2>Book an appoinment</h2>
+        <div class="col-md-8 mt-5 offset-md-2">
+            <h3 class="action-color primary-color">{% trans "Add a New Booking" %}</h3>
+
+            <p class="text-color">
+                {% blocktrans %} Please fill out the details below to add a new booking. {% endblocktrans %}
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 mt-5 offset-md-2">
+            <form method="POST" action="{% url 'booking_submit' %}">
+                {% csrf_token %}
+                {{ form.as | crispy }}
+
+                {% csrf_tokern %}
+                {% crispy_forms | safe %}
+                <button class="btn btn-signup right text-color action-bg" type="submit">{% trans "Submit" %}</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}

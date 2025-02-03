@@ -44,3 +44,10 @@ class BarberService(models.Model):
     
     def __str__(self):
         return f'{self.service_name}'
+
+
+#Booking model to store user inputs, the choice of barber and service
+class Booking(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    barber = models.ForeignKey(Barber, on_delete=models.CASCADE)
+    service = models.ForeignKey(BarberService, on_delete=models.CASCADE)
