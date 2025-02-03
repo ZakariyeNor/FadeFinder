@@ -29,7 +29,7 @@ class Barber(models.Model):
         ordering = ['created_on']
         
     def __str__(self):
-        return f'{self.barber_name}'
+        return self.barber_name
 
 #Model for barbers'service
 class BarberService(models.Model):

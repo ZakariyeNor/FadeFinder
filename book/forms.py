@@ -8,7 +8,7 @@ class BookingForm(forms.ModelForm):
         fields = ['barber', 'service']
 
     def __init__(self, *args, **kwargs):
-        super.__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
         #populate services based on the selected barber
         if 'barber' in self.data:

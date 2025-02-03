@@ -4,6 +4,13 @@
 {% load crispy_forms_tags %}
 {% load i18n %}
 <div class="container">
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li class="alert alert-{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
     <div class="row g-0 mt-3" id="cover-image">
         {% for bookcover in bookingcover %}
         <!-- Booking Cover Image -->
@@ -17,7 +24,7 @@
         <div class="cover-text text-center">
             <h2>Book Now</h2>
             {{ bookcover.booking_intro | safe }}
-            <button type="submit" class="btn text-color action-bg">Book</button>
+            <a href="{% url 'booking_form' %}" class="btn text-color action-bg">Book</a>
         </div>
         {% endfor %}
         
@@ -26,11 +33,11 @@
 
 <!-- Booking form -->
 
-<div class="container">
+<div class="container mt-3">
     <div class="row">
-        <h2>Book an appoinment</h2>
-        <div class="col-md-8 mt-5 offset-md-2">
-            <h3 class="action-color primary-color">{% trans "Add a New Booking" %}</h3>
+        <h2 class="text-center">Book an appoinment</h2>
+        <div class="col-md-8 mt-2 offset-md-2">
+            <h3 class="action-color text-center">{% trans "Add a New Booking" %}</h3>
 
             <p class="text-color">
                 {% blocktrans %} Please fill out the details below to add a new booking. {% endblocktrans %}
@@ -40,15 +47,12 @@
 
     <div class="row">
         <div class="col-md-8 mt-5 offset-md-2">
-            <form method="POST" action="{% url 'booking_submit' %}">
+            <form method="POST" action="{% url 'booking_form' %}">
+                {{ booking_form | crispy }}
                 {% csrf_token %}
-                {{ form.as | crispy }}
-
-                {% csrf_tokern %}
-                {% crispy_forms | safe %}
                 <button class="btn btn-signup right text-color action-bg" type="submit">{% trans "Submit" %}</button>
             </form>
         </div>
     </div>
-</div>
+    </div>
 {% endblock %}

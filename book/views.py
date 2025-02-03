@@ -19,7 +19,7 @@ def booking_view(request):
             booking_form.save()
             messages.add_message(request, messages.SUCCESS,
             'You booked an appointment successfully!')
-            return redirect('booking.html')
+            return redirect('booking_view')
 
         else:
             messages.add_message(request, messages.ERROR,
