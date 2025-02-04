@@ -6,28 +6,47 @@
 <!-- Booking cover -->
 <div class="container">
     {% if messages %}
-    <ul>
+    <ul class="list-unstyled mt-3" id="message-container">
         {% for message in messages %}
         <li class="alert alert-{{ message.tags }}">{{ message }}</li>
         {% endfor %}
     </ul>
     {% endif %}
-    <div class="row g-0 mt-3" id="cover-image">
-        <!-- Booking Cover Image -->
-        {% if "placeholder" in bookcover.cover_image.url %}
-            <img src="{% static 'images/cover.jpg' %}" class="img-fluid" alt="Placeholder image">
-        {% else %}
-            <img src="{{ bookcover.cover_image.url }}" class="img-fluid" alt="Booking cover image">
-        {% endif %}
+    {% if user.is_authenticated %}
+        <div class="row g-0 mt-3" id="cover-image">
+            <!-- Booking Cover Image -->
+            {% if "placeholder" in bookcover.cover_image.url %}
+                <img src="{% static 'images/cover.jpg' %}" class="img-fluid" alt="Placeholder image">
+            {% else %}
+                <img src="{{ bookcover.cover_image.url }}" class="img-fluid" alt="Booking cover image">
+            {% endif %}
 
-            <!-- Booking intro -->
-        <div class="cover-text text-center">
-            <h2>Book Now</h2>
-            {{ bookcover.booking_intro | safe }}
-            <a href="#booking-section" class="btn text-color action-bg">Go to Booking</a>
+                <!-- Booking intro -->
+            <div class="cover-text text-center">
+                <h2>Book Now</h2>
+                {{ bookcover.booking_intro | safe }}
+                <a href="#booking-section" class="btn text-color action-bg" id="fade-button">Go to Booking</a>
+            </div>
+            
         </div>
-        
-    </div>
+    {% else %}
+        <div class="row g-0 mt-3" id="cover-images">
+            <!-- Booking Cover Image -->
+            {% if "placeholder" in bookcover.cover_image.url %}
+                <img src="{% static 'images/cover.jpg' %}" class="img-fluid" alt="Placeholder image">
+            {% else %}
+                <img src="{{ bookcover.cover_image.url }}" class="img-fluid" alt="Booking cover image">
+            {% endif %}
+
+                <!-- Booking intro -->
+            <div class="cover-text text-center">
+                <h2>Book Now</h2>
+                {{ bookcover.booking_intro | safe }}
+                <a href="#booking-section" class="btn text-color action-bg">Go to Booking</a>
+            </div>
+            
+        </div>
+    {% endif %}
 </div>
 
 <!-- Booking form -->
@@ -36,10 +55,11 @@
         <h2 class="text-center">Book an appoinment</h2>
         <div class="col-md-8 mt-2 offset-md-2">
             <h3 class="action-color text-center">{% trans "Add a New Booking" %}</h3>
-
-            <p class="text-color">
-                {% blocktrans %} Please fill out the details below to add a new booking. {% endblocktrans %}
-            </p>
+            {% if user.is_authenticated %}
+                <p class="text-color">
+                    {% blocktrans %} Please fill out the details below to add a new booking. {% endblocktrans %}
+                </p>
+            {% endif %}
         </div>
     </div>
 
@@ -49,11 +69,11 @@
                 <form method="post" action="{% url 'book' %}">
                     {% csrf_token %}
                     {{ form | crispy }}
-                    <button class="btn btn-signup right text-color action-bg" type="submit">{% trans "Submit" %}</button>
+                    <button class="btn btn-signup right text-color action-bg" type="submit">{% trans "Book" %}</button>
                 </form>
             </div>
         {% else %}
-        <p class="text-center text-color">Log in to book an appoinment</p>
+            <p class="text-center text-color">Log in please to book an appoinment</p>
         {% endif %}
     </div>
 </div>

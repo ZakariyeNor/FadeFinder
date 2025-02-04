@@ -6,7 +6,7 @@ from .forms import BookingForm
 
 
 #View for the booking form
-def booking_form_view(request):
+def booking_form(request):
     """ Diplay the booking form with barber and service """
 
     barbers = Barber.objects.all() 

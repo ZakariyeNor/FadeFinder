@@ -220,6 +220,25 @@ body {
     z-index: 0;
 }
 
+#cover-images {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#cover-images::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 10px;
+    height: 100%;
+    background: rgba(178, 175, 175, 0.981);
+    z-index: 0;
+}
+
 .cover-text {
     position: absolute;
     top: 45%;
