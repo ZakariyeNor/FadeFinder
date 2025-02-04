@@ -27,4 +27,5 @@ class BarberServiceAdmin(admin.ModelAdmin):
 @admin.register(Booking)
 class BookingAdmin(SummernoteModelAdmin):
     search_fields = ['user']
-    list_display = ('user', 'barber', 'service')
+    list_display = ('user', 'barber', 'service', 'date', 'time')
+    list_filter = ('user', 'barber', 'service', 'date', 'time')
