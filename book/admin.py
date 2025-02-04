@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import BookCover, Barber, BarberService
+from .models import BookCover, Barber, BarberService, Booking
 
 
 # Register your models here.
@@ -22,3 +22,9 @@ class BarberServiceAdmin(SummernoteModelAdmin):
     search_fields = ['service_name']
     list_display = ('service_name', 'service_price',)
     list_filter = ('updated_on', 'created_on')
+
+# For booking.
+@admin.register(Booking)
+class BookingAdmin(SummernoteModelAdmin):
+    search_fields = ['user']
+    list_display = ('user', 'barber', 'service')

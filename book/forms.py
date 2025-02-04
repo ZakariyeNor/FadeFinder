@@ -5,22 +5,31 @@ from .models import Booking, BarberService, Barber
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = ['barber', 'service']
+        fields = ('barber', 'service')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+
+
+        #Don't show services until user chooses the barber
+        self.fields['service'].queryset = BarberService.objects.none()
+
         #populate services based on the selected barber
         if 'barber' in self.data:
-            barber_id = self.data.get('barber')
-            self.fields['service'].queryset = BarberService.objects.filter(barber_id=barber_id)
-        else:
+            try:
+                barber_id = int(self.data.get('barber'))
+                self.fields['service'].queryset = BarberService.objects.filter(barber_id=barber_id)
+            except (ValueError, TypeError):
+                pass
+        elif self.instance.pk:
             #Don't show services until user chooses the barber
-            self.fields['service'].queryset = BarberService.objects.none()
+            self.fields['service'].queryset = BarberService.objects.filter(barber=self.instance.barber)
 
-    def cleaned_data(self):
+    def clean(self):
+        cleaned_data = super().clean()
         service = self.cleaned_data.get('service')
         if not service:
             raise forms.ValidationError('You need to select a service.')
         else:
-            return service
+            return cleaned_data

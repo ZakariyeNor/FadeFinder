@@ -51,3 +51,10 @@ class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     barber = models.ForeignKey(Barber, on_delete=models.CASCADE)
     service = models.ForeignKey(BarberService, on_delete=models.CASCADE)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-updated_on']
+
+    def __str__(self):
+        return f"Booked by | {self.user}"
