@@ -19,7 +19,7 @@ class BookCover(models.Model):
 
 #Model for barbers
 class Barber(models.Model):
-    barber_name = models.TextField(max_length=50)
+    barber_name = models.CharField(max_length=50)
     barber_address = models.CharField(max_length=200)
     barber_number = models.CharField(max_length=20)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -34,7 +34,7 @@ class Barber(models.Model):
 #Model for barbers'service
 class BarberService(models.Model):
     barber = models.ForeignKey(Barber, on_delete=models.CASCADE, related_name='services')
-    service_name = models.TextField(max_length=50)
+    service_name = models.CharField(max_length=50)
     service_price = models.DecimalField(max_digits=5, decimal_places=2)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -52,6 +52,8 @@ class Booking(models.Model):
     barber = models.ForeignKey(Barber, on_delete=models.CASCADE)
     service = models.ForeignKey(BarberService, on_delete=models.CASCADE)
     updated_on = models.DateTimeField(auto_now=True)
+    date = models.DateField(null=False, blank=False)
+    time = models.TimeField(null=False, blank=False)
 
     class Meta:
         ordering = ['-updated_on']

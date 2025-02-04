@@ -3,6 +3,6 @@ from . import views
 
 #Booking app path
 urlpatterns = [
-    path('', views.BookCoverShow.as_view(), name='book'),
-    path('form/', views.booking_form_view, name='booking_form'),
+    # path('', views.BookCoverShow.as_view(), name='book'),
+    path('form/', views.booking_form_view, name='book'),
 ]

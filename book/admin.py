@@ -10,7 +10,7 @@ class BookCoverAdmin(SummernoteModelAdmin):
 
 # For barbers.
 @admin.register(Barber)
-class BarberAdmin(SummernoteModelAdmin):
+class BarberAdmin(admin.ModelAdmin):
     search_fields = ['barber_name']
     list_display = ('barber_name', 'barber_address', 'barber_number',)
     list_filter = ('updated_on', 'created_on')
@@ -18,7 +18,7 @@ class BarberAdmin(SummernoteModelAdmin):
 
 # For barbers'service.
 @admin.register(BarberService)
-class BarberServiceAdmin(SummernoteModelAdmin):
+class BarberServiceAdmin(admin.ModelAdmin):
     search_fields = ['service_name']
     list_display = ('service_name', 'service_price',)
     list_filter = ('updated_on', 'created_on')
