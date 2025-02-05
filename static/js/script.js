@@ -18,3 +18,28 @@ document.getElementById("fade-button").addEventListener("click", function() {
     image.style.opacity = 0;
     setTimeout(() => image.remove(), 10000);
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const dateInput = document.querySelector("input[name='date']");
+    const timeInput = document.querySelector("input[name='time']");
+
+    if (dateInput) {
+        flatpickr(dateInput, {
+            minDate: "today",
+            dateFormat: "Y-m-d",
+        });
+    }
+
+    if (timeInput) {
+        flatpickr(timeInput, {
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "H:i",
+            minuteIncrement: 30,
+            time_24hr: true,
+            minTime: new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})
+        });
+    }
+});
+
+console.log(typeof flatpickr);

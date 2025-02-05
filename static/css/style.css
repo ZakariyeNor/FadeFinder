@@ -273,6 +273,7 @@ body {
     font-weight: 400;
 }
 
+
 /* Mobile footer, show only under 580 media query and hide it over 580*/
 /* Media query for small screens */
 @media (max-width: 580px) {
@@ -326,7 +327,7 @@ body {
 
 /* Media query for mid large screen */
 @media (min-width: 581px) {
-    .home {
+    .home, .book {
         margin-bottom: 360px;
     }
 }
