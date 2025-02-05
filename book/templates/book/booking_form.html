@@ -81,5 +81,21 @@
             <p class="text-center text-color">Log in please to book an appoinment</p>
         {% endif %}
     </div>
+    <!-- Booked data section link -->
+    <div class="sinaan row">
+        {% if user_booked %}
+        <a href="#booked-data" class="btn accent-color mt-3 accent-bg" style="width: 70%;"> See Booked appoinments</a>
+        {% endif %}
+    </div>
 </div>
+
+<!-- Booked data section -->
+<div class="container book mt-3" id="booked-data">
+
+    <div class="row">
+        <div class="col">
+            <h2>Booked Appoinments</h2>
+        </div>
+    </div>
+ </div>
 {% endblock %}

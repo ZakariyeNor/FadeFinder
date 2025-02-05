@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
+
 # Create your models here.
 class BookCover(models.Model):
     #The cover image for the booking page
@@ -30,6 +31,7 @@ class Barber(models.Model):
         
     def __str__(self):
         return self.barber_name
+
 
 #Model for barbers'service
 class BarberService(models.Model):

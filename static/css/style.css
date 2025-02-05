@@ -38,12 +38,19 @@ html {
 }
 
 /* Accent Color: #f5f5f5 (Secondary Buttons like Cancel) */
-.accent-color {
-    color: #e8f6f7;
+.accent-bg {
+    background-color: #d8dede;
 }
 
-.accent-bg {
-    background-color: #e8f6f7;
+.accent-color {
+    color: #030404;
+}
+
+.accent-color:hover {
+    color: #353030;
+    font-weight: 500;
+    font-size: 18px;
+    background-color: #3cacb47d;
 }
 
 
@@ -271,6 +278,11 @@ body {
     font-size: larger;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
+}
+
+/* Bokked data style */
+.sinaan {
+    padding-left: 40%;
 }
 
 
