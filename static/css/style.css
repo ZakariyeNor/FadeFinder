@@ -148,6 +148,13 @@ body {
     padding: 10px 0;
 }
 
+/* Phone logo */
+#logo {
+    font-weight: 600;
+    font-size: 100px;
+    cursor: pointer;
+}
+
 
 
 /* General Anchor & list Styles */
@@ -287,7 +294,18 @@ body {
 #hego {
     margin-bottom: 30px;
 }
+/* Default for all screen sizes */
+.space-con {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between; /* Even space between the elements */
+    max-height: 60px; /* Limit height to 100px */
+}
 
+/* Add some padding/margin to space out content as needed */
+.space-con h2, .space-con a {
+    margin: 0;
+}
 
 /* Mobile footer, show only under 580 media query and hide it over 580*/
 /* Media query for small screens */
@@ -323,6 +341,23 @@ body {
         font-weight: 600;
         transform: scale(1.2);
     }
+
+    .space-con {
+        max-height: 80px; /* Ensure total space is 100px */
+        padding: 0; /* No additional padding */
+    }
+
+    .space-con h2 {
+        margin-bottom: 60px; /* Space between header and anchor */
+    }
+
+    .space-con a {
+        margin-top: 70px; /* Adjust space above anchor */
+    }
+
+    .cover-text p {
+        font-size: 13px;
+    }
 }
 
 
@@ -331,18 +366,8 @@ body {
     .mobile-footer {
         display: none;
     }
-}
-
-/* Phone logo */
-#logo {
-    font-weight: 600;
-    font-size: 100px;
-    cursor: pointer;
-}
-
-/* Media query for mid large screen */
-@media (min-width: 581px) {
-    .home, .book {
+    .home,
+    .book {
         margin-bottom: 360px;
     }
 }
