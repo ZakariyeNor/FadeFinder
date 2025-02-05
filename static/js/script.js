@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
         flatpickr(dateInput, {
             minDate: "today",
             dateFormat: "Y-m-d",
+            defaultDate: ["2025-02-05"],
         });
     }
 
@@ -36,7 +37,8 @@ document.addEventListener("DOMContentLoaded", function() {
             noCalendar: true,
             dateFormat: "H:i",
             minuteIncrement: 30,
-            time_24hr: true,
+            time_24hr: false,
+            defaultDate: "09:30",
             minTime: new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})
         });
     }
