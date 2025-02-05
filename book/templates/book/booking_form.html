@@ -83,13 +83,14 @@
     </div>
     <!-- Booked data section link -->
     <div class="sinaan row">
-        {% if user_booked %}
-        <a href="#booked-data" class="btn accent-color mt-3 accent-bg" style="width: 70%;"> See Booked appoinments</a>
+        {% if bookings %}
+            <a href="#booked-data" class="btn accent-color mt-3 accent-bg"> See Booked appoinments</a>
         {% endif %}
     </div>
 </div>
 
 <!-- Booked data section -->
+<!-- 
 <div class="container book mt-3" id="booked-data">
     <div class="row">
         <div class="col-12">
@@ -97,24 +98,61 @@
         </div>
     </div>
     <div class="row">
+        {% for booking in bookings %}
         <div class="accordion" id="accordionExample">
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 accordion-item">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-4 col-xxl-5 accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button text-color action-bg" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Accordion Item #1
+                        {{ booking.service.service_name }} | {{ booking.time }}
                     </button>
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                     <div class="accordion-body secondary-bg text-color">
-                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the
-                        collapse
-                        plugin adds the appropriate classes that we use to style each element.
+                        <strong>{{ booking.barber.barber_name }} | </strong> {{ booking.date }}
+                        Welcome to our barber!
                     </div>
                 </div>
             </div>
         </div>
+        {% empty %}
+            <p class="text-center">You have no booked appoinment</p>
+        {% endfor %}
+    </div>
+</div> -->
+ 
+
+<div class="container book mt-3" id="booked-data">
+    <div class="row">
+        <div class="col-12">
+            <h2 id="hego" class="text-center">Booked Appointments</h2>
+        </div>
+    </div>
+    <div class="row">
+        {% for booking in bookings %}
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-4 col-xxl-5 accordion-item">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <!-- Make sure each button links to its unique collapse ID -->
+                        <button class="accordion-button text-color action-bg" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
+                            {{ booking.service.service_name }} | {{ booking.time }}
+                        </button>
+                    </h2>
+                    <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body secondary-bg text-color">
+                            <strong>{{ booking.barber.barber_name }} | </strong> {{ booking.date }}
+                            Welcome to our barber!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+            <p class="text-center">You have no booked appointments</p>
+        {% endfor %}
     </div>
 </div>
- 
+
 {% endblock %}

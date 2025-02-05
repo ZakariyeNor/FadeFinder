@@ -11,7 +11,11 @@ def booking_form(request):
 
     barbers = Barber.objects.all() 
     cover = BookCover.objects.first()
-    user_booked = Booking.objects.filter(user=request.user).exists() if request.user.is_authenticated else False
+    if request.user.is_authenticated:
+        bookings = Booking.objects.filter(user=request.user)
+    else:
+        bookings = []
+    
     
     if request.method == "POST":
         form = BookingForm(data=request.POST)
@@ -38,6 +42,6 @@ def booking_form(request):
             "barbers": barbers,
             "form": form,
             "bookcover": cover,
-            "user_booked": user_booked,
+            "bookings": bookings,
         },
     )

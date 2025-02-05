@@ -40,6 +40,7 @@ html {
 /* Accent Color: #f5f5f5 (Secondary Buttons like Cancel) */
 .accent-bg {
     background-color: #d8dede;
+    width: 72%;
 }
 
 .accent-color {
