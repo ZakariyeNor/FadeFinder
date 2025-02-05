@@ -52,15 +52,20 @@
 <!-- Booking form -->
 <div id="booking-section" class="container book mt-3">
     <div class="row">
-        <h2 class="text-center">Book an appoinment</h2>
-        <div class="col-md-8 mt-2 offset-md-2">
-            <h3 class="action-color text-center">{% trans "Add a New Booking" %}</h3>
-            {% if user.is_authenticated %}
+        {% if user.is_authenticated %}
+            <h2 class="text-center">Book an appoinment</h2>
+            <div class="col-md-8 mt-2 offset-md-2">
+                <h3 class="action-color text-center">{% trans "Add a New Booking" %}</h3>
                 <p class="text-color">
                     {% blocktrans %} Please fill out the details below to add a new booking. {% endblocktrans %}
                 </p>
-            {% endif %}
+            </div>
+        {% else %}
+        <h2 class="text-center">Barber Booking</h2>
+        <div class="col-md-8 mt-2 offset-md-2">
+            <h3 class="action-color text-center">{% trans "To book an appoinment" %}</h3>
         </div>
+        {% endif %}
     </div>
 
     <div class="row">
