@@ -141,6 +141,16 @@
                         </button>
                     </h2>
                     <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <!-- Booking management dropdown -->
+                        <div class="dropdown px-3 text-end">
+                            <button class="btn accent-color mt-2 mini-manage" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Manage bookings
+                            </button>
+                            <ul class="dropdown-menu mini-drop" style="position: absolute;">
+                              <li><a class="dropdown-item" href="#">Update</a></li>
+                              <li><a class="dropdown-item mini-delete" href="#">Delete</a></li>
+                            </ul>
+                          </div>
                         <div class="accordion-body secondary-bg text-color">
                             <strong>{{ booking.barber.barber_name | linebreaks }} | </strong> <strong>Price:</strong> {{ booking.service.service_price }} <br> <strong>| Date: </strong> {{ booking.date }} <br>
                             <hr class="fw-semibold">
