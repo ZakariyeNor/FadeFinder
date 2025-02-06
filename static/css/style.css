@@ -54,7 +54,27 @@ html {
     background-color: #3cacb47d;
 }
 
+/* Booked data styling */
 
+.accent-bg-bk {
+    background-color: #609d9d;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #353030;
+    background-color: #ffb300;
+}
+
+.accent-bg-bk:hover {
+    color: #353030;
+    font-weight: 500;
+    font-size: 18px;
+    background-color: #3cacb47d
+}
+
+.accordion-item {
+    border: var(--bs-accordion-border-width) solid #0d332761;
+}
 
 /* Global Text Classes */
 /* Text and Icons: Black (#000000) */

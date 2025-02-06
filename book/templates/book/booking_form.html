@@ -130,20 +130,21 @@
     </div>
     <div class="row">
         {% for booking in bookings %}
-        <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-4 col-xxl-5 accordion-item">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 accordion-item">
             <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
+                <div class="accordion-item mb-2">
                     <h2 class="accordion-header">
                         <!-- Make sure each button links to its unique collapse ID -->
-                        <button class="accordion-button text-color action-bg" type="button" data-bs-toggle="collapse"
+                        <button class="accordion-button colap text-color accent-bg-bk" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
-                            {{ booking.service.service_name }} | {{ booking.time }}
+                            {{ booking.service.service_name }} | {{ booking.time }} 
                         </button>
                     </h2>
                     <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body secondary-bg text-color">
-                            <strong>{{ booking.barber.barber_name }} | </strong> {{ booking.date }}
-                            Welcome to our barber!
+                            <strong>{{ booking.barber.barber_name | linebreaks }} | </strong> <strong>Price:</strong> {{ booking.service.service_price }} <br> <strong>| Date: </strong> {{ booking.date }} <br>
+                            <hr class="fw-semibold">
+                            Welcome <strong class="text-capitalize">{{ booking.user }}!</strong> We're excited to have you at our barber shop. Hoping to see you soon!
                         </div>
                     </div>
                 </div>
