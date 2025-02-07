@@ -45,3 +45,7 @@ def booking_form(request):
             "bookings": bookings,
         },
     )
+
+
+#Create view for the edit booking 
+def edit_booking(request, booking_id)
