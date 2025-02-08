@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
+from django.http import HttpResponseRedirect
 from .models import BookCover, Booking, Barber, BarberService
 from .forms import BookingForm
 
@@ -48,4 +49,38 @@ def booking_form(request):
 
 
 #Create view for the edit booking 
-def edit_booking(request, booking_id)
+def edit_booking(request, booking_id):
+    booked = get_object_or_404(Booking, id=booking_id)
+
+    if booked.user != request.user:
+        messages.add_message(
+            request, messages.ERROR,
+            "You are not allowed to edit this booking!")
+        return redirect('book')
+
+    if request.method == "POST":
+        form = BookingForm(request.POST, instance=booked)
+        if form.is_valid():
+            form.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'You updated the appointment successfully!'
+            )
+            return redirect('book')
+            
+        else:
+            messages.add_message(
+                request, messages.ERROR,
+                'You need to choose available time based on the service and barber!'
+            )
+    else:
+        form = BookingForm(instance=booked)
+
+    return render(
+        request,
+        'book/edit_booking.html',
+        {
+            "form": form,
+            "booking": booked,
+        }
+        )
