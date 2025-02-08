@@ -84,3 +84,22 @@ def edit_booking(request, booking_id):
             "booking": booked,
         }
         )
+
+
+#Create view for the delete booking 
+def delete_booking(request, booking_id):
+    booked = get_object_or_404(Booking, id=booking_id)
+
+    if booked.user == request.user:
+        booked.delete()
+        messages.add_message(
+            request, messages.SUCCESS,
+            'You Deleted the appointment successfully!'
+        )
+        return redirect('book')
+            
+    else:
+        messages.add_message(
+            request, messages.ERROR,
+            'You need to choose your own appoinments to delete!'
+        )
