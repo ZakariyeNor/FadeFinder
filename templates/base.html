@@ -22,7 +22,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
     <!-- Custom Css -->
-     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- Block for extra CSS files -->
+    {% block extra_css %}{% endblock %}
      
     <title>{% block title %}Page title{% endblock %}</title>
 </head>
@@ -197,6 +200,6 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
     <!-- Custom JS -->
-     <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

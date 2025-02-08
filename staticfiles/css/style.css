@@ -34,19 +34,82 @@ html {
 }
 
 .action-bg:hover {
-    background-color: #7eda22;
+    background-color: #3cacb47d;
 }
 
 /* Accent Color: #f5f5f5 (Secondary Buttons like Cancel) */
-.accent-color {
-    color: #e8f6f7;
-}
-
 .accent-bg {
-    background-color: #e8f6f7;
+    background-color: #d8dede;
+    width: 72%;
 }
 
+.accent-color {
+    color: #030404;
+}
 
+.accent-color:hover {
+    color: #353030;
+    font-weight: 500;
+    font-size: 18px;
+    background-color: #3cacb47d;
+}
+
+/* Booked data styling */
+
+.accent-bg-bk {
+    background-color: #609d9d;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #353030;
+    background-color: #ffb300;
+}
+
+.accent-bg-bk:hover {
+    color: #353030;
+    font-weight: 500;
+    font-size: 18px;
+    background-color: #3cacb47d
+}
+
+.accordion-item {
+    border: var(--bs-accordion-border-width) solid #0d332761;
+}
+
+.mini-manage {
+    background-color: #d8dede;
+}
+
+.mini-drop {
+        font-weight: 400;
+        text-align: inherit;
+        white-space: nowrap;
+        border: 0;
+}
+
+/* Override the default focus and active state of dropdown items */
+.dropdown-item:focus, 
+.dropdown-item:active {
+    background-color: #bad7bc !important; 
+    color: white !important;
+}
+
+.mini-delete:focus, 
+.mini-delete:active {
+    background-color: #cf4c28 !important; 
+    color: white !important;
+}
+
+.dropdown-item:hover {
+    background-color: #3cacb47d;
+    color: white;
+}
+
+/* Optional: Change background color when hovering over the item */
+.mini-delete:hover {
+    background-color: #c6650b7d;
+    color: white;
+}
 
 /* Global Text Classes */
 /* Text and Icons: Black (#000000) */
@@ -139,6 +202,13 @@ body {
 .desktop-footer,
 .mobile-footer {
     padding: 10px 0;
+}
+
+/* Phone logo */
+#logo {
+    font-weight: 600;
+    font-size: 100px;
+    cursor: pointer;
 }
 
 
@@ -273,6 +343,25 @@ body {
     font-weight: 400;
 }
 
+/* Bokked data style */
+.sinaan {
+    padding-left: 40%;
+}
+#hego {
+    margin-bottom: 30px;
+}
+/* Default for all screen sizes */
+.space-con {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between; /* Even space between the elements */
+    max-height: 60px; /* Limit height to 100px */
+}
+
+/* Add some padding/margin to space out content as needed */
+.space-con h2, .space-con a {
+    margin: 0;
+}
 
 /* Mobile footer, show only under 580 media query and hide it over 580*/
 /* Media query for small screens */
@@ -308,6 +397,23 @@ body {
         font-weight: 600;
         transform: scale(1.2);
     }
+
+    .space-con {
+        max-height: 80px; /* Ensure total space is 100px */
+        padding: 0; /* No additional padding */
+    }
+
+    .space-con h2 {
+        margin-bottom: 60px; /* Space between header and anchor */
+    }
+
+    .space-con a {
+        margin-top: 70px; /* Adjust space above anchor */
+    }
+
+    .cover-text p {
+        font-size: 13px;
+    }
 }
 
 
@@ -316,18 +422,8 @@ body {
     .mobile-footer {
         display: none;
     }
-}
-
-/* Phone logo */
-#logo {
-    font-weight: 600;
-    font-size: 100px;
-    cursor: pointer;
-}
-
-/* Media query for mid large screen */
-@media (min-width: 581px) {
-    .home, .book {
+    .home,
+    .book {
         margin-bottom: 360px;
     }
 }

@@ -15,13 +15,14 @@ setTimeout(function() {
 document.getElementById("fade-button").addEventListener("click", function() {
     let image = document.getElementById("cover-image");
     image.style.transition = "opacity 10s";
-    image.style.opacity = 0;
-    setTimeout(() => image.remove(), 10000);
+    image.style.opacity = 0.8;
 });
+
 
 document.addEventListener("DOMContentLoaded", function() {
     const dateInput = document.querySelector("input[name='date']");
     const timeInput = document.querySelector("input[name='time']");
+    const deleteModal = document.getElementById('deleteModal');
 
     if (dateInput) {
         flatpickr(dateInput, {
@@ -42,6 +43,15 @@ document.addEventListener("DOMContentLoaded", function() {
             minTime: new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})
         });
     }
-});
 
-console.log(typeof flatpickr);
+    deleteModal.addEventListener('show.bs.modal', function (event) {
+        const link = event.relatedTarget;
+        const serviceName = link.getAttribute("data-service-name");
+        const bookingDate = link.getAttribute("data-booking-date");
+        const deleteUrl = link.getAttribute("data-delete-url");
+        document.getElementById('deleteMessage').innerHTML = 
+        `Are you sure you want to delete the <strong>${serviceName}</strong> appointment on <strong>${bookingDate} |</strong> This action cannot be undone.`
+        document.getElementById('deleteForm').setAttribute("action", deleteUrl);
+    });
+    
+});
