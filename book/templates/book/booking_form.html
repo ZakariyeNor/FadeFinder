@@ -90,52 +90,64 @@
 </div>
 
 <!-- Booked data section -->
-<div class="container book mt-3" id="booked-data">
-    <div class="row">
-        <div class="col-12">
-            <h2 id="hego" class="text-center">Booked Appointments</h2>
-        </div>
-    </div>
-    <div class="row">
-        {% for booking in bookings %}
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 accordion-item">
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item mb-2">
-                    <h2 class="accordion-header">
-                        <!-- Make sure each button links to its unique collapse ID -->
-                        <button class="accordion-button colap text-color accent-bg-bk" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
-                            {{ booking.service.service_name }} | {{ booking.time }} 
-                        </button>
-                    </h2>
-                    <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                        <!-- Booking management dropdown -->
-                        <div class="dropdown px-3 text-end">
-                            <button class="btn accent-color mt-2 mini-manage" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Manage bookings
-                            </button>
-                            <ul class="dropdown-menu mini-drop" style="position: absolute;">
-                                <li><a class="dropdown-item" href="{% url 'edit_booking' booking.id %}">Update</a></li>
-                                <li><a class="dropdown-item mini-delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
-                                        data-delete-url="{% url 'delete_booking' booking.id %}" data-booking-id="{{ booking.id }}"
-                                        data-service-name="{{ booking.service.service_name }}" data-booking-date="{{ booking.date }}">Delete</a>
-                                </li>
-                            </ul>
-                          </div>
-                        <div class="accordion-body secondary-bg text-color">
-                            <strong>{{ booking.barber.barber_name | linebreaks }} | </strong> <strong>Price:</strong> {{ booking.service.service_price }} <br> <strong>| Date: </strong> {{ booking.date }} <br>
-                            <hr class="fw-semibold">
-                            Welcome <strong class="text-capitalize">{{ booking.user }}!</strong> We're excited to have you at our barber shop. Hoping to see you soon!
+{% if user.is_authenticated %}
+    {% if bookings %}
+        <div class="container book mt-3" id="booked-data">
+            <div class="row">
+                <div class="col-12">
+                    <h2 id="hego" class="text-center">Booked Appointments</h2>
+                </div>
+            </div>
+            <div class="row">
+                {% for booking in bookings %}
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 accordion-item">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item mb-2">
+                            <h2 class="accordion-header">
+                                <!-- Make sure each button links to its unique collapse ID -->
+                                <button class="accordion-button colap text-color accent-bg-bk" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}"
+                                    aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
+                                    {{ booking.service.service_name }} | {{ booking.time }}
+                                </button>
+                            </h2>
+                            <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <!-- Booking management dropdown -->
+                                <div class="dropdown px-3 text-end">
+                                    <button class="btn accent-color mt-2 mini-manage" type="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Manage bookings
+                                    </button>
+                                    <ul class="dropdown-menu mini-drop" style="position: absolute;">
+                                        <li><a class="dropdown-item" href="{% url 'edit_booking' booking.id %}">Update</a></li>
+                                        <li><a class="dropdown-item mini-delete" data-bs-toggle="modal"
+                                                data-bs-target="#deleteModal"
+                                                data-delete-url="{% url 'delete_booking' booking.id %}"
+                                                data-booking-id="{{ booking.id }}"
+                                                data-service-name="{{ booking.service.service_name }}"
+                                                data-booking-date="{{ booking.date }}">Delete</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="accordion-body secondary-bg text-color">
+                                    <strong>{{ booking.barber.barber_name | linebreaks }} | </strong> <strong>Price:</strong> {{
+                                    booking.service.service_price }} <br> <strong>| Date: </strong> {{ booking.date }} <br>
+                                    <hr class="fw-semibold">
+                                    Welcome <strong class="text-capitalize">{{ booking.user }}!</strong> We're excited to have
+                                    you at our barber shop. Hoping to see you soon!
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
-        {% empty %}
-            <p class="text-center">You have no booked appointments</p>
-        {% endfor %}
-    </div>
-</div>
+    {% else %}
+        <p class="text-center">You have no booked appointments yet!</p>
+    {% endif %}
+{% endif %}
 
 <!-- Delete Confirmation Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
