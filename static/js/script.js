@@ -15,9 +15,9 @@ setTimeout(function() {
 document.getElementById("fade-button").addEventListener("click", function() {
     let image = document.getElementById("cover-image");
     image.style.transition = "opacity 10s";
-    image.style.opacity = 0;
-    setTimeout(() => image.remove(), 10000);
+    image.style.opacity = 0.8;
 });
+
 
 document.addEventListener("DOMContentLoaded", function() {
     const dateInput = document.querySelector("input[name='date']");
