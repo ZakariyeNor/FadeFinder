@@ -131,8 +131,9 @@
                                     </ul>
                                 </div>
                                 <div class="accordion-body secondary-bg text-color">
-                                    <strong>{{ booking.barber.barber_name | linebreaks }} | </strong> <strong>Price:</strong> {{
-                                    booking.service.service_price }} <br> <strong>| Date: </strong> {{ booking.date }} <br>
+                                    <p><strong>|{{ booking.barber.barber_name }}</strong></p> 
+                                    <p><strong>|Price:</strong> {{ booking.service.service_price }}</p> 
+                                    <p><strong>| Date: </strong> {{ booking.date }} <br></p>
                                     <hr class="fw-semibold">
                                     Welcome <strong class="text-capitalize">{{ booking.user }}!</strong> We're excited to have
                                     you at our barber shop. Hoping to see you soon!

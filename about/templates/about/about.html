@@ -3,27 +3,57 @@
 {% block content %}
 {% load crispy_forms_tags %}
 {% load i18n %}
-<div class="container mt-5">
+
+<div id="booking-section" class="container book mt-3">
     <div class="row">
-        <div class="col-4 text-center">
-            <img src="{% static 'images/cover.jpg' %}" width="75%">
-        </div>
-        <div class="col-8">
-            <!-- Title goes between these h2 tags -->
-            <h2 class="primary-color">
-            </h2>
-            <!-- Content goes directly underneath this -->
-            <p class="secondary-color">
-            </p>
+        <p class="text-center">Choose a Barber</p>
+        <div class="col-md-8 mt-5 offset-md-2">
+            <form method="post">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <input type="hidden" name="barber_id" value="{{ barber.id }}" />
+                <button class="btn btn-signup right text-color action-bg" type="submit">{% trans "Choose" %}</button>
+            </form>
         </div>
     </div>
-    <div class="row">
-        <div class="col text-end">
-            <!-- Updated on field goes in here -->
-            <p class="text-end accent-color"><em></em></p>
-        </div>
-    </div>
-    
 </div>
 
+{% if no_barber_selected %}
+    <div class="container text-center">
+        <p>Please choose a barber to view the information.</p>
+    </div>
+
+{% elif barber %}
+    <div class="container mt-5">
+        {% for about in abouts %}
+            <div class="row">
+                {% if "placeholder" in about.about_image.url %}
+                    <div class="col-4 text-center">
+                        <img src="{{ about.about_image.url }}" class="rounded float-start" alt="The barber {{ about.title }} image">
+                    </div>
+                {% else %}
+                    <div class="col-4 text-center">
+                        <img src="{% static 'images/cover.jpg' %}" class="rounded float-start" alt="About me default image">
+                        <p>No image available</p>
+                        <small class="d-block text-muted mt-2">Updated on: {{ about.updated_on }}</small>
+                    </div>
+                {% endif %}
+
+                <div class="col-8">
+                    <!-- Title -->
+                    <h2 class="primary-color">{{ about.title }}</h2>
+                    <!-- Content -->
+                    <p class="secondary-color">{{ about.content | safe }}</p>
+                </div>  
+            </div>
+            <div class="row">
+                <div class="col text-end">
+                    <!-- Updated on -->
+                    <p class="text-end accent-color"><em>
+                    <small class="d-block text-muted mt-2">Updated on: {{ about.updated_on }}</small></em></p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
 {% endblock%}
