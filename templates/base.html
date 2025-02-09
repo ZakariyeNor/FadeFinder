@@ -4,6 +4,7 @@
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
 {% url 'book' as book_url %}
+{% url 'about' as about_urls %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -74,7 +75,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-color-sec">About</a>
+                            <a href="{% url 'about' %}" class="nav-link text-color-sec">About</a>
                         </li>
                     </ul>
                 </div>
@@ -117,7 +118,7 @@
                 </div>
                 <div class="row">
                     <div class="col-6">
-                        <li><a href="#" class="text-color-sec footer-link">About</a></li>
+                        <li><a href="{% url 'about' %}" class="text-color-sec footer-link">About</a></li>
                     </div>
                     <div class="col-6">
                         {% if user.is_authenticated %}

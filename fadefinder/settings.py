@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'home',
     'book',
+    'about',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
