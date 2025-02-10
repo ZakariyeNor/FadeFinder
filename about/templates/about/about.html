@@ -8,17 +8,17 @@
     {% for about in abouts %}
         <div class="row">
             {% if "placeholder" in about.about_image.url %}
-                <div class="col-12 col-md-12 col-sm-12 col-lg-6 col-xl-6 text-center">
-                    <img src="{% static 'images/cover.jpg' %}" class="img-fluid" alt="The barber {{ about.title }} image">
+                <div class="col-12 col-md-4 col-sm-12 col-lg-4 col-xl-4 text-center" style="height: 20%;">
+                    <img src="{% static 'images/cover.jpg' %}" class="img-fluid" alt="The barber {{ about.title }} image" style="height: 50%;">
                     <p>No image available</p>
                 </div>
             {% else %}
-                <div class="col-12 col-md-12 col-sm-12 col-lg-6 col-xl-6 text-center">
-                    <img src="{{ about.about_image.url }}" class="img-fluid" alt="About me default image">
+                <div class="col-12 col-md-4 col-sm-12 col-lg-4 col-xl-4 text-center" style="height: 20%;">
+                    <img src="{{ about.about_image.url }}" class="img-fluid" alt="About me default image" style="height: 50%;">
                 </div>
             {% endif %}
 
-            <div class="col-12 col-md-12 col-sm-12 col-lg-6 col-xl-6">
+            <div class="col-12 col-md-8 col-sm-12 col-lg-8 col-xl-8 pt-0">
                 <!-- Title -->
                 <h2 class="primary-color">{{ about.title }}</h2>
                 <!-- Content -->

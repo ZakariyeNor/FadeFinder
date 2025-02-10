@@ -363,6 +363,11 @@ body {
     margin: 0;
 }
 
+/* ABOUT PAGE */
+.logo-height {
+    height: 20%;
+}
+
 /* Mobile footer, show only under 580 media query and hide it over 580*/
 /* Media query for small screens */
 @media (max-width: 580px) {
@@ -414,6 +419,7 @@ body {
     .cover-text p {
         font-size: 13px;
     }
+    
 }
 
 
