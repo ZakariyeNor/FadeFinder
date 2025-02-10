@@ -14,7 +14,7 @@ class CollaborationAdmin(admin.ModelAdmin):
     list_display = ('barber_name', 'barber_shop', 'email',)
     search_fields = ('barber_name', 'barber_shop',)
     list_filter = (
-        'barber_name', 'barber_shop', 'created_on', 'updated_on', 'service_offered',)
+        'barber_name', 'barber_shop', 'created_on', 'service_offered',)
     prepopulated_fields = {
         'barber_shop': ('barber_name',)
     }

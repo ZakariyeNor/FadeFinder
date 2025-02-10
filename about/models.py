@@ -30,7 +30,6 @@ class Collaboration(models.Model):
     number = models.CharField(max_length=15)
     more_info = models.TextField(null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ['-created_on']
