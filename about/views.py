@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.shortcuts import render,redirect
 from django.contrib import messages
 from .models import About, Collaboration
@@ -9,6 +10,7 @@ def about_me(request):
 
     collaborations = Collaboration.objects.all()
     forms = CollaborationForm()
+    maps_api = settings.API_KEY
     
 
     if collaborations:
@@ -54,5 +56,6 @@ def about_me(request):
             "abouts": abouts,
             "forms": forms,
             "collaborations": collaborations,
+            "maps_api": maps_api,
         }
         )

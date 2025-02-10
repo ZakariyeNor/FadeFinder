@@ -377,6 +377,11 @@ body {
     padding: 2.5rem !important;
 }
 
+#map {
+    height: 500px;
+    width: 70%;
+}
+
 /* Mobile footer, show only under 580 media query and hide it over 580*/
 /* Media query for small screens */
 @media (max-width: 580px) {

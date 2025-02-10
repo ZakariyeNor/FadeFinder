@@ -26,6 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
+#Google maps api key
+API_KEY = os.environ.get("GOOGLE_MAPS_API_KEY")
+
 #Cloudinary Key access
 CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
 
