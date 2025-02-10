@@ -423,7 +423,8 @@ body {
         display: none;
     }
     .home,
-    .book {
+    .book,
+    .about {
         margin-bottom: 360px;
     }
 }
