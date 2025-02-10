@@ -4,7 +4,7 @@ from .models import Collaboration
 class CollaborationForm(forms.ModelForm):
     class Meta:
         model = Collaboration
-        fields = ('barber_name', 'barber_shop', 'business_type', 'service_offered', 'email', 'number')
+        fields = ('barber_name', 'barber_shop', 'business_type', 'service_offered', 'email', 'number', 'more_info',)
 
     
     barber_name = forms.CharField(

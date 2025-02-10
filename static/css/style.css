@@ -429,8 +429,10 @@ body {
         display: none;
     }
     .home,
-    .book,
-    .about {
+    .book {
         margin-bottom: 360px;
+    }
+    .about {
+        margin-bottom: 60px;
     }
 }

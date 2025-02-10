@@ -15,7 +15,7 @@ class CollaborationAdmin(admin.ModelAdmin):
     search_fields = ('barber_name', 'barber_shop',)
     list_filter = (
         'barber_name', 'barber_shop', 'created_on', 'service_offered',)
-    prepopulated_fields = {
-        'barber_shop': ('barber_name',)
-    }
+    readonly_fields = (
+        'barber_name', 'barber_shop', 'business_type', 'service_offered', 'email', 'number', 'more_info',
+    )
 

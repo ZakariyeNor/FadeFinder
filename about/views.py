@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from django.contrib import messages
 from .models import About, Collaboration
 from .forms import CollaborationForm
 # from book.models import Barber
@@ -11,6 +12,7 @@ def about_me(request):
 
     collaborations = Collaboration.objects.all()
     forms = CollaborationForm()
+    
 
     if collaborations:
         total_collaborations = collaborations.count()
@@ -26,10 +28,26 @@ def about_me(request):
             print(f"Phone Number: {collaboration.number}")
             print(f"Additional Info: {collaboration.more_info}")
             print(f"Created On: {collaboration.created_on}")
-            print(f"Updated On: {collaboration.updated_on}")
             print("-" * 20)
     else:
         print("Not found collaborations")
+
+    if request.method == "POST":
+        forms = CollaborationForm(data=request.POST)
+        if forms.is_valid():
+            collaborations = forms.save(commit=False)
+            collaborations.request = request.user
+            collaborations.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                "You're collaboration request is succesfully send, will be in touch in two days")
+            return redirect('about')
+
+        else:
+            messages.add_message(
+                request, messages.ERROR,
+                "There was an error with your form submission. Please check the details and try again.")
+
 
 
     return render(
@@ -37,6 +55,7 @@ def about_me(request):
         "about/about.html",
         {
             "abouts": abouts,
+            "forms": forms,
             "collaborations": collaborations,
         }
         )
