@@ -53,5 +53,17 @@ document.addEventListener("DOMContentLoaded", function() {
         `Are you sure you want to delete the <strong>${serviceName}</strong> appointment on <strong>${bookingDate} |</strong> This action cannot be undone.`
         document.getElementById('deleteForm').setAttribute("action", deleteUrl);
     });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const form = document.getElementById("barber-form");
+    
+        if (form) {
+            form.addEventListener("submit", function(event) {
+                const barberId = document.getElementById("barber_id").value;
+                console.log("Submitting form with barber_id:", barberId);
+            });
+        }
+    });
+    
     
 });
