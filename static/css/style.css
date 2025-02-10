@@ -368,6 +368,15 @@ body {
     height: 20%;
 }
 
+.form-style {
+    background-color: #ffffff;
+    margin-top: 1.5rem !important;
+    box-shadow: 1px 0rem 1rem 1px rgb(13 210 227 / 18%) !important;
+}
+.form-p {
+    padding: 2.5rem !important;
+}
+
 /* Mobile footer, show only under 580 media query and hide it over 580*/
 /* Media query for small screens */
 @media (max-width: 580px) {
