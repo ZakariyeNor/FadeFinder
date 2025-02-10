@@ -80,7 +80,7 @@
  <div class="container about mt-4 p-4">
     <div class="row">
         <div class="col-8 text-center">
-            <h3 class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">Find Us</h3>
+            <h3 class="col-12 col-sm-6 col-md-4 col-lg-8 col-xl-9">Find Us</h3>
             <div id="map">
 
             </div>
@@ -93,12 +93,10 @@
     <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
 
     <!-- Google map JAvascript API -->
-    <script
-    async
-    defer
-    src="https://maps.googleapis.com/maps/api/js?key=maps_api&libraries=maps,marker&v=beta&callback=initMap" defer></script>
-
-    <!-- External js link -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key={{ maps_api }}&libraries=maps,marker&v=beta&callback=initMap"></script>
+        
+        <!-- External js link -->
      <script src="{% static 'js/maps.js' %}"></script>
     
  {% endblock %}

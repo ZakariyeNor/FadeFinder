@@ -35,7 +35,7 @@ CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-zakariyenor-fadefinder-6wk0ajb85v8.ws.codeinstitute-ide.net','.herokuapp.com']
+ALLOWED_HOSTS = ['8000-zakariyenor-fadefinder-fl5iq7riekk.ws-eu117.gitpod.io','.herokuapp.com']
 
 
 # Application definition
@@ -121,7 +121,7 @@ DATABASES = {
 
 #Trusted webs 
 CSRF_TRUSTED_ORIGINS = [
-    "https://*.codeinstitute-ide.net/",
+    'https://8000-zakariyenor-fadefinder-fl5iq7riekk.ws-eu117.gitpod.io',
     "https://*.herokuapp.com/",
 ]
 
