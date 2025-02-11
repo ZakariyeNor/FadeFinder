@@ -1,8 +1,8 @@
 from django.conf import settings
 from django.shortcuts import render,redirect
 from django.contrib import messages
-from .models import About, Collaboration
-from .forms import CollaborationForm
+from .models import About, Collaboration, ContactUs
+from .forms import CollaborationForm, ContactUsForm
 
 def about_me(request):
     abouts = About.objects.all()
@@ -11,6 +11,20 @@ def about_me(request):
     collaborations = Collaboration.objects.all()
     forms = CollaborationForm()
     maps_api = settings.API_KEY
+    contact_form = ContactUsForm()
+
+    if request.method == "POST":
+        contact_form = CollaborationForm(data=request.POST)
+        if contact_form.is_valid():
+            contact_form.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                "You're message is succesfully send, will be in touch in two days")
+            return redirect('about')
+        else:
+            messages.add_message(
+                request, messages.ERROR,
+                "There was an error with your form submission. Please check the details and try again.")
     
 
     if collaborations:
@@ -57,5 +71,6 @@ def about_me(request):
             "forms": forms,
             "collaborations": collaborations,
             "maps_api": maps_api,
+            "contact_form": contact_form,
         }
         )
