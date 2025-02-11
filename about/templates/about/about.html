@@ -302,16 +302,60 @@
 <!-- the container of the map of the business location and constact us form -->
 <div class="container about">
     <div class="row">
-        <h3 class="text-center">Contact Us</h3>
-        <div id="contact-us">
+        <div class="col-12 col-md-6 col-sm-12 col-lg-6 col-xl-6">
+            <h3 class="text-center">Contact Us</h3>
+            <div id="contact-us">
+                <form action="https://formspree.io/f/xpwqjddp" method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="nameInput" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="nameInput" name="name" required>
+                    </div>
+            
+                    <div class="mb-3">
+                        <label for="emailInput" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="emailInput" name="email" aria-describedby="emailHelp" required>
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
 
+                    <!-- Category selection dropdown with sub-dropdown for Developer -->
+                    <div class="mb-3">
+                        <label for="categoryInput" class="form-label">Category</label>
+                        <select class="form-select" id="categoryInput" name="category" onchange="toggleSubCategory()" required>
+                            <option value="">Select a category</option>
+                            <option value="Feedback">Feedback</option>
+                            <option value="Inquiry">Inquiry</option>
+                            <option value="Suggestion">Suggestion</option>
+                            <option value="Developer">Developer</option>
+                            <option value="Member">Member</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Subcategory selection, shown only if "Developer" is selected -->
+                    <div class="mb-3" id="developerSubCategory" style="display: none;">
+                        <label for="subCategoryInput" class="form-label">Developer Type</label>
+                        <select class="form-select" id="subCategoryInput" name="subCategory">
+                            <option value="">Select a sub-category</option>
+                            <option value="UX">UX</option>
+                            <option value="UI">UI</option>
+                            <option value="FUNCTIONALITY">Functionality</option>
+                            <option value="ISSUE">Bug</option>
+                        </select>
+                    </div>
+            
+                    <div class="mb-3">
+                        <label for="messageInput" class="form-label">Your Message</label>
+                        <textarea class="form-control" id="messageInput" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                    </form>
+            </div>
         </div>
-    </div> 
-    <!-- Map container -->
-    <div class="col-12 col-md-6 col-sm-12 col-lg-6 col-xl-6">
-        <h3 class="text-center">Find Us</h3>
-        <div id="map">
+        <!-- Map container -->
+        <div class="col-12 col-md-6 col-sm-12 col-lg-6 col-xl-6">
+            <h3 class="text-center">Find Us</h3>
+            <div id="map">
 
+            </div>
         </div>
     </div>
 </div>

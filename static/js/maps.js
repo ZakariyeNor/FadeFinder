@@ -29,3 +29,15 @@ async function initMap() {
 
 // Initialize the map when the page is loaded
 initMap();
+
+function toggleSubCategory() {
+    const category = document.getElementById('categoryInput').value;
+    const developerSubCategory = document.getElementById('developerSubCategory');
+
+    if (category === 'Developer') {
+        developerSubCategory.style.display = 'block';
+    } else {
+        developerSubCategory.style.display = 'none';
+    }
+}
+
