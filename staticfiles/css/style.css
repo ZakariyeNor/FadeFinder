@@ -363,6 +363,26 @@ body {
     margin: 0;
 }
 
+/* ABOUT PAGE */
+.logo-height {
+    height: 20%;
+}
+
+.form-style {
+    background-color: #ffffff;
+    margin-top: 1.5rem !important;
+    box-shadow: 1px 0rem 1rem 1px rgb(13 210 227 / 18%) !important;
+}
+.form-p {
+    padding: 2.5rem !important;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+    margin-top: 40px;
+}
+
 /* Mobile footer, show only under 580 media query and hide it over 580*/
 /* Media query for small screens */
 @media (max-width: 580px) {
@@ -414,6 +434,7 @@ body {
     .cover-text p {
         font-size: 13px;
     }
+    
 }
 
 
@@ -423,8 +444,10 @@ body {
         display: none;
     }
     .home,
-    .book,
-    .about {
+    .book {
         margin-bottom: 360px;
+    }
+    .about {
+        margin-bottom: 330px;
     }
 }
