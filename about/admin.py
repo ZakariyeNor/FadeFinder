@@ -23,8 +23,8 @@ class CollaborationAdmin(admin.ModelAdmin):
 #Register the contact us model 
 @admin.register(ContactUs)
 class ContactUsAdmin(admin.ModelAdmin):
-    search_fields = ('name', 'email', 'number',)
+    search_fields = ('name', 'email', 'phone',)
     list_filter = ('name', 'created_on', 'is_finished',)
     list_display = ('name', 'email', 'is_finished',)
     readonly_fields = (
-        'name', 'created_on', 'name', 'email', 'number',)
+        'name', 'created_on', 'name', 'email', 'phone',)

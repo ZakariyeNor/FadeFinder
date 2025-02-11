@@ -56,6 +56,8 @@ class ContactUs(models.Model):
         constraints = [
             models.UniqueConstraint(fields=['email', 'message'], name='unique_email_and_message')
         ]
+        verbose_name = ('User Message')
+        verbose_name_plural = ("User Messages")
 
     def __str__(self):
         return f"Message from {self.name} | {self.created_on}"
