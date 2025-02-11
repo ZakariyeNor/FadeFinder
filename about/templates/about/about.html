@@ -30,6 +30,7 @@
         </div>
     {% endfor %}
 </div>
+
 <!-- Collaborations Section -->
 <div class="container about">
     <div class="row d-flex justify-content-center align-items-center">
@@ -78,8 +79,6 @@
 </div>
 
 <!-- FAQ section -->
-<!-- Accordion Section -->
-
 <div class="container about">
     <div class="row d-flex justify-content-center align-items-center">
         <div class="col-md-6 accordion" id="accordionExample" style="width: 70%;">
@@ -304,20 +303,28 @@
     </div>
 </div>
 
-
-
-<!-- Map of the business location -->
- <div class="container about mt-4 p-4">
+<!-- the container of the map of the business location and constact us form -->
+ <div class="container about">
     <div class="row">
-        <div class="col-8 text-center">
-            <h3 class="col-12 col-sm-6 col-md-4 col-lg-8 col-xl-9">Find Us</h3>
+        <!-- Contact us form -->
+        <div class="col-12 col-md-6 col-sm-12 col-lg-6 col-xl-6 text-center">
+            <h3>Contact Us</h3>
+            <div id="contact-us">
+
+            </div>
+        </div>
+        <!-- Map container -->
+        <div class="col-12 col-md-6 col-sm-12 col-lg-6 col-xl-6 text-center">
+            <h3>Find Us</h3>
             <div id="map">
 
             </div>
         </div>
     </div>
  </div>
- {% block extra_footer %}
+
+ 
+{% block extra_footer %}
 
     <!-- Add cluster marker -->
     <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
@@ -329,5 +336,5 @@
         <!-- External js link -->
      <script src="{% static 'js/maps.js' %}"></script>
     
- {% endblock %}
+{% endblock %}
 {% endblock%}
