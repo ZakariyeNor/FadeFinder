@@ -60,48 +60,48 @@ class ContactUsForm(forms.ModelForm):
         model = ContactUs
         fields = ('name', 'phone', 'email', 'message',)
 
-        name = forms.CharField(
-            widget=forms.TextInput(
-                attrs={
-                    'placeholder': 'Enter Your Name'
-                }
-            )
+    name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Enter Your Name'
+            }
         )
+    )
 
-        phone = forms.CharField(
-            widget=forms.NumberInput(
-                attrs={
-                    'placeholder': 'Enter Your Number'
-                }
-            )
+    phone = forms.CharField(
+        widget=forms.NumberInput(
+            attrs={
+                'placeholder': 'Enter Your Number'
+            }
         )
+    )
 
-        email = forms.CharField(
-            widget=forms.EmailField(
-                attrs={
-                    'placeholder': 'Enter Your Email'
-                }
-            )
+    email = forms.EmailField(
+        widget=forms.EmailInput(
+            attrs={
+                'placeholder': 'Enter Your Email'
+            }
         )
+    )
 
-        message = forms.CharField(
-            widget=forms.Textarea(
-                attrs={
-                    'placeholder': 'Type your message here...'
-                }
-            )
+    message = forms.CharField(
+        widget=forms.Textarea(
+            attrs={
+                'placeholder': 'Type your message here...'
+            }
         )
+    )
 
     def clean(self):
         cleaned_data = super().clean()
 
-        name = cleaned_data.get('email')
+        email = cleaned_data.get('email')
         message = cleaned_data.get('message')
 
-    # Check if the user already sent same message with same email
-    if email and message:
-        if ContactUs.objects.filter(email=email, message=message).exists():
-            self.add_error(
-                'message', 'A similar message has already been sent. Please modify your message if you need to add more details.'
-            )
-    return
+        # Check if the user already sent same message with same email
+        if email and message:
+            if ContactUs.objects.filter(email=email, message=message).exists():
+                self.add_error(
+                    'message', 'A similar message has already been sent. Please modify your message if you need to add more details.'
+                )
+        return cleaned_data
