@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import About, Collaboration, ContactUs
+from .models import About, Collaboration
 from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
@@ -19,12 +19,3 @@ class CollaborationAdmin(admin.ModelAdmin):
         'barber_name', 'barber_shop', 'business_type', 'service_offered', 'email', 'number', 'more_info',
     )
 
-
-#Register the contact us model 
-@admin.register(ContactUs)
-class ContactUsAdmin(admin.ModelAdmin):
-    search_fields = ('name', 'email', 'phone',)
-    list_filter = ('name', 'created_on', 'is_finished',)
-    list_display = ('name', 'email', 'is_finished',)
-    readonly_fields = (
-        'name', 'created_on', 'name', 'email', 'phone',)

@@ -1,5 +1,6 @@
 from django import forms
-from .models import Collaboration, ContactUs
+from .models import Collaboration
+from django.core.exceptions import ValidationError
 
 # Collaboration form
 class CollaborationForm(forms.ModelForm):
@@ -48,60 +49,9 @@ class CollaborationForm(forms.ModelForm):
         barber_name = cleaned_data.get('barber_name')
         barber_shop = cleaned_data.get('barber_shop')
 
-        #check if the combination of barber name and barbershop already exists
-        if barber_name and barber_shop:
-            if Collaboration.objects.filter(barber_name=barber_name, barber_shop=barber_shop).exists():
-                self.add_error('barber_shop', 'A collaboration with this barber name and shop already exists.')
-        return cleaned_data
+        # You can optionally add errors to both fields
+    if barber_name and barber_shop:
+        if Collaboration.objects.filter(barber_name=barber_name, barber_shop=barber_shop).exists():
+            self.add_error('barber_name', 'A collaboration with this barber name and shop already exists.')
 
-# ContactUs form
-class ContactUsForm(forms.ModelForm):
-    class Meta:
-        model = ContactUs
-        fields = ('name', 'phone', 'email', 'message',)
-
-    name = forms.CharField(
-        widget=forms.TextInput(
-            attrs={
-                'placeholder': 'Enter Your Name'
-            }
-        )
-    )
-
-    phone = forms.CharField(
-        widget=forms.NumberInput(
-            attrs={
-                'placeholder': 'Enter Your Number'
-            }
-        )
-    )
-
-    email = forms.EmailField(
-        widget=forms.EmailInput(
-            attrs={
-                'placeholder': 'Enter Your Email'
-            }
-        )
-    )
-
-    message = forms.CharField(
-        widget=forms.Textarea(
-            attrs={
-                'placeholder': 'Type your message here...'
-            }
-        )
-    )
-
-    def clean(self):
-        cleaned_data = super().clean()
-
-        email = cleaned_data.get('email')
-        message = cleaned_data.get('message')
-
-        # Check if the user already sent same message with same email
-        if email and message:
-            if ContactUs.objects.filter(email=email, message=message).exists():
-                self.add_error(
-                    'message', 'A similar message has already been sent. Please modify your message if you need to add more details.'
-                )
-        return cleaned_data
+    

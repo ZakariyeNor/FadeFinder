@@ -6,6 +6,14 @@
 
 <!-- the about of the barber booking center -->
 <div class="container about mt-5">
+    {% if messages %}
+        {% for message in messages %}
+            <div
+                class="alert {% if message.tags == 'success' %}alert-success{% elif message.tags == 'error' %}alert-danger{% endif %}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
     {% for about in abouts %}
         <div class="row">
             {% if "placeholder" in about.about_image.url %}
@@ -45,22 +53,10 @@
                     and enhanced visibility for your business.
                 </p>
 
-                <!-- Display Success or Error Messages -->
-                {% if messages %}
-                <div class="mt-3">
-                    {% for message in messages %}
-                    <div
-                        class="alert {% if message.tags == 'success' %}alert-success{% elif message.tags == 'error' %}alert-danger{% endif %}">
-                        {{ message }}
-                    </div>
-                    {% endfor %}
-                </div>
-                {% endif %}
-
                 <!-- Collaboration Form -->
                 <div class="card shadow-lg form-style rounded">
                     <h3 class="text-center form-p">Apply for Collaboration</h3>
-                    <form method="POST" class="form-p">
+                    <form method="POST" class="form-p" action="">
                         {% csrf_token %}
                         {{ forms|crispy }}
                         <button type="submit" class="btn action-bg text-white w-100">Submit Request</button>
@@ -304,24 +300,21 @@
 </div>
 
 <!-- the container of the map of the business location and constact us form -->
- <div class="container about">
+<div class="container about">
     <div class="row">
-        <!-- Contact us form -->
-        <div class="col-12 col-md-6 col-sm-12 col-lg-6 col-xl-6 text-center">
-            <h3>Contact Us</h3>
-            <div id="contact-us">
+        <h3 class="text-center">Contact Us</h3>
+        <div id="contact-us">
 
-            </div>
         </div>
-        <!-- Map container -->
-        <div class="col-12 col-md-6 col-sm-12 col-lg-6 col-xl-6 text-center">
-            <h3>Find Us</h3>
-            <div id="map">
+    </div> 
+    <!-- Map container -->
+    <div class="col-12 col-md-6 col-sm-12 col-lg-6 col-xl-6">
+        <h3 class="text-center">Find Us</h3>
+        <div id="map">
 
-            </div>
         </div>
     </div>
- </div>
+</div>
 
  
 {% block extra_footer %}

@@ -41,23 +41,3 @@ class Collaboration(models.Model):
     def __str__(self):
         return f"The {self.barber_shop} owned by | {self.barber_name}"
 
-
-#Contact us form
-class ContactUs(models.Model):
-    name = models.CharField(max_length=30)
-    phone = models.IntegerField()
-    email = models.EmailField()
-    message = models.TextField()
-    is_finished = models.BooleanField(default=False, editable=False)
-    created_on = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        ordering = ['created_on']
-        constraints = [
-            models.UniqueConstraint(fields=['email', 'message'], name='unique_email_and_message')
-        ]
-        verbose_name = ('User Message')
-        verbose_name_plural = ("User Messages")
-
-    def __str__(self):
-        return f"Message from {self.name} | {self.created_on}"
