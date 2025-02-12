@@ -55,7 +55,7 @@ class Booking(models.Model):
     service = models.ForeignKey(BarberService, on_delete=models.CASCADE)
     updated_on = models.DateTimeField(auto_now=True)
     date = models.DateField(null=False, blank=False)
-    time = models.TimeField(null=False, blank=False)
+    time = models.TimeField(null=False, blank=False, unique=True)
 
     class Meta:
         ordering = ['-updated_on']

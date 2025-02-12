@@ -196,6 +196,11 @@ body {
     padding-bottom: 249px;
 }
 
+/* Navigation links */
+/* Style for all nav links */
+.nav-link.active {
+    color: #ffc107 !important; /* Force color to black */
+}
 
 
 /* Footer always at the bottom */

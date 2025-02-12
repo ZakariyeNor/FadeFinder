@@ -119,6 +119,7 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DB_URL"))
 }
 
+
 #Trusted webs 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-zakariyenor-fadefinder-fl5iq7riekk.ws-eu117.gitpod.io',
