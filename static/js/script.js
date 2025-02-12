@@ -3,6 +3,12 @@ $( document ).ready(function (){
 
 });
 
+document.getElementById("fade-button").addEventListener("click", function() {
+    let image = document.getElementById("cover-image");
+    image.style.transition = "opacity 10s";
+    image.style.opacity = 0.8;
+});
+
 setTimeout(function() {
     let messages = document.getElementById('message-container');
     if (messages) {
@@ -11,12 +17,6 @@ setTimeout(function() {
         setTimeout(() => messages.remove(), 10000);
     }
 }, 10000);
-
-document.getElementById("fade-button").addEventListener("click", function() {
-    let image = document.getElementById("cover-image");
-    image.style.transition = "opacity 10s";
-    image.style.opacity = 0.8;
-});
 
 
 document.addEventListener("DOMContentLoaded", function() {
