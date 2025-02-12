@@ -6,14 +6,6 @@
 
 <!-- the about of the barber booking center -->
 <div class="container about mt-5">
-    {% if messages %}
-        {% for message in messages %}
-            <div
-                class="alert {% if message.tags == 'success' %}alert-success{% elif message.tags == 'error' %}alert-danger{% endif %}">
-                {{ message }}
-            </div>
-        {% endfor %}
-    {% endif %}
     {% for about in abouts %}
         <div class="row">
             {% if "placeholder" in about.about_image.url %}
@@ -300,7 +292,7 @@
 </div>
 
 <!-- the container of the map of the business location and constact us form -->
-<div class="container about" id="dot-section">
+<div class="container about">
     <div class="row">
         <div class="col-12 col-md-6 col-sm-12 col-lg-6 col-xl-6">
             <h3 class="text-center">Contact Us</h3>
@@ -351,7 +343,7 @@
             </div>
         </div>
         <!-- Map container -->
-        <div class="col-12 col-md-6 col-sm-12 col-lg-6 col-xl-6">
+        <div class="col-12 col-md-6 col-sm-12 col-lg-6 col-xl-6" id="dot-section">
             <h3 class="text-center">Find Us</h3>
             <div id="map">
 

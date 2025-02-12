@@ -216,6 +216,14 @@ body {
     cursor: pointer;
 }
 
+#message-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 
 
 /* General Anchor & list Styles */
