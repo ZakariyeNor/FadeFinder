@@ -14,8 +14,8 @@
 - Verify the visibility and contrast of call-to-action buttons (e.g., “Book” button).
 
 ## Functionality:
-- Ensure that all links (e.g., Home, Book, About) work and lead to the correct pages.
-- Test any dynamic elements (sliders, carousels, etc.) for functionality.
+- Ensure that all links (e.g., Home, Book, About and account) work and lead to the correct pages.
+- Test any dynamic functionality.
 
 ## Logic:
 - Verify that the correct user content is shown (e.g., logged-in users vs. logged-out users).
@@ -23,7 +23,7 @@
 
 ## Access:
 - Test access to the homepage for logged-in and logged-out users.
-- Ensure that non-logged-in users are redirected properly to login or book pages if necessary.
+- Ensure that non-logged-in users are redirected properly to login or book pages.
 
 ---
 
@@ -45,7 +45,7 @@
   - Ensure that the form can be submitted correctly and that the data is saved.
 
 ## Logic:
-- Ensure that the system prevents multiple bookings for the same time slot (if uniqueness is enforced).
+- Ensure that the system prevents multiple bookings for the same time slot.
 - Test the case where a user tries to book with invalid information (e.g., past date).
 
 ## Access:
