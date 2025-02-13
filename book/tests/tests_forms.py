@@ -51,8 +51,8 @@ class TestBookingForm(TestCase):
         
         # Creating instances of the model to be used in the form
         self.barber = Barber.objects.create(
-            barber_name='John Doe',
-            barber_address='123 Barber Street',
+            barber_name='Zaki Nor',
+            barber_address='Sockenvägen 3A',
             barber_number='1234567890'
         )
         self.service = BarberService.objects.create(
