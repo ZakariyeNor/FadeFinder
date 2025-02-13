@@ -1,6 +1,6 @@
 from django.test import TestCase
-from .forms import DateInput, TimeInput, BookingForm
-from .models import Booking, Barber, BarberService
+from ..forms import DateInput, TimeInput, BookingForm
+from ..models import Booking, Barber, BarberService
 from datetime import date, datetime
 
 
