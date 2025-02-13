@@ -180,3 +180,52 @@
 - Test loading times and performance on various devices and networks.
 - Test accessibility (using screen readers, ensuring the app is usable with only keyboard navigation).
 - Test security: Ensure that pages requiring authentication (e.g., booking, editing) properly restrict access to unauthorized users.
+
+
+# User Stories for Automated Testing with pytest in Django
+
+## User Story 1: Home Page Header and Footer
+**As a user**, I want the home page to display the header and footer correctly, so that I can navigate the site properly and view any relevant information at the top and bottom of the page.
+
+### Acceptance Criteria:
+- The header should include a site title, logo, and navigation links.
+- The footer should include contact information, social media links, and additional navigation (e.g., terms and conditions).
+- The header and footer should be visible on all screen sizes (mobile, tablet, and desktop).
+
+---
+
+## User Story 2: BarberInfo Model Display
+**As an admin**, I want to see a list of barber descriptions in the Django admin panel so that I can manage the details of the barbers.
+
+### Acceptance Criteria:
+- The list display should show `title`, `created_on`, and `updated_on`.
+- The search functionality should allow searching by `title`.
+- The description field should be editable using the Summernote text editor.
+
+---
+
+## User Story 3: ServicesDes Model Display
+**As an admin**, I want to see the services descriptions in the admin panel so that I can easily manage the services offered by the barbershop.
+
+### Acceptance Criteria:
+- The list display should show `title`, `created_on`, and `updated_on`.
+- The search functionality should allow searching by `title`.
+- The description field should be editable using the Summernote text editor.
+
+---
+
+## User Story 4: Home Page (BarberInfoContent View)
+**As a user**, I want to see a list of barbers and the services offered on the home page so that I can make an informed choice when booking.
+
+### Acceptance Criteria:
+- The home page should list all the barbers with their descriptions.
+- The page should also display the services offered by the barbershop.
+- The `barberinfo` and `servicedescription` context data should be passed to the template.
+
+---
+
+## User Story 5: URL Mapping (Home URL)
+**As a user**, I want the home page to load correctly when I visit the root URL (`/`).
+
+### Acceptance Criteria:
+- The URL should render the `home.html` template.
