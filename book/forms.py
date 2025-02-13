@@ -5,15 +5,19 @@ from datetime import date, datetime
 #Time and date for the booking
 class DateInput(forms.DateInput):
     input_type = 'date'
-    attrs = {
-        'today': date.today().strftime('%Y-%m-%d'),
-    }
+    
+    def __init__(self, *args, **kwargs):
+        kwargs.setdefault('attrs', {})
+        kwargs['attrs']['today'] = date.today().strftime('%Y-%m-%d')
+        super().__init__(*args, **kwargs)
 
 class TimeInput(forms.TextInput):
     input_type = 'time'
-    attrs = {
-        'min': datetime.now().strftime('%H:%M'),
-    }
+    
+    def __init__(self, *args, **kwargs):
+        kwargs.setdefault('attrs', {})
+        kwargs['attrs']['min'] = datetime.now().strftime('%H:%M')
+        super().__init__(*args, **kwargs)
 
 #Create form for the booking model using model form
 class BookingForm(forms.ModelForm):
@@ -24,3 +28,5 @@ class BookingForm(forms.ModelForm):
             'date': DateInput(),
             'time': TimeInput()
         }
+
+
