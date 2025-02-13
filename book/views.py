@@ -102,3 +102,4 @@ def delete_booking(request, booking_id):
             request, messages.ERROR,
             'You need to choose your own appoinments to delete!'
         )
+    return redirect('book')
