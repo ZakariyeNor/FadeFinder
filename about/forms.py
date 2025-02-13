@@ -42,7 +42,6 @@ class CollaborationForm(forms.ModelForm):
         )
     )
 
-
     def clean(self):
         cleaned_data = super().clean()
 
@@ -50,8 +49,8 @@ class CollaborationForm(forms.ModelForm):
         barber_shop = cleaned_data.get('barber_shop')
 
         # You can optionally add errors to both fields
-    if barber_name and barber_shop:
-        if Collaboration.objects.filter(barber_name=barber_name, barber_shop=barber_shop).exists():
-            self.add_error('barber_name', 'A collaboration with this barber name and shop already exists.')
+        if barber_name and barber_shop:
+            if Collaboration.objects.filter(barber_name=barber_name, barber_shop=barber_shop).exists():
+                self.add_error('barber_name', 'A collaboration with this barber name and shop already exists.')
 
-    
+        return cleaned_data
