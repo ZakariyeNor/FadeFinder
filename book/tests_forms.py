@@ -1,6 +1,18 @@
 from django.test import TestCase
-from .forms import DateInput
+from .models import Booking
+from .forms import BookingForm
+from .models import Booking
+from datetime import date, datetime
 
 # Create your tests here.
-class TestDateInput(TestCase):
-    def test_da
+class TestDateinput(TestCase):
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.form = BookingForm()
+
+
+    def tearDown(self):
+        self.form = None
+
+

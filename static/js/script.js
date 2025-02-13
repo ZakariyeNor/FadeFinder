@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const datepicker = flatpickr(dateInput, {
             minDate: "today",
             dateFormat: "Y-m-d",
-            defaultDate: ["2025-02-12"],
+            defaultDate: ["2025-02-13"],
             onChange: function(selectedDates, dateStr, instance) {
                 updateMinTime(dateStr);
             }

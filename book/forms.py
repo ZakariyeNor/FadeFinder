@@ -6,7 +6,7 @@ from datetime import date, datetime
 class DateInput(forms.DateInput):
     input_type = 'date'
     attrs = {
-        'min': date.today().strftime('%Y-%m-%d'),
+        'today': date.today().strftime('%Y-%m-%d'),
     }
 
 class TimeInput(forms.TextInput):
