@@ -1,6 +1,10 @@
 from django.test import TestCase
+from django.contrib.auth.models import User
 from django.urls import reverse
 
+from ..models import Barber, BarberService, Booking
+
+#he correctness of your URL patterns and the behavior of the views
 #Test for booking form url
 class BookingFormUrlTests(TestCase):
     def test_booking_form_url(self):
@@ -25,3 +29,4 @@ class DeleteBookingUrlTests(TestCase):
         booking_id = 1  # Example booking_id
         url = reverse('delete_booking', kwargs={'booking_id': booking_id})
         self.assertEqual(url, f'/book/delete_booking/{booking_id}')
+
