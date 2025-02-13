@@ -1,18 +1,27 @@
 from django.test import TestCase
-from .models import Booking
-from .forms import BookingForm
-from .models import Booking
-from datetime import date, datetime
+from .forms import DateInput
+from datetime import date
 
-# Create your tests here.
-class TestDateinput(TestCase):
+#Runs once before all test
+@classmethod
+def setUpClass(cls):
+    print("Setting up the test class.")
 
-    @classmethod
-    def setUpTestData(cls):
-        cls.form = BookingForm()
-
-
-    def tearDown(self):
-        self.form = None
+#Runs once after all test
+@classmethod
+def tearDownClass(cls):
+    print("Tearing down the test class.")
 
 
+#Dateinput test
+class TestDateInput(TestCase):
+
+    def test_form_is_valid(self):
+        # Create an instance of DateInput
+        date_input = DateInput()
+
+        # Verify that the input_type is set to 'date'
+        self.assertEqual(date_input.input_type, 'date')
+
+        # Verify that the 'today' attribute is set correctly
+        today_str = date.today().strftime('%Y-%m-%d')
