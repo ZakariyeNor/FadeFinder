@@ -173,59 +173,115 @@
 
 ---
 
-# General Testing Tasks Across All Pages:
+# Automated Testing
 
-- Test different browsers (Chrome, Firefox, Safari, Edge) to ensure cross-browser compatibility.
-- Check for broken links on all pages.
-- Test loading times and performance on various devices and networks.
-- Test accessibility (using screen readers, ensuring the app is usable with only keyboard navigation).
-- Test security: Ensure that pages requiring authentication (e.g., booking, editing) properly restrict access to unauthorized users.
+## Tasks for Home Page 
+
+## Task 1: Test Home Page Header and Footer Display
+- Verify the header includes the site title, logo, and navigation links.
+- Check the footer for contact info, social media links, and navigation.
+
+## Task 2: Verify BarberInfo Data and ServicesDes Data on Home Page and if their Fields Rendering
+- Ensure the list of barbers and their descriptions are displayed correctly on the home page.
+- Verify that `title`, `created_on`, and `updated_on` are displayed for each barber.
+- Ensure the services offered by the barbershop are displayed on the home page.
+- Check that each service’s `title` and `description` are visible.
+- Ensure that `barberinfo` and `servicedescription` context are passed to the home template.
+- Verify that the home page loads correctly from the root URL (`/`).
+- Ensure the response for the home page renders the `home.html` template.
+- Verify that the status code for the home page request is 200 (OK).
 
 
-# User Stories for Automated Testing with pytest in Django
+## Tasks for Book Page 
 
-## User Story 1: Home Page Header and Footer
-**As a user**, I want the home page to display the header and footer correctly, so that I can navigate the site properly and view any relevant information at the top and bottom of the page.
+## Task 1: Test Booking Form Display
+- Verify that the booking form shows a list of available barbers and services.
+- Check if the form displays a cover image and intro text at the top of the page.
+- Ensure the form is responsive and accessible on mobile, tablet, and desktop.
 
-### Acceptance Criteria:
-- The header should include a site title, logo, and navigation links.
-- The footer should include contact information, social media links, and additional navigation (e.g., terms and conditions).
-- The header and footer should be visible on all screen sizes (mobile, tablet, and desktop).
+## Task 2: Test Booking Form Submission
+- Verify that the booking form submits successfully and creates a booking record in the database.
+- Ensure the booking is linked to the authenticated user.
+- Confirm a success message is displayed upon successful booking.
+- Check if an error message is shown when the form is invalid (e.g., invalid time or date).
 
----
+## Task 3: Test Edit & Delete Booking Functionality
+- Ensure only the user who created the booking can edit it.
+- Verify that the user can modify the barber, service, date, and time.
+- Confirm that a success message is shown when changes are saved.
+- Ensure only the user who created the booking can delete it.
+- Verify that the booking is removed from the database after successful deletion.
+- Confirm that a success message is displayed upon deletion.
 
-## User Story 2: BarberInfo Model Display
-**As an admin**, I want to see a list of barber descriptions in the Django admin panel so that I can manage the details of the barbers.
+## Task 4: Test URL Mapping for Booking Pages
+- Verify that the `/form/` URL renders the booking form.
+- Ensure the `/edit_booking/<booking_id>/` URL renders the edit booking form.
+- Verify the `/delete_booking/<booking_id>/` URL allows the user to delete the booking.
 
-### Acceptance Criteria:
-- The list display should show `title`, `created_on`, and `updated_on`.
-- The search functionality should allow searching by `title`.
-- The description field should be editable using the Summernote text editor.
+## Task 5: Test Booking Model Validation for Overlapping Appointments
+- Ensure the system prevents overlapping bookings with the same barber and service at the same time.
+- Verify that the system displays an error message when a conflict occurs.
 
----
 
-## User Story 3: ServicesDes Model Display
-**As an admin**, I want to see the services descriptions in the admin panel so that I can easily manage the services offered by the barbershop.
+# Tasks for Login, Logout, and Sign-Up with Allauth
 
-### Acceptance Criteria:
-- The list display should show `title`, `created_on`, and `updated_on`.
-- The search functionality should allow searching by `title`.
-- The description field should be editable using the Summernote text editor.
+## Task 1: Test Sign-Up and Login Functionality
+- **Test Sign-Up:**
+  - Ensure the sign-up page is accessible.
+  - Verify that the sign-up form includes fields for username, email, and password.
+  - Test successful sign-up and confirm that the user is redirected to the login page or homepage.
+  - Verify that the new user is created in the database.
+  - Ensure that an email confirmation is sent (if applicable).
+- **Test Login:**
+  - Ensure the login page is accessible.
+  - Test successful login with valid credentials and verify redirection to the homepage or user dashboard.
+  - Test invalid login attempts with incorrect credentials and ensure the form shows error messages.
 
----
+## Task 2: Test Logout Functionality and Session Management
+- Ensure the logout button/link is accessible to logged-in users.
+- Verify that clicking logout redirects the user to the login page or homepage.
+- Confirm that the user’s session is terminated after logout.
+- Ensure that the user cannot access logged-in pages after logging out.
 
-## User Story 4: Home Page (BarberInfoContent View)
-**As a user**, I want to see a list of barbers and the services offered on the home page so that I can make an informed choice when booking.
+## Task 3: Test User Authentication and Access Control
+- **Test Access Control:**
+  - Verify that only authenticated users can access restricted pages (e.g., profile, dashboard).
+  - Ensure unauthenticated users are redirected to the login page when attempting to access restricted pages.
+- **Test Email Confirmation (If enabled in Allauth):**
+  - Ensure that a confirmation email is sent after sign-up.
+  - Verify that the user cannot log in until they click the confirmation link.
+  - Check that the user’s account is activated after confirming the email.
 
-### Acceptance Criteria:
-- The home page should list all the barbers with their descriptions.
-- The page should also display the services offered by the barbershop.
-- The `barberinfo` and `servicedescription` context data should be passed to the template.
+# Testing Tasks for "About" Page
 
----
+## Task 1: Test About Model and Admin Registration
 
-## User Story 5: URL Mapping (Home URL)
-**As a user**, I want the home page to load correctly when I visit the root URL (`/`).
+  - Verify that an `About` instance can be created with valid fields (`title`, `about_image`, `content`).
+  - Ensure the `About` model appears in the Django admin.
+  - Verify that the `title` and `created_on` fields are displayed in the admin list view.
 
-### Acceptance Criteria:
-- The URL should render the `home.html` template.
+## Task 2: Test Collaboration Model and Admin Registration
+  - Verify that a `Collaboration` instance can be created with valid fields (`barber_name`, `barber_shop`, `business_type`, `service_offered`, `email`, `number`).
+  - Ensure the unique constraint on `barber_name` and `barber_shop` is enforced.
+  - Ensure the `Collaboration` model appears in the Django admin.
+  - Verify that `barber_name`, `barber_shop`, and `email` fields are displayed in the admin list view.
+
+## Task 3: Test Collaboration Form Validation and Submission
+  - Verify that a valid `CollaborationForm` submission creates a new `Collaboration` record in the database.
+  - Ensure the user receives a success message after successful form submission.
+  - Ensure that invalid form data triggers appropriate error messages.
+  - Verify that duplicate collaboration entries (same `barber_name` and `barber_shop`) are prevented.
+
+## Task 4: Test About Page View and Context & URL Mapping
+
+  - Ensure that the `about_me` view renders correctly.
+  - Verify that the context passed to the template includes `abouts` and `collaborations` data.
+  
+  - Ensure that the API key used for maps is correctly passed to the template.
+  - Verify that the URL for the "About" page (`/`) maps to the `about_me` view.
+
+## Task 5: Test About Image Upload Functionality
+
+  - Verify that an image can be successfully uploaded to the `about_image` field.
+  - Ensure that the uploaded image is displayed correctly on the "About" page, If it's not the placeholder image (cover.jpg) should displayed with error text.
+  
