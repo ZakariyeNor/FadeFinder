@@ -15,3 +15,5 @@ class AboutMeViewTest(TestCase):
         """Test if the about_me view uses the correct template."""
         response = self.client.get(reverse('about'))
         self.assertTemplateUsed(response, 'about/about.html')  # Replace with actual template name
+
+
