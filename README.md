@@ -6,11 +6,9 @@ Barber Booking Center
 [![GitHub last commit](https://img.shields.io/github/last-commit/ZakariyeNor/FadeFinder)](https://www.github.com/ZakariyeNor/FadeFinder/commits/main)
 [![GitHub repo size](https://img.shields.io/github/repo-size/ZakariyeNor/FadeFinder)](https://www.github.com/ZakariyeNor/FadeFinder)
 
-⚠️ INSTRUCTIONS ⚠️
+Description
 
-In this section, include a few paragraphs providing an overview of your project. Essentially, this part is your "sales pitch". Describe what the project hopes to accomplish, who it is intended to target, and how it will be useful to the target audience.
-
-⚠️ --- END --- ⚠️
+The Barber Booking App is an online platform that allows users to easily book appointments with barbers. The app provides an intuitive interface for customers to select their preferred barber, choose an appointment slot, and manage their booking details. Barbers can manage their availability and keep track of upcoming appointments.
 
 🛑 NOTES 🛑
 
@@ -256,8 +254,15 @@ A few examples are listed below to align with possible ways to improve on the sa
 | [![badge](https://img.shields.io/badge/Figma-grey?logo=figma&logoColor=F24E1E)](https://www.figma.com) | Creating wireframes. |
 | [![badge](https://img.shields.io/badge/Google_Maps_API-grey?logo=googlemaps&logoColor=4285F4)](https://developers.google.com/maps) | Interactive map on my site. |
 | [![badge](https://img.shields.io/badge/Font_Awesome-grey?logo=fontawesome&logoColor=528DD7)](https://fontawesome.com) | Icons. |
-| [![badge](https://img.shields.io/badge/ChatGPT-grey?logo=openai&logoColor=75A99C)](https://chat.openai.com) | Help debug, troubleshoot, and explain things. |
+| [![badge](https://img.shields.io/badge/ChatGPT-grey?logo=openai&logoColor=75A99C)](https://chat.openai.com) | Help debug, troubleshoot, testing and explain things. |
 | [![badge](https://img.shields.io/badge/Mermaid-grey?logo=mermaid&logoColor=FF3670)](https://mermaid.live) | Generate an interactive diagram for the data/schema. |
+| [![badge](https://img.shields.io/badge/Flatpickr-grey?logo=flatpickr&logoColor=FF4500)](https://flatpickr.js.org) | Date and time picker. |
+| [![badge](https://img.shields.io/badge/Summernote-grey?logo=summernote&logoColor=FF8800)](https://summernote.org) | WYSIWYG text editor. |
+| [![badge](https://img.shields.io/badge/Django_Allauth-grey?logo=django&logoColor=091A3D)](https://django-allauth.readthedocs.io) | Authentication and registration for Django. |
+| [![badge](https://img.shields.io/badge/Django_Middleware-grey?logo=django&logoColor=F7B500)](https://docs.djangoproject.com/en/stable/topics/middleware/) | Custom middleware in Django. |
+| [![badge](https://img.shields.io/badge/Django_Crispy_Forms-grey?logo=django&logoColor=D8D8D8)](https://django-crispy-forms.readthedocs.io) | Styling forms in Django with Bootstrap. |
+| [![badge](https://img.shields.io/badge/Bootstrap_Crispy_Forms-grey?logo=django&logoColor=7952B3)](https://django-crispy-forms.readthedocs.io/en/latest/) | Bootstrap integration for Django Crispy Forms. |
+
 
 ⚠️ NOTE ⚠️
 
