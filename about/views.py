@@ -7,7 +7,6 @@ from .forms import CollaborationForm
 def about_me(request):
     
     abouts = About.objects.all()
-    print(f"Total about entries: {abouts}")
 
     maps_api = settings.API_KEY
 
@@ -31,24 +30,6 @@ def about_me(request):
             messages.add_message(
                 request, messages.ERROR,
                 "There was an error with your form submission. Please check the details and try again.")
-    
-            if collaborations:
-                total_collaborations = collaborations.count()
-                print(f"Total Collaborations: {total_collaborations}")
-                    
-
-                for collaboration in collaborations:
-                    print(f"Barber Name: {collaboration.barber_name}")
-                    print(f"Barber Shop: {collaboration.barber_shop}")
-                    print(f"Business Type: {collaboration.business_type}")
-                    print(f"Service Offered: {collaboration.service_offered}")
-                    print(f"Email: {collaboration.email}")
-                    print(f"Phone Number: {collaboration.number}")
-                    print(f"Additional Info: {collaboration.more_info}")
-                    print(f"Created On: {collaboration.created_on}")
-                    print("-" * 20)
-            else:
-                print("Not found collaborations")
 
 
     return render(

@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if (form) {
             form.addEventListener("submit", function(event) {
                 const barberId = document.getElementById("barber_id").value;
-                console.log("Submitting form with barber_id:", barberId);
             });
         }
     });
