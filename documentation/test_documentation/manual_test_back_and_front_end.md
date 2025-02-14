@@ -354,3 +354,101 @@ To verify that the About Page (`about_me` view) is rendering correctly, displayi
 By completing the above tests, the **About Page** should be fully verified for content, functionality, security, and responsiveness. Any detected issues should be logged and addressed.
 
 
+
+# Manual Testing for Authentication (Django Allauth)
+
+## 1. Sign-Up Page
+
+### Test Case 1: Successful Sign-Up
+
+**Steps:**
+1. Navigate to `/accounts/signup/`.
+2. Enter a valid email address.
+3. Enter a valid password and confirm it.
+4. Click on **Sign Up**.
+
+**Expected Result:**
+- The user receives a confirmation email.
+- The user is redirected to an email verification page (if email verification is enabled).
+- The user account is created in the database.
+
+### Test Case 2: Sign-Up with an Existing Email
+
+**Steps:**
+1. Navigate to `/accounts/signup/`.
+2. Enter an already registered email address.
+3. Enter a valid password and confirm it.
+4. Click on **Sign Up**.
+
+**Expected Result:**
+- An error message appears stating that the email is already in use.
+- The user is not registered again.
+
+### Test Case 3: Invalid Password
+
+**Steps:**
+1. Navigate to `/accounts/signup/`.
+2. Enter a valid email address.
+3. Enter a weak password (e.g., `123`).
+4. Click on **Sign Up**.
+
+**Expected Result:**
+- An error message appears indicating password strength requirements.
+- The user is not registered.
+
+## 2. Login Page
+
+### Test Case 4: Successful Login
+
+**Steps:**
+1. Navigate to `/accounts/login/`.
+2. Enter a valid email and password.
+3. Click on **Login**.
+
+**Expected Result:**
+- The user is redirected to the home page (or the next URL if provided).
+- The session is established.
+
+### Test Case 5: Login with Incorrect Credentials
+
+**Steps:**
+1. Navigate to `/accounts/login/`.
+2. Enter an incorrect email or password.
+3. Click on **Login**.
+
+**Expected Result:**
+- An error message appears indicating invalid credentials.
+- The user is not logged in.
+
+### Test Case 6: Login Without Email Verification (If Enabled)
+
+**Steps:**
+1. Navigate to `/accounts/login/`.
+2. Enter an unverified email and password.
+3. Click on **Login**.
+
+**Expected Result:**
+- An error message appears asking the user to verify their email before logging in.
+- The user is not logged in.
+
+## 3. Logout Page
+
+### Test Case 7: Successful Logout
+
+**Steps:**
+1. Log in to the application.
+2. Navigate to `/accounts/logout/`.
+3. Click on **Logout**.
+
+**Expected Result:**
+- The user is logged out.
+- The session is terminated.
+- The user is redirected to the logout confirmation page or home page.
+
+### Test Case 8: Logout Without Logging In
+
+**Steps:**
+1. Navigate to `/accounts/logout/` without logging in.
+
+**Expected Result:**
+- The user remains on the logout confirmation page (if applicable) or is redirected to the login page.
