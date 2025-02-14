@@ -3,6 +3,12 @@ $( document ).ready(function (){
 
 });
 
+document.getElementById("fade-button").addEventListener("click", function() {
+    let image = document.getElementById("cover-image");
+    image.style.transition = "opacity 10s";
+    image.style.opacity = 0.8;
+});
+
 setTimeout(function() {
     let messages = document.getElementById('message-container');
     if (messages) {
@@ -12,37 +18,8 @@ setTimeout(function() {
     }
 }, 10000);
 
-document.getElementById("fade-button").addEventListener("click", function() {
-    let image = document.getElementById("cover-image");
-    image.style.transition = "opacity 10s";
-    image.style.opacity = 0.8;
-});
-
 
 document.addEventListener("DOMContentLoaded", function() {
-    const dateInput = document.querySelector("input[name='date']");
-    const timeInput = document.querySelector("input[name='time']");
-    const deleteModal = document.getElementById('deleteModal');
-
-    if (dateInput) {
-        flatpickr(dateInput, {
-            minDate: "today",
-            dateFormat: "Y-m-d",
-            defaultDate: ["2025-02-05"],
-        });
-    }
-
-    if (timeInput) {
-        flatpickr(timeInput, {
-            enableTime: true,
-            noCalendar: true,
-            dateFormat: "H:i",
-            minuteIncrement: 30,
-            time_24hr: false,
-            defaultDate: "09:30",
-            minTime: new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})
-        });
-    }
 
     deleteModal.addEventListener('show.bs.modal', function (event) {
         const link = event.relatedTarget;
@@ -60,10 +37,52 @@ document.addEventListener("DOMContentLoaded", function() {
         if (form) {
             form.addEventListener("submit", function(event) {
                 const barberId = document.getElementById("barber_id").value;
-                console.log("Submitting form with barber_id:", barberId);
             });
         }
     });
     
     
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const dateInput = document.querySelector("input[name='date']");
+    const timeInput = document.querySelector("input[name='time']");
+
+    if (dateInput) {
+        const datepicker = flatpickr(dateInput, {
+            minDate: "today",
+            dateFormat: "Y-m-d",
+            defaultDate: ["2025-02-13"],
+            onChange: function(selectedDates, dateStr, instance) {
+                updateMinTime(dateStr);
+            }
+        });
+
+        function updateMinTime(selectedDate) {
+            if (timeInput) {
+                const now = new Date();
+                const selected = new Date(selectedDate);
+                let minTimeValue = "00:00"; // Default for future dates
+
+                if (selected.toDateString() === now.toDateString()) {
+                    minTimeValue = now.getHours() + ":" + now.getMinutes();
+                }
+
+                timepicker.set("minTime", minTimeValue);
+            }
+        }
+    }
+
+    if (timeInput) {
+        const timepicker = flatpickr(timeInput, {
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "H:i",
+            minuteIncrement: 30,
+            time_24hr: false,
+            defaultDate: "20:28",
+            minTime: new Date().getHours() + ":" + new Date().getMinutes(),
+        });
+    }
+});
+

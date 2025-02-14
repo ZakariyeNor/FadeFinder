@@ -127,6 +127,10 @@ html {
     color: #ffffff;
 }
 
+.text-color-third {
+    color: #68c8b5;
+}
+
 .hilo:hover {
     text-decoration: none;
     font-size: 20px;
@@ -196,6 +200,11 @@ body {
     padding-bottom: 249px;
 }
 
+/* Navigation links */
+/* Style for all nav links */
+.nav-link.active {
+    color: #ffc107 !important; /* Force color to black */
+}
 
 
 /* Footer always at the bottom */
@@ -209,6 +218,14 @@ body {
     font-weight: 600;
     font-size: 100px;
     cursor: pointer;
+}
+
+#message-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 
@@ -267,6 +284,15 @@ body {
     color: #cc0000;
     font-weight: 600;
     transform: scale(1.2);
+}
+
+.social-space {
+    margin-top: 70px;
+}
+
+#space-icons {
+    margin-top: 20px;
+    justify-content: space-between;
 }
 
 /* Booking app  */
@@ -434,6 +460,10 @@ body {
     .cover-text p {
         font-size: 13px;
     }
+
+    #mobile-social-links {
+        display: block;
+    }
     
 }
 
@@ -449,5 +479,9 @@ body {
     }
     .about {
         margin-bottom: 330px;
+    }
+
+    #mobile-social-links {
+        display: none;
     }
 }
