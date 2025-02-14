@@ -109,7 +109,7 @@ class BaseTemplateTest(TestCase):
         html_output = render_to_string('base.html', context)
 
         # Write the HTML output to a file for inspection
-        with open('output.html', 'w', encoding='utf-8') as f:
+        with open('tests/output_base.html', 'w', encoding='utf-8') as f:
             f.write(html_output)
                 
        

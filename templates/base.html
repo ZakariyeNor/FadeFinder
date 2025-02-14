@@ -129,27 +129,40 @@
                 <h5 class="nav-heading">Navigation</h5>
                 <div class="row nav-links">
                     <div class="col-6">
-                        <li><a href="{% url 'book' %}" class="text-color-sec footer-link">Book</a></li>
+                        <ul>
+                            <li><a href="{% url 'book' %}" class="text-color-sec footer-link">Book</a></li>
+                        </ul>
                     </div>
                     <div class="col-6">
                         {% if user.is_authenticated %}
-                        <li><a href="{% url 'account_logout' %}" class="text-color-sec footer-link">Logout</a></li>
+                        <ul>
+                            <li><a href="{% url 'account_logout' %}" class="text-color-sec footer-link">Logout</a></li>
+                        </ul>
                         {% else %}
-                        <li><a href="{% url 'account_login' %}" class="text-color-sec footer-link">Login</a></li>
+                        <ul>
+                            <li><a href="{% url 'account_login' %}" class="text-color-sec footer-link">Login</a></li></ul>
                         {% endif %}
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6">
+                        <ul>
+
                         <li><a href="{% url 'about' %}" class="text-color-sec footer-link">About</a></li>
+                        </ul>
                     </div>
                     <div class="col-6">
                         {% if user.is_authenticated %}
-                        <li><a href="{% url 'admin:index' %}" class="text-color-sec footer-link"
+                        
+                        <ul>
+                            <li><a href="{% url 'admin:index' %}" class="text-color-sec footer-link"
                                 target="_blank">Admin</a></li>
+                        </ul>
                         {% else %}
-                        <li><a href="{% url 'admin:login' %}" class="text-color-sec footer-link" target="_blank">Admin
+                        <ul>
+                            <li><a href="{% url 'admin:login' %}" class="text-color-sec footer-link" target="_blank">Admin
                                 login</a></li>
+                        </ul>
                         {% endif %}
                     </div>
                 </div>
