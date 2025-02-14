@@ -127,6 +127,10 @@ html {
     color: #ffffff;
 }
 
+.text-color-third {
+    color: #68c8b5;
+}
+
 .hilo:hover {
     text-decoration: none;
     font-size: 20px;
@@ -280,6 +284,15 @@ body {
     color: #cc0000;
     font-weight: 600;
     transform: scale(1.2);
+}
+
+.social-space {
+    margin-top: 70px;
+}
+
+#space-icons {
+    margin-top: 20px;
+    justify-content: space-between;
 }
 
 /* Booking app  */
@@ -447,6 +460,10 @@ body {
     .cover-text p {
         font-size: 13px;
     }
+
+    #mobile-social-links {
+        display: block;
+    }
     
 }
 
@@ -462,5 +479,9 @@ body {
     }
     .about {
         margin-bottom: 330px;
+    }
+
+    #mobile-social-links {
+        display: none;
     }
 }
