@@ -126,8 +126,7 @@
                                 <div class="accordion-body secondary-bg text-color">
                                     <p><strong>|{{ booking.barber.barber_name }}</strong></p> 
                                     <p><strong>|Price:</strong> {{ booking.service.service_price }}</p> 
-                                    <!-- <p><strong>| Date: </strong> {{ booking.date }} <br></p> -->
-                                    <input type="date" name="date" value="{{ booking.date|date:'Y-m-d' }}" class="dateinput form-control" required id="id_date">
+                                    <p><strong>| Date: </strong> {{ booking.date }} <br></p>
                                     <hr class="fw-semibold">
                                     Welcome <strong class="text-capitalize">{{ booking.user }}!</strong> We're excited to have
                                     you at our barber shop. Hoping to see you soon!
