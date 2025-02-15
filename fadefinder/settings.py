@@ -126,7 +126,7 @@ if 'test' in sys.argv:
 
 #Trusted webs 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-zakariyenor-fadefinder-fl5iq7riekk.ws-eu117.gitpod.io',
+    'https://barber-booking-center-b87a4a734af4.herokuapp.com',
     "https://*.herokuapp.com/",
 ]
 

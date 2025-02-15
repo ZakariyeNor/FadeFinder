@@ -304,16 +304,6 @@ As we continue to improve and expand the functionalities of our platform, we hav
 | [![badge](https://img.shields.io/badge/Bootstrap_Crispy_Forms-grey?logo=django&logoColor=7952B3)](https://django-crispy-forms.readthedocs.io/en/latest/) | Bootstrap integration for Django Crispy Forms. |
 
 
-⚠️ NOTE ⚠️
-
-Want to add more?
-
-- Tutorial: https://shields.io/badges/static-badge
-- Icons/Logos: https://simpleicons.org
-  - FYI: not all logos are available to use
-
-🛑 --- END --- 🛑
-
 ## Database Design
 
 ### Data Model

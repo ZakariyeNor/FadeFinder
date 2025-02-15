@@ -411,6 +411,7 @@ body {
 
 /* Mobile footer, show only under 580 media query and hide it over 580*/
 /* Media query for small screens */
+
 @media (max-width: 580px) {
 
     /* hide desktop footer */
