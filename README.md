@@ -208,7 +208,9 @@ In this section, list all of your possible user stories for the project. Samples
 | As a new user | I would like to register for an account | so that I can access all features of the app. |
 | As a logged-in user | I would like to log out of my account | so that I can securely end my session. |
 | As a user | I would like to visit the About page | so that I can learn more about the barber shop and its team. |
-| As an admin | I would like to log in to my account | so that I can manage bookings and view the calendar. |
+| As a user | I would like to view a map of the barber shop location on the About page | so that I can easily find the shop. |
+| As a user | I would like to read the FAQ section on the About page | so that I can get answers to common questions about the barber shop's services. |
+| As an admin | I would like to log in to my account | so that I can manage bookings and view the booked appoinments. |
 | As a user | I would like to fill out a collaboration form | so that I can partner with the barber shop for potential projects or services. |
 | As a non-registered user | I would like to contact the barber shop | so that I can inquire about services or ask questions without needing to register. |
 
@@ -224,26 +226,42 @@ In this section, you should go over the different parts of your project, and des
 
 ### Existing Features
 
+### Existing Features
+
 | Feature | Notes | Screenshot |
 | --- | --- | --- |
-| Register | Authentication is handled by allauth, allowing users to register accounts. | ![screenshot](documentation/features/register.png) |
-| Login | Authentication is handled by allauth, allowing users to log in to their existing accounts. | ![screenshot](documentation/features/login.png) |
-| Logout | Authentication is handled by allauth, allowing users to log out of their accounts. | ![screenshot](documentation/features/logout.png) |
-| Blog List | The homepage displays basic information about blog posts, including image, title, author, date, and a brief excerpt. | ![screenshot](documentation/features/blog-list.png) |
-| View Post | Users can view the full blog post details, including any comments. | ![screenshot](documentation/features/view-post.png) |
-| Pagination | Blog posts are displayed in pages, with six posts per page. This provides better navigation for users through the post list. | ![screenshot](documentation/features/pagination.png) |
-| Add Comments | Authenticated visitors can comment on blog posts; comments require approval before being published. | ![screenshot](documentation/features/add-comment.png) |
-| Edit Comments | Authenticated visitors can edit their own comments. | ![screenshot](documentation/features/edit-comment.png) |
-| Delete Comments | Authenticated visitors can delete their own comments. | ![screenshot](documentation/features/delete-comment.png) |
-| Comment Approvals | Admins can approve or disapprove comments submitted by users before they are visible on the blog post. | ![screenshot](documentation/features/comment-approval.png) |
-| Create Post | Site owners can create/publish blog posts, including setting a featured image using Cloudinary, all from the Django admin dashboard. | ![screenshot](documentation/features/create-post.png) |
-| Update Post | Site owners can update/manage blog posts from the Django admin dashboard. | ![screenshot](documentation/features/update-post.png) |
-| Delete Post | Site owners can delete blog posts from the Django admin dashboard. | ![screenshot](documentation/features/delete-post.png) |
-| About Page | The About page displays the latest information about the site author, along with the option for visitors to send collaboration requests. | ![screenshot](documentation/features/about.png) |
-| Collaboration Requests | Visitors can submit collaboration requests from the *About* page, which are later reviewed by the admin. | ![screenshot](documentation/features/collaboration.png) |
-| User Feedback | Clear and obvious Django messages are used to provide feedback to user actions. | ![screenshot](documentation/features/messages.png) |
-| Heroku Deployment | The site is fully deployed to Heroku, making it accessible online and easy to manage. | ![screenshot](documentation/features/heroku.png) |
-| 404 | The 404 error page will indicate when a user has navigated to a page that doesn't exist, replacing the default Heroku 404 page with one that ties into the site's look and feel. | ![screenshot](documentation/features/404.png) |
+| Desktop Navigation Login | Displays the navigation bar on desktop when the user is logged in, with access to different sections and the ability to log out. | ![screenshot](documentation/features/desktop_nav_log_in.png) |
+| Desktop Navigation Logout | Displays the navigation bar on desktop when the user is logged out, providing access to login and other public pages. | ![screenshot](documentation/features/desktop_nav_log_out.png) |
+| Mobile Navigation Logged In | Displays the mobile navigation bar when the user is logged in, including login status and links to manage bookings. | ![screenshot](documentation/features/mobile_nav_logged_in.png) |
+| Mobile Navigation Logout | Displays the mobile navigation bar when the user is logged out, with options for login and public pages. | ![screenshot](documentation/features/mobile_nav_logout.png) |
+| Desktop Footer Login | Footer section on desktop with login options for users who are not logged in. | ![screenshot](documentation/features/desktop_footer_login.png) |
+| Desktop Footer Logout | Footer section on desktop with logout options for users who are logged in. | ![screenshot](documentation/features/desktop_footer_logout.png) |
+| Mobile Footer | Mobile version of the site with footer navigation links to important sections. | ![screenshot](documentation/features/mobile_footer.png) |
+| Home Desktop | Displays the homepage on desktop, providing basic information about the barber shop and its services. | ![screenshot](documentation/features/home_desktop.png) |
+| Mobile Home | Displays the mobile version of the homepage, including key barber shop details and services. | ![screenshot](documentation/features/mobile_home.png) |
+| Booked Data | View showing the user's booked appointments, with details like time, service, and status. | ![screenshot](documentation/features/booked_data.png) |
+| Desktop Book Login | View showing the booking page for logged-in users, where they can select services and schedule appointments. | ![screenshot](documentation/features/desktop_book_login.png) |
+| Edit View | View allowing users to edit their profile details or booking information. | ![screenshot](documentation/features/edit_view.png) |
+| Login | The login screen where users enter their credentials to access their account. | ![screenshot](documentation/features/login.png) |
+| Register | The registration screen where users can create a new account by entering necessary details. | ![screenshot](documentation/features/register.png) |
+| Logout Message | Message displayed after the user successfully logs out, confirming the action. | ![screenshot](documentation/features/logout_message.png) |
+| Success Book | A success message displayed after a user successfully books an appointment. | ![screenshot](documentation/features/success_book.png) |
+| Success Collaboration Message | Success message displayed after a user successfully submits a collaboration request. | ![screenshot](documentation/features/success_collaboration_message.png) |
+| Success Form Submit | Success message after a user successfully submits a form on the site, confirming the submission. | ![screenshot](documentation/features/success_formspree.png) |
+| Success Update | Success message displayed after successfully updating user details or bookings. | ![screenshot](documentation/features/success_update.png) |
+| About Mobile | The mobile version of the About page, displaying details of the barber shop, the team, and services offered. | ![screenshot](documentation/features/about_mobile.png) |
+| Desktop About with Logout | The desktop version of the About page with a logout option visible for logged-in users. | ![screenshot](documentation/features/desktop_about_logout.png) |
+| Desktop About Login | The desktop view of the About page when a user is logged in, providing more detailed options. | ![screenshot](documentation/features/desktop_About_login.png) |
+| Desktop About Login (Alt) | An alternative view of the About page for logged-in users, offering different layout or options. | ![screenshot](documentation/features/desktop_about_login2.png) |
+| Desktop About Logout | The desktop version of the About page shown when the user is logged out, with more basic details. | ![screenshot](documentation/features/desktop_about_logout.png) |
+| Delete Warning | A confirmation screen that warns the user before they proceed with deleting data such as appointments. | ![screenshot](documentation/features/delete_warning.png) |
+| Error Collaboration Message | Error message shown if something goes wrong while submitting a collaboration request. | ![screenshot](documentation/features/error_collaboration_message.png) |
+| Error Message | General error message displayed for invalid user actions or inputs throughout the site. | ![screenshot](documentation/features/collaboration_error.message.png) |
+| Log In Message | A message displayed during the login process to indicate whether the credentials are correct or if there was an error. | ![screenshot](documentation/features/log_in_message.png) |
+| Phone Profile Icon | The profile icon shown on mobile devices for users to quickly access their profile. | ![screenshot](documentation/features/phone_profile_icon.png) |
+
+
+
 
 ### Future Features
 
