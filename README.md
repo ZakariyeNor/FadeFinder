@@ -373,7 +373,13 @@ I've decomposed my Epics into User Stories for prioritizing and implementing the
 ## Testing
 
 > [!NOTE]
-> For all testing, please refer to the [TESTING.md](TESTING.md) file.
+- Documentation of the manual testing, front and back-end testing files.
+> For all testing, you can find them [TESTING.md](documentation/test_documentation) folder.
+
+> Or for each 
+ > [Manual Testing](documentation/test_documentation/manual_testing.md),
+ > [Front-end Tests](documentation/test_documentation/Front_end_validation.md),
+ > [Back-end Tests](documentation/test_documentation/back_end_tests.md),
 
 ## Deployment
 
