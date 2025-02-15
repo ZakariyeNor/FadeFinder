@@ -10,6 +10,10 @@ Description
 
 The Barber Booking App is an online platform that allows users to easily book appointments with barbers. The app provides an intuitive interface for customers to select their preferred barber, choose an appointment slot, and manage their booking details. Barbers can manage their availability and keep track of upcoming appointments.
 
+![screenshot](documentation/mockup.png)
+
+source: [FadeFinder amiresponsive](https://ui.dev/amiresponsive?url=https://barber-booking-center-b87a4a734af4.herokuapp.com)
+
 **Site Mockups**
 
 # Wireframes Documentation
@@ -94,14 +98,6 @@ The **About Page** provides information about the barber shop, including its his
 
 ---
 
-🛑 --- END ---- 🛑
-
-![screenshot](documentation/mockup.png)
-
-source: [FadeFinder amiresponsive](https://ui.dev/amiresponsive?url=https://barber-booking-center-b87a4a734af4.herokuapp.com)
-
-> [!IMPORTANT]
-> The examples in these templates are strongly influenced by the Code Institute walkthrough project called "I Think Therefore I Blog".
 
 ## UX
 
@@ -197,55 +193,24 @@ Users need an easy way to book services, manage their accounts, and navigate the
 
 ## User Stories
 
-⚠️ INSTRUCTIONS ⚠️
+INSTRUCTIONS 
 
 In this section, list all of your possible user stories for the project. Samples have been provided below using the example walkthrough project for your inspiration. Make sure to adjust to match your own project features!
 
-⚠️ --- END --- ⚠️
 
 | Target | Expectation | Outcome |
 | --- | --- | --- |
-| As a blog owner | I would like to create new blog posts with a title, featured image, and content | so that I can share my experiences with my audience. |
-| As a blog owner | I would like to update existing blog posts | so that I can correct or add new information to my previous stories. |
-| As a blog owner | I would like to delete blog posts | so that I can remove outdated or irrelevant content from my blog. |
-| As a blog owner | I would like to retrieve a list of all my published blog posts | so that I can manage them from a central dashboard. |
-| As a blog owner | I would like to preview a post as draft before publishing it | so that I can ensure formatting and content appear correctly. |
-| As a blog owner | I would like to review comments before they are published | so that I can filter out spam or inappropriate content. |
-| As a blog owner | I would like to approve or reject comments from users | so that I can maintain control over the discussion on my posts. |
-| As a blog owner | I would like to view a list of all comments (both approved and pending) | so that I can manage user engagement effectively. |
-| As a blog owner | I would like to edit or delete user comments | so that I can clean up or remove inappropriate responses after they've been posted. |
-| As a registered user | I would like to log in to the site | so that I can leave comments on blog posts. |
-| As a registered user | I would like to register for an account | so that I can become part of the community and engage with the blog. |
-| As a registered user | I would like to leave a comment on a blog post | so that I can share my thoughts or ask questions about the owner's experiences. |
-| As a registered user | I would like my comment to show my name and the timestamp | so that others can see who I am and when I left the comment. |
-| As a registered user | I would like to receive a notification or message saying my comment is pending approval | so that I understand it hasn't been posted immediately. |
-| As a registered user | I would like to edit or delete my own comments | so that I can fix mistakes or retract my statement. |
-| As a guest user | I would like to read blog posts without registering | so that I can enjoy the content without needing to log in. |
-| As a guest user | I would like to browse past posts | so that I can explore the blog's full content history. |
-| As a guest user | I would like to register for an account | so that I can participate in the community by leaving comments on posts. |
-| As a guest user | I would like to see the names of other commenters on posts | so that I can get a sense of community interaction before registering. |
-| As a user | I would like to see a 404 error page if I get lost | so that it's obvious that I've stumbled upon a page that doesn't exist. |
-
-## Wireframes
-
-⚠️ INSTRUCTIONS ⚠️
-
-If you've created wireframes or mock-ups, use this section to display screenshots of your wireframes. The example table below uses sample pages from the walkthrough project to give you some inspiration for your own project, so please adjust accordingly.
-
-⚠️ --- END --- ⚠️
-
-To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
-I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
-
-| Page | Mobile | Tablet | Desktop |
-| --- | --- | --- | --- |
-| Register | ![screenshot](documentation/wireframes/mobile-register.png) | ![screenshot](documentation/wireframes/tablet-register.png) | ![screenshot](documentation/wireframes/desktop-register.png) |
-| Login | ![screenshot](documentation/wireframes/mobile-login.png) | ![screenshot](documentation/wireframes/tablet-login.png) | ![screenshot](documentation/wireframes/desktop-login.png) |
-| Home | ![screenshot](documentation/wireframes/mobile-home.png) | ![screenshot](documentation/wireframes/tablet-home.png) | ![screenshot](documentation/wireframes/desktop-home.png) |
-| Add Blog | ![screenshot](documentation/wireframes/mobile-add-blog.png) | ![screenshot](documentation/wireframes/tablet-add-blog.png) | ![screenshot](documentation/wireframes/desktop-add-blog.png) |
-| Edit Blog | ![screenshot](documentation/wireframes/mobile-edit-blog.png) | ![screenshot](documentation/wireframes/tablet-edit-blog.png) | ![screenshot](documentation/wireframes/desktop-edit-blog.png) |
-| Blog Post | ![screenshot](documentation/wireframes/mobile-blog-post.png) | ![screenshot](documentation/wireframes/tablet-blog-post.png) | ![screenshot](documentation/wireframes/desktop-blog-post.png) |
-| 404 | ![screenshot](documentation/wireframes/mobile-404.png) | ![screenshot](documentation/wireframes/tablet-404.png) | ![screenshot](documentation/wireframes/desktop-404.png) |
+| As a user | I would like to navigate to different pages using the header links | so that I can access the features of the app. |
+| As a user | I would like to view pictures and text in the main section of the landing page | so that I can learn about the barber shop and its services. |
+| As a user | I would like to use the footer links to access additional features and information | so that I can interact with the app more effectively. |
+| As a user | I would like to book an appointment by selecting a service, date, and time | so that I can schedule a haircut or other services. |
+| As a user | I would like to log in to my account | so that I can book appointments and manage my bookings. |
+| As a new user | I would like to register for an account | so that I can access all features of the app. |
+| As a logged-in user | I would like to log out of my account | so that I can securely end my session. |
+| As a user | I would like to visit the About page | so that I can learn more about the barber shop and its team. |
+| As an admin | I would like to log in to my account | so that I can manage bookings and view the calendar. |
+| As a user | I would like to fill out a collaboration form | so that I can partner with the barber shop for potential projects or services. |
+| As a non-registered user | I would like to contact the barber shop | so that I can inquire about services or ask questions without needing to register. |
 
 ## Features
 
