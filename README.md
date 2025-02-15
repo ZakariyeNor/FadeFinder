@@ -391,7 +391,7 @@ I've decomposed my Epics into User Stories for prioritizing and implementing the
 
 ## Deployment
 
-The live deployed application can be found deployed on [Heroku](https://barber-booking-center-b87a4a734af4.herokuapp.com).
+The live deployed application can be found deployed on [Heroku](https://barber-booking-center-b87a4a734af4.herokuapp.com/).
 
 ### Heroku Deployment
 
@@ -403,21 +403,13 @@ Deployment steps are as follows, after account setup:
 - Your app name must be unique, and then choose a region closest to you (EU or USA), then finally, click **Create App**.
 - From the new app **Settings**, click **Reveal Config Vars**, and set your environment variables to match your private `env.py` file.
 
-> [!IMPORTANT]
-> This is a sample only; you would replace the values with your own if cloning/forking my repository.
-
-🛑 !!! ATTENTION ZakariyeNor !!! 🛑
-
-⚠️ DO NOT update the environment variables to your own! These should never be public; only use the demo values below! ⚠️
-
-🛑 --- END --- 🛑
-
 | Key | Value |
 | --- | --- |
-| `CLOUDINARY_URL` | user-inserts-own-cloudinary-url |
-| `DATABASE_URL` | user-inserts-own-postgres-database-url |
-| `DISABLE_COLLECTSTATIC` | 1 (*this is temporary, and can be removed for the final deployment*) |
-| `SECRET_KEY` | any-random-secret-key |
+| `CLOUDINARY_URL` | https://cloudinary.com/ |
+| `DATABASE_URL` | https://www.postgresql.org/ |
+| `GOOGLE_MAPS_API` | https://maps.googleapis.com/maps/api/geocode/json?address=city&key=API_KEY
+ |
+| `SECRET_KEY` | 34567ikjmnbvcarrgshggnb5tr |
 
 Heroku needs some additional files in order to deploy properly.
 
@@ -434,12 +426,9 @@ If you have your own packages that have been installed, then the requirements fi
 
 The **[Procfile](Procfile)** can be created with the following command:
 
-- `echo web: gunicorn app_name.wsgi > Procfile`
-- *replace `app_name` with the name of your primary Django app name; the folder where `settings.py` is located*
+- `echo web: gunicorn fadefinder.wsgi > Procfile`
 
 For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
-
-Either (*recommended*):
 
 - Select **Automatic Deployment** from the Heroku app.
 
@@ -468,12 +457,6 @@ To obtain your own Cloudinary API key, create an account and log in.
 ### PostgreSQL
 
 This project uses a [Code Institute PostgreSQL Database](https://dbs.ci-dbs.net) for the Relational Database with Django.
-
-> [!CAUTION]
-> - PostgreSQL databases by Code Institute are only available to CI Students.
-> - You must acquire your own PostgreSQL database through some other method if you plan to clone/fork this repository.
-> - Code Institute students are allowed a maximum of 8 databases.
-> - Databases are subject to deletion after 18 months.
 
 To obtain my own Postgres Database from Code Institute, I followed these steps:
 
@@ -515,15 +498,6 @@ For either method, you will need to install any applicable packages found within
 - `pip3 install -r requirements.txt`.
 
 You will need to create a new file called `env.py` at the root-level, and include the same environment variables listed above from the Heroku deployment steps.
-
-> [!IMPORTANT]
-> This is a sample only; you would replace the values with your own if cloning/forking my repository.
-
-🛑 !!! ATTENTION ZakariyeNor !!! 🛑
-
-⚠️ DO NOT update the environment variables to your own! These should never be public; only use the demo values below! ⚠️
-
-🛑 --- END --- 🛑
 
 Sample `env.py` file:
 
@@ -582,12 +556,6 @@ By forking the GitHub Repository, you make a copy of the original repository on 
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
 ### Local VS Deployment
-
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to discuss any differences between the local version you've developed, and the live deployment site. Generally, there shouldn't be [m]any major differences, so if you honestly cannot find any differences, feel free to use the following example:
-
-⚠️ --- END --- ⚠️
 
 There are no remaining major differences between the local version when compared to the deployed version online.
 
