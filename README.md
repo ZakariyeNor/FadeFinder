@@ -10,20 +10,89 @@ Description
 
 The Barber Booking App is an online platform that allows users to easily book appointments with barbers. The app provides an intuitive interface for customers to select their preferred barber, choose an appointment slot, and manage their booking details. Barbers can manage their availability and keep track of upcoming appointments.
 
-🛑 NOTES 🛑
-
-Do not add a **Table of Contents** to your Markdown files. GitHub has these built-in automatically using the headers/hashtags.
-
-Don't add screenshots for the README/TESTING into your `assets` or `static` folders. Create a new folder at the root-level called `documentation`. Consider creating sub-directories within `documentation` to handle things like `wireframes`, `features`, `validation`, `responsiveness`, etc.
-
 **Site Mockups**
-*([amiresponsive](https://ui.dev/amiresponsive?url=https://barber-booking-center-b87a4a734af4.herokuapp.com), [techsini](https://techsini.com/multi-mockup), etc.)*
-Having issues generating site mockups? This is likely due to security policies with your deployed site.
-If you open up your DevTools, there may be an error referencing `X-Frame-Options`.
 
-For Chrome users, head over to http://bit.ly/3iRPn4u and install the extension within your browser. Once installed, navigate back to the mockup site of your choice. You should find your site rendering in the various devices now.
+# Wireframes Documentation
 
-Alternatively, open your project in Gitpod and run the server. Once the site is running, click the `Ports` tab from your Gitpod Terminal. Click the padlock on the appropriate port for your project (`Flask: 5000`, `Django: 8000`). This will make your local page public temporarily. Now, copy the URL of your live-preview page into the responsive tool above. You should find your site rendering in the various devices.
+This document contains wireframes for the **FadeFinder** app, showcasing the design for both **mobile** and **desktop** views. Each wireframe is linked below with a detailed description of the page.
+
+---
+
+## 1. Home Page
+The **Home Page** is the landing page of the app. It provides an overview of the barber shop and its services, with clear navigation to other pages.
+
+### Mobile View
+![Home Page Mobile](documentation/mockups/home.png)
+
+### Desktop View
+![Home Page Desktop](documentation/mockups/home_d.png)
+
+---
+
+## 2. Menu (Navigation)
+The **Menu** provides access to all major pages of the app, including **Book Now**, **Login**, **Register**, and **About**.
+
+- The menu is integrated into the header navigation bar on desktop.
+
+### Mobile View
+
+![Menu Mobile](documentation/mockups/menu.png)
+
+
+## 3. Booking Page
+The **Booking Page** allows users to select a service, choose a date and time, and confirm their appointment.
+
+### Mobile View
+![Booking Page Mobile](documentation/mockups/booking.png)
+
+### Desktop View
+![Booking Page Desktop](documentation/mockups/booking_d.png)
+
+---
+
+## 4. Login Page
+The **Login Page** allows users to log in to their accounts using their email and password. It also includes a link to the **Register Page**.
+
+### Mobile View
+![Login Page Mobile](documentation/mockups/log_in.png)
+
+### Desktop View
+![Login Page Desktop](documentation/mockups/log_in_d.png)
+
+---
+
+## 5. Register Page
+The **Register Page** allows new users to create an account by entering their name, email, and password.
+
+### Mobile View
+![Register Page Mobile](documentation/mockups/register.png)
+
+### Desktop View
+![Register Page Desktop](documentation/mockups/register_d.png)
+
+---
+
+## 6. Log Out Page
+The **Log Out Page** confirms that the user has successfully logged out and provides options to log back in or return to the home page.
+
+### Mobile View
+![Log Out Page Mobile](documentation/mockups/log_out.png)
+
+### Desktop View
+![Log Out Page Desktop](documentation/mockups/log_out_d.png)
+
+---
+
+## 7. About Page
+The **About Page** provides information about the barber shop, including its history, team, and location.
+
+### Mobile View
+![About Page Mobile](documentation/mockups/about.png)
+
+### Desktop View
+![About Page Desktop](documentation/mockups/about_d.png)
+
+---
 
 🛑 --- END ---- 🛑
 
