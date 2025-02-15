@@ -381,6 +381,14 @@ I've decomposed my Epics into User Stories for prioritizing and implementing the
  > [Front-end Tests](documentation/test_documentation/Front_end_validation.md),
  > [Back-end Tests](documentation/test_documentation/back_end_tests.md),
 
+- | [![badge](https://img.shields.io/badge/ChatGPT-grey?logo=openai&logoColor=75A99C)](https://chat.openai.com) |
+- I used to output html templates, to validate in HTML validator without templatetags,
+- I used to test, views, functions, models, urls, admin and forms to make the testing process faster.
+- I used to document testing files to make the process of documenting faster
+- I used to test the template logic and user accessibility.
+- I used HTML validator for html testing, CSS validator for css testing and JSHINT for javascript testing.
+
+
 ## Deployment
 
 The live deployed application can be found deployed on [Heroku](https://barber-booking-center-b87a4a734af4.herokuapp.com).
