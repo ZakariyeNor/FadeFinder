@@ -105,88 +105,95 @@ source: [FadeFinder amiresponsive](https://ui.dev/amiresponsive?url=https://barb
 
 ## UX
 
-### The 5 Planes of UX
+# The 5 Planes of UX
 
-#### 1. Strategy Plane
-##### Purpose
-- Provide blog owners with tools to create, manage, and moderate engaging blog content and user interactions.
-- Offer users and guests an intuitive platform to explore, engage, and contribute to blog discussions.
+## 1. Strategy Plane
 
-##### Primary User Needs
-- Blog owners need seamless tools for publishing and managing posts and comments.
-- Registered users need the ability to engage with blog content through comments and account features.
-- Guests need the ability to browse and enjoy blog content without registration.
+### Purpose
+Users need an easy way to book services, manage their accounts, and navigate the barber shop’s website.  
+**Business Goal:** Provide users with a seamless online experience for making appointments, registering, and learning about the services provided by the barber shop.
 
-##### Business Goals
-- Foster a dynamic blogging platform with active user participation.
-- Build a sense of community through discussions and user engagement.
-- Ensure easy blog content management for owners.
+### Primary User Needs
+- Users need to navigate the site easily to access services, book appointments, and get more information about the barber shop.
+- Admins need efficient tools to log in and manage bookings, add services and upload images.
+- New Users need a simple registration process and if they want to contact us they can contact us without login by email.
+- Give user ability to manage their bookings.
 
-#### 2. Scope Plane
-##### Features
-- A full list of [Features](#features) can be viewed in detail below.
+### Business Goals
+- Make booking appointments intuitive and seamless.
+- Encourage user registration and engagement with the site.
+- Ensure clear communication of the barber shop’s services, values, and contact details.
 
-##### Content Requirements
-- Blog post management (create, update, delete, and preview).
-- Comment moderation and management tools.
-- User account features (register, log in, edit/delete comments).
-- Notification system for comment approval status.
-- 404 error page for lost users.
+---
 
-#### 3. Structure Plane
-##### Information Architecture
-- **Navigation Menu**:
-  - Links to Home, Blog Posts, Login/Register, and Dashboard (for blog owners).
-- **Hierarchy**:
-  - Blog content displayed prominently for easy browsing.
-  - Clear call-to-action buttons for account creation and engagement (e.g., commenting).
+## 2. Scope Plane
 
-##### User Flow
-1. Guest users browse blog content → read posts and see commenter names.
-2. Guest users register for an account → log in to leave comments.
-3. Registered users leave comments → receive a pending approval notification.
-4. Blog owners create, update, and manage posts → moderate comments.
-5. Blog owners approve or reject comments → manage user interactions.
+### Features
+- Header navigation with links (Home, Book, Account, About).
+- Booking page with Booking form, calendar, and time.
+- Login, Register, and Admin Login functionality.
+- About page with info on the barber booking app, contact us form, collaboration request form and location.
+- Footer navigation in mobile devices, links to social media and additional pages in tablet and desktop size.
 
-#### 4. Skeleton Plane
-##### Wireframe Suggestions
-- A full list of [Wireframes](#wireframes) can be viewed in detail below.
+### Content Requirements
+- High-quality images of the barber shop and services.
+- Text about the barber, barber shop’s services.
+- Forms for logging in, registering, and booking appointments.
+- Social media links (only phone size) and contact info on the About page
 
-#### 5. Surface Plane
-##### Visual Design Elements
-- **[Colours](#colour-scheme)**: see below.
-- **[Typography](#typography)**: see below.
+---
 
-### Colour Scheme
+## 3. Structure Plane
 
-⚠️INSTRUCTIONS ⚠️
+### Information Architecture
+- **Main Navigation:** Home, Book, Account(Log-in,log-out, register, admin), About (Header); Footer mobile (with icons of home, calendr, profile and gps) from tablet size (Social Links, Find Us, Book, Log Out, admin-log-out.
+- **User Flow:**
+  - **New Users:** Browse site → Register → Book an Appointment.
+  - **Logged-In Users:** View services → Choose a date and time → Confirm booking.
+    - Logged in users can add, edit, delete their own appoinments.),
+    - They can see booking form, if they have already booked appoinments and can send form
+  - **Admins:** Login → Manage bookings → View calendar and user data.
 
-Explain your colors and color scheme. Consider adding a link and screenshot for your color scheme using [coolors](https://coolors.co/generate).
+### User Flow
+- Users can navigate via the header or footer to access pages.
+- On the Booking page, users can select, barbers, services, dates, and times.
+- Users can log in or register to book an appointment.
+- Admins can log in, access the dashboard, and manage bookings, their services and more.
 
-When you add a color to the palette, the URL is dynamically updated, making it easier for you to return back to your color palette later if needed. See example below:
+---
 
-⚠️ --- END --- ⚠️
+## 4. Skeleton Plane
 
-I used [coolors.co](https://coolors.co/080708-3772ff-df2935-fdca40-e6e8e6) to generate my color palette.
+### Wireframe Suggestions
+- **Homepage:** Header with navigation, main section with images and text, footer with links.
+- **Booking Page:** Barber list, service list, calendar, time, "Book" button.
+- **Login/Registration Pages:** Forms for user info, login/register options.
+- **Admin Dashboard:** Manage barber shop, it's services, bookings, see booked appoinments, can read collaboration requests.
 
-- `#000000` primary text.
-- `#3772FF` primary highlights.
-- `#DF2935` secondary text.
-- `#FDCA40` secondary highlights.
+---
 
-![screenshot](documentation/coolors.png)
+## 5. Surface Plane
 
-### Typography
+### Visual Design Elements
 
-⚠️ INSTRUCTIONS ⚠️
+#### Colors:
+- **Primary Color:** `#1f5a5e` (Dark Green) for headers and key UI elements.
+- **Secondary Color:** `#ffffff` (White) for background and text containers.
+- **Accent Color:** `#ffc107` (Gold) for action buttons like Book Now.
+- **Action Color:** `#ffd700` (Gold) for call-to-action buttons.
 
-Explain any fonts and icon libraries used, like **Google Fonts**, **Font Awesome**, etc. Consider adding a link to each font used, the Font Awesome site (if used), or similar icon library.
-
-⚠️ --- END --- ⚠️
-
-- [Montserrat](https://fonts.google.com/specimen/Montserrat) was used for the primary headers and titles.
-- [Lato](https://fonts.google.com/specimen/Lato) was used for all other secondary text.
+#### Typography:
+- **Heading Font:** [Montserrat](https://fonts.google.com/specimen/Montserrat) was used for the primary headers and titles.
+- **Body Text Font:** [Lato](https://fonts.google.com/specimen/Lato) was used fo body text.
+- **Primary Button Font:** [**Roboto**](https://fonts.google.com/specimen/Roboto) was used for call-to-action buttons.
+- **Secondary Button Font:** [**Poppins**](https://fonts.google.com/specimen/Poppins) was used for all other secondary text.
 - [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
+
+#### Visual Design:
+- Clean, modern layout with an emphasis on simplicity and easy navigation.
+- High-contrast text for readability.
+- Interactive elements (buttons, links) with hover effects for better user interaction.
+
 
 ## User Stories
 
