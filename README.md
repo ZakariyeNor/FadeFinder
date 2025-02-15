@@ -561,19 +561,9 @@ There are no remaining major differences between the local version when compared
 
 ## Credits
 
-⚠️ INSTRUCTIONS ⚠️
-
-In the following sections, you need to reference where you got your content, media, and any extra help. It is common practice to use code from other repositories and tutorials (which is totally acceptable), however, it is important to be very specific about these sources to avoid potential plagiarism.
-
-⚠️ --- END ---⚠️
+Throughout the development of this project, I have used various resources, tools, and references that have helped shape and improve the application. This section acknowledges the individuals, tutorials, open-source libraries, and documentation that contributed to the project’s success.
 
 ### Content
-
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to provide attribution links for any borrowed code snippets, elements, and resources. Ideally, you should provide an actual link to every resource used, not just a generic link to the main site. If you've used multiple components from the same source (such as Bootstrap), then you only need to list it once, but if it's multiple Codepen samples, then you should list each example individually. If you've used AI for some assistance (such as ChatGPT or Perplexity), be sure to mention that as well. A few examples have been provided below to give you some ideas.
-
-⚠️ --- END ---⚠️
 
 | Source | Notes |
 | --- | --- |
@@ -584,59 +574,44 @@ Use this space to provide attribution links for any borrowed code snippets, elem
 | [Cloudinary API](https://cloudinary.com) | Cloud storage for static/media files |
 | [Whitenoise](https://whitenoise.readthedocs.io) | Static file service |
 | [Python Tutor](https://pythontutor.com) | Additional Python help |
-| [ChatGPT](https://chatgpt.com) | Help with code logic and explanations |
+| [ChatGPT](https://chatgpt.com) | Help with code logic, help to make faster the testing process and explanations |
+| [FontAwesome](https://fontawesome.com) | Icon library for scalable vector icons |
+| [Flatpickr](https://flatpickr.js.org) | Lightweight and powerful date picker |
+| [jQuery](https://jquery.com) | JavaScript library for simplifying HTML DOM manipulation |
+| [Bootstrap](https://getbootstrap.com) | Front-end framework for responsive web design |
+| [Django Tutorial Playlist](https://www.youtube.com/playlist?list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM) | Django tutorial series for beginners |
 
 ### Media
 
-⚠️ INSTRUCTIONS ⚠️
+### Media Attribution
 
-Use this space to provide attribution links to any media files borrowed from elsewhere (images, videos, audio, etc.). If you're the owner (or a close acquaintance) of some/all media files, then make sure to specify this information. Let the assessors know that you have explicit rights to use the media files within your project. Ideally, you should provide an actual link to every media file used, not just a generic link to the main site, unless it's AI-generated artwork.
+- **Logo**: The logo used in this project(about page"Baber booking center") is owned by me.
+- **Cover Image**: The cover image used in this project is from the official [Django Walkthrough](https://github.com/ZakariyeNor/django-semi).
+- The scissors logo in the large screen size is [Font Awesome](https://fontawesome.com).
+- **Email**: The email connected to the contact us form (barberbooking@example.com) is owned and managed by me.
 
-Looking for some media files? Here are some popular sites to use. The list of examples below is by no means exhaustive. Within the Code Institute Slack community, you can find more "free media" links by sending yourself (or Slackbot) the following command: `!freemedia`.
+### Images & Content Sources
 
-- Images
-    - [Pexels](https://www.pexels.com)
-    - [Unsplash](https://unsplash.com)
-    - [Pixabay](https://pixabay.com)
-    - [Lorem Picsum](https://picsum.photos) (placeholder images)
-    - [Wallhere](https://wallhere.com) (wallpaper / backgrounds)
-    - [This Person Does Not Exist](https://thispersondoesnotexist.com) (reload to get a new person)
-- Audio
-    - [Audio Micro](https://www.audiomicro.com/free-sound-effects)
-- Video
-    - [Videvo](https://www.videvo.net)
-- Image Compression
-    - [TinyPNG](https://tinypng.com) (for images <5MB)
-    - [CompressPNG](https://compresspng.com) (for images >5MB)
+- **Images**  
+  - [Pexels](https://www.pexels.com) - Free stock images  
 
-A few examples have been provided below to give you some ideas on how to do your own Media credits.
+- **Text & Content**  
+  - Generated using ChatGPT 
+  - Design Ideation: The concept of balanced typography, fonts, colors, sizing, and spacing was developed with the help of ChatGPT ideation.
 
-⚠️ --- END ---⚠️
+- **Maps**  
+  - [Google Maps](https://www.google.com/maps) - Integrated for location services  
 
-| Source | Notes |
-| --- | --- |
-| [favicon.io](https://favicon.io) | Generating the favicon |
-| [I Think Therefore I Blog](https://codeinstitute.net) | Sample images provided from the walkthrough projects |
-| [Font Awesome](https://fontawesome.com) | Icons used throughout the site |
-| [Pexels](https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg) | Hero image |
-| [Wallhere](https://c.wallhere.com/images/9c/c8/da4b4009f070c8e1dfee43d25f99-2318808.jpg!d) | Background wallpaper |
-| [Pixabay](https://cdn.pixabay.com/photo/2017/09/04/16/58/passport-2714675_1280.jpg) | Background wallpaper |
-| [DALL-E 3](https://openai.com/index/dall-e-3) | AI generated artwork |
-| [TinyPNG](https://tinypng.com) | Compressing images < 5MB |
-| [CompressPNG](https://compresspng.com) | Compressing images > 5MB |
-| [CloudConvert](https://cloudconvert.com/webp-converter) | Converting images to `.webp` |
+### Contact Form
+
+- **Contact Us Form**  
+  - Powered by [Formspree](https://formspree.io) for handling form submissions
 
 ### Acknowledgements
 
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to provide attribution and acknowledgement to any supports that helped, encouraged, or supported you throughout the development stages of this project. It's always lovely to appreciate those that help us grow and improve our developer skills. A few examples have been provided below to give you some ideas.
-
-⚠️ --- END ---⚠️
+I would like to acknowledge and thank those who have contributed to the success of this project. Their support, tools, and resources have been invaluable throughout my development process.
 
 - I would like to thank my Code Institute mentor, [Tim Nelson](https://www.github.com/TravelTimN) for the support throughout the development of this project.
 - I would like to thank the [Code Institute](https://codeinstitute.net) Tutor Team for their assistance with troubleshooting and debugging some project issues.
 - I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and impostor syndrome.
-- I would like to thank my partner, for believing in me, and allowing me to make this transition into software development.
-- I would like to thank my employer, for supporting me in my career development change towards becoming a software developer.
-
+- I would like to thank God, who gave me the ability to do all of these and remain consistent.
