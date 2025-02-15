@@ -348,15 +348,9 @@ INSTALLED_APPS = [
 
 ### GitHub Projects
 
-⚠️ TIP ⚠️
-
-Consider adding screenshots of your Projects Board(s), Issues (open and closed), and Milestone tasks.
-
-⚠️ --- END ---⚠️
-
 [GitHub Projects](https://www.github.com/ZakariyeNor/FadeFinder/projects) served as an Agile tool for this project. Through it, EPICs, User Stories, issues/bugs, and Milestone tasks were planned, then subsequently tracked on a regular basis using the Kanban project board.
 
-![screenshot](documentation/gh-projects.png)
+![screenshot](documentation/agile/project_agi.png)
 
 ### GitHub Issues
 
@@ -364,8 +358,8 @@ Consider adding screenshots of your Projects Board(s), Issues (open and closed),
 
 | Link | Screenshot |
 | --- | --- |
-| [![GitHub issues](https://img.shields.io/github/issues/ZakariyeNor/FadeFinder)](https://www.github.com/ZakariyeNor/FadeFinder/issues) | ![screenshot](documentation/gh-issues-open.png) |
-| [![GitHub closed issues](https://img.shields.io/github/issues-closed/ZakariyeNor/FadeFinder)](https://www.github.com/ZakariyeNor/FadeFinder/issues?q=is%3Aissue+is%3Aclosed) | ![screenshot](documentation/gh-issues-closed.png) |
+| [![GitHub issues](https://img.shields.io/github/issues/ZakariyeNor/FadeFinder)](https://www.github.com/ZakariyeNor/FadeFinder/issues) | ![screenshot](documentation/agile/issues.png) |
+| [![GitHub closed issues](https://img.shields.io/github/issues-closed/ZakariyeNor/FadeFinder)](https://www.github.com/ZakariyeNor/FadeFinder/issues?q=is%3Aissue+is%3Aclosed) | ![screenshot](documentation/agile/done_issues.ong.png) |
 
 ### MoSCoW Prioritization
 
