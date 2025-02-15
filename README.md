@@ -216,17 +216,10 @@ In this section, list all of your possible user stories for the project. Samples
 
 ## Features
 
-⚠️ INSTRUCTIONS ⚠️
-
-In this section, you should go over the different parts of your project, and describe each feature. You should explain what value each of the features provides for the user, focusing on your target audience, what they want to achieve, and how your project can help them achieve these things.
-
-**IMPORTANT**: Remember to always include a screenshot of each individual feature!
-
-⚠️ --- END --- ⚠️
 
 ### Existing Features
 
-### Existing Features
+Barber booking center is packed with a range of powerful features that help users, barbers, and admins manage appointments, profiles, and services seamlessly. From booking and collaboration to personalized user accounts and responsive design across devices, we strive to provide a user-friendly experience for everyone involved. Below, you'll find an overview of the current features available on the platform, each designed to improve accessibility, usability, and interaction for our community.
 
 | Feature | Notes | Screenshot |
 | --- | --- | --- |
@@ -265,30 +258,19 @@ In this section, you should go over the different parts of your project, and des
 
 ### Future Features
 
-⚠️ INSTRUCTIONS ⚠️
+As we continue to improve and expand the functionalities of our platform, we have identified several key features and enhancements to make the user experience even better. These upcoming features are designed to provide more convenience, flexibility, and personalization, whether for users, barbers, or admins. We aim to streamline the booking process, improve communication, and offer more tailored options for our barbershops and customers. Below is a list of features we plan to implement in the future to meet the evolving needs of our platform.
 
-Do you have additional ideas that you'd like to include on your project in the future? Fantastic, list them here! It's always great to have plans for future improvements. Consider adding any helpful links or notes to help remind you in the future, if you revisit the project in a couple years.
 
-A few examples are listed below to align with possible ways to improve on the sample walkthrough project, to give you some inspiration.
-
-⚠️ --- END ---⚠️
-
-- **Post Categories/Tags**: Allow users to categorize and tag blog posts, making it easier for visitors to filter content based on their interests.
-- **Post Search Functionality**: Add a search bar for users to quickly find posts by keywords or phrases.
-- **Post Likes/Dislikes or Upvotes**: Implement a "like" or "upvote" system for blog posts to encourage user engagement and give feedback to the author.
-- **User Profiles**: Create personalized user profiles where authenticated users can view their comments, liked posts, and account information.
-- **Comment Replies & Threads**: Enable users to reply to comments, creating nested comment threads for better discussions.
-- **Post Sharing**: Add social media sharing buttons (e.g., Twitter, Facebook, LinkedIn) for users to share blog posts.
-- **Notifications**: Implement a notification system that alerts users when their comments are approved, when new comments are made on a post they've commented on, or when new posts are published.
-- **Email Subscriptions**: Allow users to subscribe to receive email notifications for new posts, updates, or newsletters.
-- **Post Analytics**: Provide post authors with analytics such as views, time spent reading, and engagement rates.
-- **Multilingual Support**: Add the ability to write and view blog posts in multiple languages, broadening the audience.
-- **Related Posts Recommendations**: Show related posts at the bottom of a blog post to encourage further reading and keep users engaged.
-- **Content Flagging/Reporting**: Allow users to flag or report inappropriate content (comments or posts) for moderation.
-- **SEO Optimization**: Implement features for SEO, such as meta tags, custom URLs, and keywords for better search engine ranking.
-- **User Dashboard**: Provide users with a dashboard to track their activity, such as comments made, likes received, and blog posts they’ve interacted with.
-- **Admin Dashboard Analytics**: Provide site admins with an analytics dashboard showing user activity, popular posts, most commented articles, etc.
-- **Custom Themes for Users**: Allow users to customize the visual theme of the site (colors, fonts, etc.) to suit their preferences.
+- **Email Confirmation for Appointments & Account Actions**: Automatically send email confirmations to users when they book, update, delete appointments, or take actions like signing in or resetting passwords.
+- **Admin Email Notifications**: Notify the admin via email when a user books, deletes, or updates an appointment, ensuring they stay informed about user actions.
+- **Payment Integration**: Implement payment systems such as credit cards, Swish, or Mobile Swift for easy and secure transactions for appointments.
+- **Multiple Barbers Under One Barbershop**: Allow one barbershop to have multiple barbers listed, each with their own availability and profiles.
+- **Barbershop-Specific About Pages**: Provide a dedicated About page for each barbershop, detailing its unique history, team, and services offered.
+- **Barbershop-Specific Home Pages**: Create a unique homepage for each barbershop, displaying essential information such as location, services, and contact details.
+- **City-Based Barber Navigation**: Develop a section that stores a navigation system to help users find barbers in different cities, making it easier to book across locations.
+- **Barber Dashboard**: Build a specialized dashboard for barbers to manage their schedules, appointments, and customer interactions.
+- **Individual Barber Dashboards**: Enable each barber to have a personal dashboard to manage their bookings, services, and client interactions.
+- **Guest User Booking**: Allow guest users (non-registered) to book appointments and receive email confirmations, ensuring convenience without the need for account creation.
 
 ## Tools & Technologies
 
