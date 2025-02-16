@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from book.models import Barber
 
+
 # Create your models here.
 class About(models.Model):
     title = models.CharField(max_length=20)
@@ -19,12 +20,23 @@ class About(models.Model):
     def __str__(self):
         return f"{self.title} | {self.updated_on}"
 
-#Collaboration form
+
+# Collaboration form
 class Collaboration(models.Model):
     barber_name = models.CharField(max_length=50)
     barber_shop = models.CharField(unique=True, max_length=50)
     business_type = models.CharField(
-        choices=[('barber', 'Barber'), ('hair_stylist', 'Hair Stylist'), ('beauty_salon', 'Beauty Salon')],
+        choices=[
+            (
+                'barber', 'Barber'
+            ),
+            (
+                'hair_stylist', 'Hair Stylist'
+            ),
+            (
+                'beauty_salon', 'Beauty Salon'
+            )
+        ],
         max_length=50)
     service_offered = models.CharField(max_length=200)
     email = models.EmailField()
@@ -35,9 +47,11 @@ class Collaboration(models.Model):
     class Meta:
         ordering = ['-created_on']
         constraints = [
-            models.UniqueConstraint(fields=['barber_name', 'barber_shop'], name='unique_barber_and_shop')
+            models.UniqueConstraint(
+                fields=[
+                    'barber_name', 'barber_shop'
+                ], name='unique_barber_and_shop')
         ]
 
     def __str__(self):
         return f"The {self.barber_shop} owned by | {self.barber_name}"
-
