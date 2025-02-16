@@ -55,10 +55,13 @@ class Booking(models.Model):
     service = models.ForeignKey(BarberService, on_delete=models.CASCADE)
     updated_on = models.DateTimeField(auto_now=True)
     date = models.DateField(null=False, blank=False)
-    time = models.TimeField(null=False, blank=False, unique=True)
+    time = models.TimeField(null=False, blank=False)
 
     class Meta:
         ordering = ['-updated_on']
+        constraints = [
+            models.UniqueConstraint(fields=['date', 'time', 'barber'], name='unique_barber_booking')
+        ]
 
     def __str__(self):
         return f"Booked by | {self.user}"
