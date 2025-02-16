@@ -1,6 +1,7 @@
 from django.test import TestCase
 from about.models import About, Collaboration
 
+
 # Create your tests here.
 class AboutModelTest(TestCase):
 
@@ -14,7 +15,8 @@ class AboutModelTest(TestCase):
     def test_about_model_fields(self):
         """Test if the model fields are correctly set."""
         self.assertEqual(self.about.title, "Test About")
-        self.assertEqual(self.about.content, "This is a test about me section.")
+        self.assertEqual(
+            self.about.content, "This is a test about me section.")
         self.assertIsNotNone(self.about.created_on)
         self.assertIsNotNone(self.about.updated_on)
 
@@ -23,7 +25,8 @@ class AboutModelTest(TestCase):
         expected_str = f"{self.about.title} | {self.about.updated_on}"
         self.assertEqual(str(self.about), expected_str)
 
-#Test for collaboration model
+
+# Test for collaboration model
 class CollaborationModelTest(TestCase):
 
     def setUp(self):
@@ -51,7 +54,9 @@ class CollaborationModelTest(TestCase):
 
     def test_collaboration_model_str(self):
         """Test the __str__ method of the Collaboration model."""
-        expected_str = f"The {self.collaboration.barber_shop} owned by | {self.collaboration.barber_name}"
+        expected_str = f"The {
+            self.collaboration.barber_shop
+            } owned by | {self.collaboration.barber_name}"
         self.assertEqual(str(self.collaboration), expected_str)
 
     def test_unique_constraint(self):
@@ -59,7 +64,7 @@ class CollaborationModelTest(TestCase):
         with self.assertRaises(Exception):
             Collaboration.objects.create(
                 barber_name="John Doe",
-                barber_shop="Fade Haven",  # Same barber shop and name as the first one
+                barber_shop="Fade Haven",
                 business_type="barber",
                 service_offered="Hair Cutting",
                 email="another@email.com",

@@ -6,6 +6,17 @@ from book.models import Barber
 
 # Create your models here.
 class About(models.Model):
+    """
+    Represents the 'About' section of the website.
+
+    Attributes:
+        title (str): Title of the about section.
+        about_image (CloudinaryField): Image associated with the section.
+        content (TextField): Detailed description.
+        created_on (DateTimeField): Timestamp when the entry was created.
+        updated_on (DateTimeField): Timestamp when the entry was last updated.
+    """
+
     title = models.CharField(max_length=20)
     about_image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
@@ -23,6 +34,11 @@ class About(models.Model):
 
 # Collaboration form
 class Collaboration(models.Model):
+    """
+    Represents a collaboration request from a barber, hair stylist, 
+    or beauty salon.
+    """
+    
     barber_name = models.CharField(max_length=50)
     barber_shop = models.CharField(unique=True, max_length=50)
     business_type = models.CharField(

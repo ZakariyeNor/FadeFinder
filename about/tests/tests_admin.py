@@ -2,15 +2,8 @@ from django.contrib.admin.sites import site
 from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
-from ..models import About, Collaboration
+from about.models import About, Collaboration
 
-
-# Create your tests here.
-#test for about admin
-from django.contrib.auth.models import User
-from django.test import TestCase
-from django.urls import reverse
-from about.models import About
 
 class AboutAdminTest(TestCase):
     def setUp(self):
@@ -57,14 +50,13 @@ class AboutAdminTest(TestCase):
         self.assertContains(response, "summernote")
 
 
-#test for Collaboaration admin
 class CollaborationAdminTest(TestCase):
     def setUp(self):
         """Set up a superuser and a test Collaboration instance."""
         self.admin_user = User.objects.create_superuser(
             username="admin", password="adminpass", email="admin@example.com"
         )
-        self.client.login(username="admin", password="adminpass")  # ✅ Log in as admin
+        self.client.login(username="admin", password="adminpass")
 
         self.collaboration = Collaboration.objects.create(
             barber_name="Zaki Nor",
@@ -78,31 +70,31 @@ class CollaborationAdminTest(TestCase):
 
     def test_collaboration_admin_list_view(self):
         """Test if the Collaboration model appears correctly in the admin list view."""
-        url = reverse("admin:about_collaboration_changelist")  # ✅ Correct admin reverse URL
+        url = reverse("admin:about_collaboration_changelist")
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Zaki Nor")  # ✅ Ensure data is displayed
+        self.assertContains(response, "Zaki Nor")
 
     def test_collaboration_admin_change_view(self):
         """Test if the Collaboration model can be accessed in the admin change view."""
         url = reverse("admin:about_collaboration_change", args=[self.collaboration.id])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Sockenvägen 3A")  # ✅ Ensure correct record loads
+        self.assertContains(response, "Sockenvägen 3A")
 
     def test_collaboration_admin_add_view(self):
         """Test if the Collaboration model cannot be added due to readonly_fields."""
-        url = reverse("admin:about_collaboration_add")  # ✅ Correct URL for add page
+        url = reverse("admin:about_collaboration_add")
         response = self.client.get(url)
-        self.assertEqual(response.status_code, 200)  # ✅ Page should load
-        self.assertContains(response, 'readonly')  # ✅ Read-only fields should be enforced
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "readonly")
 
     def test_admin_permissions(self):
         """Test if a non-admin user is forbidden from accessing the Collaboration admin."""
-        self.client.logout()  # ✅ Log out admin
+        self.client.logout()
         url = reverse("admin:about_collaboration_changelist")
         response = self.client.get(url)
-        self.assertEqual(response.status_code, 302)  # ✅ Redirects to login page
+        self.assertEqual(response.status_code, 302)
 
     def test_collaboration_admin_search(self):
         """Test if search works properly in the admin."""

@@ -5,6 +5,12 @@ from django.core.exceptions import ValidationError
 
 # Collaboration form
 class CollaborationForm(forms.ModelForm):
+    """
+    A form for submitting collaboration requests from barbers,
+    hair stylists, 
+    and beauty salons.
+    """
+
     class Meta:
         model = Collaboration
         fields = (
@@ -45,7 +51,8 @@ class CollaborationForm(forms.ModelForm):
             }
         )
     )
-
+    # Clean(): Ensures that a collaboration request with the same barber 
+    # name and shop does not already exist.
     def clean(self):
         cleaned_data = super().clean()
 

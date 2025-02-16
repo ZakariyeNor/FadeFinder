@@ -5,8 +5,26 @@ from .models import About, Collaboration
 from book.models import Booking
 from .forms import CollaborationForm
 
-
+#about me views for about template
 def about_me(request):
+
+    """
+    Handle the About page view.
+
+    This view retrieves and displays information
+    about the website or business.
+    It also allows authenticated users to view their
+    bookings and submit a 
+    collaboration request.
+
+    - Retrieves `About` details and collaboration records.
+    - Shows user bookings if authenticated.
+    - Displays a collaboration form and processes submissions.
+    - Handles success/error messages and redirects on form submission.
+    - Passes relevant data, including the Google Maps API key,
+    to the template.
+
+    """
 
     abouts = About.objects.all()
     bookings = Booking.objects.filter(

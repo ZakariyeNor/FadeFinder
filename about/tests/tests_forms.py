@@ -2,6 +2,7 @@ from django.test import TestCase
 from about.forms import CollaborationForm
 from about.models import Collaboration
 
+
 class CollaborationFormTest(TestCase):
     def test_valid_form(self):
         """Test if the form is valid with correct data."""
@@ -29,7 +30,7 @@ class CollaborationFormTest(TestCase):
         }
         form = CollaborationForm(data=form_data)
         self.assertFalse(form.is_valid())
-        self.assertIn('barber_name', form.errors)  # Check for error on barber_name
+        self.assertIn('barber_name', form.errors)
 
     def test_invalid_form_duplicate_entry(self):
         """Test if the form prevents duplicate barber name and shop entries."""
@@ -55,4 +56,4 @@ class CollaborationFormTest(TestCase):
         }
         form = CollaborationForm(data=form_data)
         self.assertFalse(form.is_valid())
-        self.assertIn('barber_name', form.errors)  # Check for duplication error
+        self.assertIn('barber_name', form.errors)
