@@ -1,16 +1,22 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block title %}Barber Booking{% endblock %}
+
 {% block content %}
     <!-- Barber Info Section -->
     <div class="container home mt-5">
+        <!-- Heading for Barber Information Section -->
         <h2 class="text-center mb-4">Barber Information</h2>
         <div class="row">
+            <!-- Loop through each barber's information -->
             {% for barber in barberinfo %}
                 <!-- Barber Info - Name and Description -->
                 <div class="col-md-6 mb-4">
                     <div class="barber-info">
+                        <!-- Display Barber's Title -->
                         <h3>{{ barber.title }}</h3>
+                        <!-- Display Barber's Description, using safe filter for HTML content -->
                         <p>{{ barber.description | safe }}</p>
                     </div>
                 </div>
@@ -18,11 +24,15 @@
                 <!-- Barber Info - Image with Updated on Date Underneath -->
                 <div class="col-md-6 mb-4">
                     <div class="barber-image">
+                        <!-- Check if the image URL contains 'placeholder'; if so, display a default placeholder image -->
                         {% if "placeholder" in barber.image.url %}
                             <img src="{% static 'images/cover.jpg' %}" alt="Placeholder Image" class="img-fluid rounded">
+                            <!-- Display the date when the barber's info was created/updated -->
                             <small class="d-block text-muted mt-2">Updated on: {{ barber.created_on }}</small>
                         {% else %}
+                            <!-- If a valid image exists, display it -->
                             <img src="{{ barber.image.url }}" alt="{{ barber.title }} Image" class="img-fluid rounded">
+                            <!-- Display the date when the barber's info was created/updated -->
                             <small class="d-block text-muted mt-2">Updated on: {{ barber.created_on }}</small>
                         {% endif %}
                     </div>
@@ -33,17 +43,23 @@
 
     <!-- Services Section -->
     <div class="container home mt-5">
+        <!-- Heading for Services Section -->
         <h2 class="text-center mb-4">Our Services</h2>
         <div class="row">
+            <!-- Loop through each service's information -->
             {% for service in servicedescription %}
                 <!-- Service - Image with Updated on Date Underneath -->
                 <div class="col-md-6 mb-4">
                     <div class="service-image">
+                        <!-- Check if the service image URL contains 'placeholder'; if so, display a default placeholder image -->
                         {% if "placeholder" in service.image.url %}
                             <img src="{% static 'images/cover.jpg' %}" alt="Placeholder Image" class="img-fluid rounded">
+                            <!-- Display the date when the service info was created/updated -->
                             <small class="d-block text-muted mt-2">Updated on: {{ service.created_on }}</small>
                         {% else %}
+                            <!-- If a valid image exists, display it -->
                             <img src="{{ service.image.url }}" alt="{{ service.title }} Image" class="img-fluid rounded">
+                            <!-- Display the date when the service info was created/updated -->
                             <small class="d-block text-muted mt-2">Updated on: {{ service.created_on }}</small>
                         {% endif %}
                     </div>
@@ -52,7 +68,9 @@
                 <!-- Service - Title and Description -->
                 <div class="col-md-6 mb-4">
                     <div class="service-info">
+                        <!-- Display Service's Title -->
                         <h3>{{ service.title }}</h3>
+                        <!-- Display Service's Description, using safe filter for HTML content -->
                         <p>{{ service.services | safe }}</p>
                     </div>
                 </div>

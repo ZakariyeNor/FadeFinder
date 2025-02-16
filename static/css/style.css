@@ -1,6 +1,7 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Scroll smooth */
 html {
     scroll-behavior: smooth;
 }
@@ -54,7 +55,134 @@ html {
     background-color: #3cacb47d;
 }
 
-/* Booked data styling */
+/* Global Message style */
+#message-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* Global Text Classes */
+/* Text and Icons: Black (#000000) */
+.text-color {
+    color: #2a2a2a;
+}
+
+.text-color:hover {
+    color: #353030;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.text-color-sec {
+    color: #ffffff;
+}
+
+.text-color-third {
+    color: #68c8b5;
+}
+
+/* Call-to-Action Buttons: Poppins Semi-Bold, Gold (#ffd700) on Dark Gray (#2c2c2c) */
+.cta-button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #ffc107;
+    background-color: #71b9bd;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Secondary Buttons: Roboto Regular, Light Gray (#f5f5f5) on White (#ffffff) */
+.secondary-button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #e8f6f7;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #e8f6f7;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+/* Custom hover for  */
+.hilo:hover {
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 4px;
+    height: 20px;
+    width: 18px;
+}
+
+/* General Anchor & list Styles */
+.footer-link {
+    color: #ffffff;
+    list-style-type: none;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.list-links li {
+    list-style-type: none;
+}
+
+.list-links a {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    font-weight: 500;
+    color: #ffc107;
+    transform: scale(1.05);
+}
+
+/* General Social Link Styles */
+.social-link {
+    color: #ffffff;
+    font-size: 1.5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Global Typography Styles */
+/* Headings: Montserrat Bold, Dark Gray (#2c2c2c) - App Titles and Section Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #1f5a5e;
+}
+
+/* Body Text: Lato Regular, Black (#000000) - Body Text and Regular Fonts */
+body,
+p,
+span,
+a {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    color: #2a2a2a;
+}
+
+/* General sizing */
+/* Body and footer */
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 249px;
+}
+
+/* Booked data styling the accent background color, hover color, text color, border style for the accordian
+and the style for the sub dropdown (color, spacing, hover and background based on if it's deletion or updating.
+Give positive color if it's update, and danger color if it's delete. */
 
 .accent-bg-bk {
     background-color: #609d9d;
@@ -111,106 +239,10 @@ html {
     color: white;
 }
 
-/* Global Text Classes */
-/* Text and Icons: Black (#000000) */
-.text-color {
-    color: #2a2a2a;
-}
-
-.text-color:hover {
-    color: #353030;
-    font-weight: 500;
-    font-size: 18px;
-}
-
-.text-color-sec {
-    color: #ffffff;
-}
-
-.text-color-third {
-    color: #68c8b5;
-}
-
-.hilo:hover {
-    text-decoration: none;
-    font-size: 20px;
-    border-radius: 4px;
-    height: 20px;
-    width: 18px;
-}
-
-
-
-/* Global Typography Styles */
-/* Headings: Montserrat Bold, Dark Gray (#2c2c2c) - App Titles and Section Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    color: #1f5a5e;
-}
-
-/* Body Text: Lato Regular, Black (#000000) - Body Text and Regular Fonts */
-body,
-p,
-span,
-a {
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    color: #2a2a2a;
-}
-
-/* Call-to-Action Buttons: Poppins Semi-Bold, Gold (#ffd700) on Dark Gray (#2c2c2c) */
-.cta-button {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: #ffc107;
-    background-color: #71b9bd;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* Secondary Buttons: Roboto Regular, Light Gray (#f5f5f5) on White (#ffffff) */
-.secondary-button {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    color: #e8f6f7;
-    background-color: #ffffff;
-    padding: 10px 20px;
-    border: 1px solid #e8f6f7;
-    border-radius: 5px;
-    cursor: pointer;
-
-}
-
-
-
-/* General sizing */
-/* Body and footer */
-body {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 249px;
-}
-
 /* Navigation links */
 /* Style for all nav links */
 .nav-link.active {
     color: #ffc107 !important; /* Force color to black */
-}
-
-
-/* Footer always at the bottom */
-.desktop-footer,
-.mobile-footer {
-    padding: 10px 0;
 }
 
 /* Phone logo */
@@ -220,47 +252,14 @@ body {
     cursor: pointer;
 }
 
-#message-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Footer styles, social icon colors, hover, fonts and spacing between them  */
 
+.desktop-footer,
+.mobile-footer {
+    padding: 10px 0;
 }
 
-
-
-/* General Anchor & list Styles */
-.footer-link {
-    color: #ffffff;
-    list-style-type: none;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-}
-
-.list-links li {
-    list-style-type: none;
-}
-
-.list-links a {
-    list-style-type: none;
-    text-decoration: none;
-}
-
-.footer-link:hover {
-    font-weight: 500;
-    color: #ffc107;
-    transform: scale(1.05);
-}
-
-/* General Social Link Styles */
-.social-link {
-    color: #ffffff;
-    font-size: 1.5rem;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Facebook Icon */
+/* social Icons */
 .social-link.facebook:hover {
     color: #3b5998;
     font-weight: 600;
@@ -304,6 +303,8 @@ body {
     align-items: center;
     flex-wrap: wrap;
 }
+
+/* Make the cover image bit darker */
 #cover-image::before {
     content: "";
     position: absolute;
@@ -316,6 +317,7 @@ body {
     z-index: 0;
 }
 
+/* Position the cover image */
 #cover-images {
     position: relative;
     display: flex;
@@ -323,6 +325,8 @@ body {
     align-items: center;
     flex-wrap: wrap;
 }
+
+/* Make the cover image bit darker */
 #cover-images::before {
     content: "";
     position: absolute;
@@ -335,6 +339,7 @@ body {
     z-index: 0;
 }
 
+/* Position the cover image */
 .cover-text {
     position: absolute;
     top: 45%;
@@ -369,31 +374,15 @@ body {
     font-weight: 400;
 }
 
-/* Bokked data style */
+/* Booked data style */
 .sinaan {
     padding-left: 40%;
 }
 #hego {
     margin-bottom: 30px;
 }
-/* Default for all screen sizes */
-.space-con {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    justify-content: space-between; /* Even space between the elements */
-    max-height: 60px; /* Limit height to 100px */
-}
 
-/* Add some padding/margin to space out content as needed */
-.space-con h2, .space-con a {
-    margin: 0;
-}
-
-/* ABOUT PAGE */
-.logo-height {
-    height: 20%;
-}
-
+/* general from spacing and styling */
 .form-style {
     background-color: #ffffff;
     margin-top: 1.5rem !important;
@@ -403,14 +392,15 @@ body {
     padding: 2.5rem !important;
 }
 
+/* Map style */
 #map {
     height: 500px;
     width: 100%;
     margin-top: 40px;
 }
 
-/* Mobile footer, show only under 580 media query and hide it over 580*/
-/* Media query for small screens */
+/* Mobile footer, show only under 580 media query and hide it over 580.
+Hide desktop footer and show mobile size social links which is in about page in this size */
 
 @media (max-width: 580px) {
 
@@ -445,19 +435,6 @@ body {
         transform: scale(1.2);
     }
 
-    .space-con {
-        max-height: 80px; /* Ensure total space is 100px */
-        padding: 0; /* No additional padding */
-    }
-
-    .space-con h2 {
-        margin-bottom: 60px; /* Space between header and anchor */
-    }
-
-    .space-con a {
-        margin-top: 70px; /* Adjust space above anchor */
-    }
-
     .cover-text p {
         font-size: 13px;
     }
@@ -469,8 +446,10 @@ body {
 }
 
 
-/* hide mobile footer */
+/* Media footer for screens from 581 px and up.
+Hide mobiel footer and give space between the footer and the containers */
 @media (min-width: 581px) {
+    /* hide mobile footer */
     .mobile-footer {
         display: none;
     }

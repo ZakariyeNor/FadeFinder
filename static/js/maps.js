@@ -30,13 +30,20 @@ async function initMap() {
 // Initialize the map when the page is loaded
 initMap();
 
+// Function to toggle the visibility of the subcategory 
 function toggleSubCategory() {
+    //Get the value of the category input and the element that represents the developer subcategory secion
     const category = document.getElementById('categoryInput').value;
     const developerSubCategory = document.getElementById('developerSubCategory');
 
+    // Now this logic checks if the selected category is developer
     if (category === 'Developer') {
+
+        // show if the develoer is selected
         developerSubCategory.style.display = 'block';
     } else {
+
+        // Otherwise, hide the developer subcategory 
         developerSubCategory.style.display = 'none';
     }
 }

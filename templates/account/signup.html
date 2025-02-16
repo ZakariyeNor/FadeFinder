@@ -1,15 +1,18 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load account socialaccount %}
+
 {% block head_title %}
+    <!-- Set the page title to "Sign Up" and make it translatable -->
     {% trans "Sign Up" %}
 {% endblock head_title %}
 
 {% block content %}
-    <!-- Message container -->
+    <!-- Message container for displaying success or error messages -->
     <div id="message-container">
         {% if messages %}
             {% for message in messages %}
+                <!-- Display message with appropriate styling based on message type (success or error) -->
                 <div
                     class="mt-5 alert {% if message.tags == 'success' %}alert-success{% elif message.tags == 'error' %}alert-danger{% endif %}" style="width: 90%;">
                     {{ message }}
@@ -17,13 +20,19 @@
             {% endfor %}
         {% endif %}
     </div>
+
+    <!-- Main container for the sign-up form -->
     <div class="container sign-up-container">
+        
+        <!-- Row for the sign-up heading and instructions -->
         <div class="row">
             <div class="col-md-8 mt-5 offset-md-2">
+                <!-- Heading for the registration page -->
                 <h3 class="action-color primary-color sign-up-title">
                     {% trans "Register" %}
                 </h3>
 
+                <!-- Text with a link to the login page if the user already has an account -->
                 <p class="text-color sign-up-text">
                     {% blocktrans %}
                         Already have an account? Then please
@@ -36,27 +45,34 @@
             </div>
         </div>
 
+        <!-- Row for the sign-up form -->
         <div class="row">
             <div class="col-md-8 mt-5 offset-md-2">
+                <!-- Sign-up form with POST method to submit the data to the 'account_signup' URL -->
                 <form class="login form-container" method="POST" action="{% url 'account_signup' %}">
+                    <!-- CSRF Token for security -->
                     {% csrf_token %}
+                    
+                    <!-- Render the form fields as paragraph elements -->
                     {{ form.as_p }}
 
-                    <!-- Display form errors -->
-                <div class="form-errors">
-                    {% for field in form %}
-                        {% if field.errors %}
-                            <div class="alert alert-danger mt-3">
-                                <strong>{{ field.name }}:</strong> {{ field.errors }}
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-
-                
+                    <!-- Display form errors below the form fields, if any -->
+                    <div class="form-errors">
+                        {% for field in form %}
+                            {% if field.errors %}
+                                <div class="alert alert-danger mt-3">
+                                    <strong>{{ field.name }}:</strong> {{ field.errors }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    
+                    <!-- Hidden field to handle redirects after successful form submission -->
                     {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
+                    
+                    <!-- Submit button for submitting the form -->
                     <button class="btn btn-signup right text-color action-bg form-submit-btn" type="submit">
                         {% trans "Register Now" %}
                     </button>

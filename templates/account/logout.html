@@ -1,30 +1,46 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load account socialaccount %}
+
 {% block head_title %}
+    <!-- Set the page title to "Sign Out" and make it translatable -->
     {% trans "Sign Out" %}
 {% endblock head_title %}
 
 {% block content %}
+    <!-- Container for the logout content -->
     <div class="container logout-container">
+        
+        <!-- Row for the sign-out confirmation heading and text -->
         <div class="row">
             <div class="col-md-8 mt-5 offset-md-2">
+                <!-- Heading for the sign-out page -->
                 <h3 class="action-color primary-color logout-title">
                     {% trans "Sign Out" %}
                 </h3>
 
+                <!-- Text asking the user if they are sure about signing out -->
                 <p class="text-color logout-text">
                     {% trans 'Are you sure you want to sign out?' %}
                 </p>
             </div>
         </div>
 
+        <!-- Row for the logout form -->
         <div class="row">
             <div class="col-md-8 mt-5 offset-md-2">
+                <!-- URL for logging out (used in the action attribute of the form) -->
                 {% url 'account_logout' as action_url %}
+                
+                <!-- The logout form, sent with POST method to sign the user out -->
                 <form method="POST" action="{{ action_url }}" class="logout-form">
+                    <!-- CSRF Token for security purposes -->
                     {% csrf_token %}
+                    
+                    <!-- Redirect field (if any) for redirecting after sign-out -->
                     {{ redirect_field }}
+                    
+                    <!-- Submit button for logging out -->
                     <button class="btn btn-signout text-color action-bg logout-btn" type="submit">
                         {% trans 'Sign Out' %}
                     </button>

@@ -3,18 +3,19 @@
 {% block content %}
 {% load crispy_forms_tags %}
 {% load i18n %}
-<!-- Booking cover -->
+
+<!-- Booking Cover Section -->
 <div class="container book">
     {% if user.is_authenticated %}
         <div class="row g-0 mt-3" id="cover-image">
-            <!-- Booking Cover Image -->
+            <!-- Booking Cover Image (Conditional Display: Placeholder or Actual Image) -->
             {% if "placeholder" in bookcover.cover_image.url %}
                 <img src="{% static 'images/cover.jpg' %}" class="img-fluid" alt="Placeholder image">
             {% else %}
                 <img src="{{ bookcover.cover_image.url }}" class="img-fluid" alt="Booking cover image">
             {% endif %}
 
-                <!-- Booking intro -->
+            <!-- Booking Intro Text with Call to Action -->
             <div id="spacing-con" class="cover-text text-center">
                 <h2>Book Now</h2>
                 {{ bookcover.booking_intro | safe }}
@@ -24,14 +25,14 @@
         </div>
     {% else %}
         <div class="row g-0 mt-3" id="cover-images">
-            <!-- Booking Cover Image -->
+            <!-- Booking Cover Image (Conditional Display: Placeholder or Actual Image) -->
             {% if "placeholder" in bookcover.cover_image.url %}
                 <img src="{% static 'images/cover.jpg' %}" class="img-fluid" alt="Placeholder image">
             {% else %}
                 <img src="{{ bookcover.cover_image.url }}" class="img-fluid" alt="Booking cover image">
             {% endif %}
 
-                <!-- Booking intro -->
+            <!-- Booking Intro Text with Call to Action -->
             <div class="cover-text text-center">
                 <h2>Book Now</h2>
                 {{ bookcover.booking_intro | safe }}
@@ -42,11 +43,11 @@
     {% endif %}
 </div>
 
-<!-- Booking form -->
+<!-- Booking Form Section -->
 <div id="booking-section" class="container book mt-3">
     <div class="row">
         {% if user.is_authenticated %}
-            <h2 class="text-center">Book an appoinment</h2>
+            <h2 class="text-center">Book an appointment</h2>
             <div class="col-md-8 mt-2 offset-md-2">
                 <h3 class="action-color text-center">{% trans "Add a New Booking" %}</h3>
                 <p class="text-color">
@@ -54,10 +55,10 @@
                 </p>
             </div>
         {% else %}
-        <h2 class="text-center">Barber Booking</h2>
-        <div class="col-md-8 mt-2 offset-md-2">
-            <h3 class="action-color text-center">{% trans "To book an appoinment" %}</h3>
-        </div>
+            <h2 class="text-center">Barber Booking</h2>
+            <div class="col-md-8 mt-2 offset-md-2">
+                <h3 class="action-color text-center">{% trans "To book an appointment" %}</h3>
+            </div>
         {% endif %}
     </div>
 
@@ -66,23 +67,26 @@
             <div class="col-md-8 mt-5 form-style offset-md-2">
                 <form method="post" class="form-p" action="{% url 'book' %}">
                     {% csrf_token %}
+                    <!-- Display Form using crispy-forms for improved styling -->
                     {{ form | crispy }}
                     <button class="btn btn-signup right text-color action-bg" type="submit">{% trans "Book" %}</button>
                 </form>
             </div>
         {% else %}
-            <p class="text-center text-color">Log in please to book an appoinment</p>
+            <!-- Prompt for user to log in to book an appointment -->
+            <p class="text-center text-color">Log in please to book an appointment</p>
         {% endif %}
     </div>
-    <!-- Booked data section link -->
+
+    <!-- Link to Booked Data Section if there are bookings -->
     <div class="sinaan row">
         {% if bookings %}
-            <a href="#booked-data" class="btn accent-color mt-3 accent-bg"> See Booked appoinments</a>
+            <a href="#booked-data" class="btn accent-color mt-3 accent-bg"> See Booked appointments</a>
         {% endif %}
     </div>
 </div>
 
-<!-- Booked data section -->
+<!-- Booked Data Section -->
 {% if user.is_authenticated %}
     {% if bookings %}
         <div class="container book mt-3" id="booked-data">
@@ -92,53 +96,55 @@
                 </div>
             </div>
             <div class="row">
+                <!-- Loop through the list of bookings -->
                 {% for booking in bookings %}
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 accordion-item">
-                    <div class="accordion" id="accordionExample">
-                        <div class="accordion-item mb-2">
-                            <h2 class="accordion-header">
-                                <!-- Make sure each button links to its unique collapse ID -->
-                                <button class="accordion-button colap text-color accent-bg-bk" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}"
-                                    aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
-                                    {{ booking.service.service_name }} | {{ booking.time }}
-                                </button>
-                            </h2>
-                            <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
-                                <!-- Booking management dropdown -->
-                                <div class="dropdown px-3 text-end">
-                                    <button class="btn accent-color mt-2 mini-manage" type="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        Manage bookings
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 accordion-item">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item mb-2">
+                                <h2 class="accordion-header">
+                                    <!-- Accordion Button for each booking item, linking to its unique collapse ID -->
+                                    <button class="accordion-button colap text-color accent-bg-bk" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}"
+                                        aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
+                                        {{ booking.service.service_name }} | {{ booking.time }}
                                     </button>
-                                    <ul class="dropdown-menu mini-drop" style="position: absolute;">
-                                        <li><a class="dropdown-item" href="{% url 'edit_booking' booking.id %}">Update</a></li>
-                                        <li><a class="dropdown-item mini-delete" data-bs-toggle="modal"
-                                                data-bs-target="#deleteModal"
-                                                data-delete-url="{% url 'delete_booking' booking.id %}"
-                                                data-booking-id="{{ booking.id }}"
-                                                data-service-name="{{ booking.service.service_name }}"
-                                                data-booking-date="{{ booking.date }}">Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="accordion-body secondary-bg text-color">
-                                    <p><strong>|{{ booking.barber.barber_name }}</strong></p> 
-                                    <p><strong>|Price:</strong> {{ booking.service.service_price }}</p> 
-                                    <p><strong>| Date: </strong> {{ booking.date }} <br></p>
-                                    <hr class="fw-semibold">
-                                    Welcome <strong class="text-capitalize">{{ booking.user }}!</strong> We're excited to have
-                                    you at our barber shop. Hoping to see you soon!
+                                </h2>
+                                <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionExample">
+                                    <!-- Booking Management Dropdown (Update or Delete options) -->
+                                    <div class="dropdown px-3 text-end">
+                                        <button class="btn accent-color mt-2 mini-manage" type="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            Manage bookings
+                                        </button>
+                                        <ul class="dropdown-menu mini-drop" style="position: absolute;">
+                                            <li><a class="dropdown-item" href="{% url 'edit_booking' booking.id %}">Update</a></li>
+                                            <li><a class="dropdown-item mini-delete" data-bs-toggle="modal"
+                                                    data-bs-target="#deleteModal"
+                                                    data-delete-url="{% url 'delete_booking' booking.id %}"
+                                                    data-booking-id="{{ booking.id }}"
+                                                    data-service-name="{{ booking.service.service_name }}"
+                                                    data-booking-date="{{ booking.date }}">Delete</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="accordion-body secondary-bg text-color">
+                                        <p><strong>|{{ booking.barber.barber_name }}</strong></p> 
+                                        <p><strong>|Price:</strong> {{ booking.service.service_price }}</p> 
+                                        <p><strong>| Date: </strong> {{ booking.date }} <br></p>
+                                        <hr class="fw-semibold">
+                                        Welcome <strong class="text-capitalize">{{ booking.user }}!</strong> We're excited to have
+                                        you at our barber shop. Hoping to see you soon!
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 {% endfor %}
             </div>
         </div>
     {% else %}
+        <!-- Message when there are no booked appointments -->
         <p class="text-center">You have no booked appointments yet!</p>
     {% endif %}
 {% endif %}
@@ -162,4 +168,5 @@
         </div>
     </div>
 </div>
-{% endblock%}
+
+{% endblock %}

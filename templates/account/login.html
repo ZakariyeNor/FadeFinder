@@ -1,33 +1,48 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load account socialaccount %}
+
 {% block head_title %}{% trans "Sign In" %}{% endblock head_title %}
 
 {% block content %}
-
+    <!-- Container for the entire content -->
     <div class="container">
+        
+        <!-- Row for the heading and signup prompt -->
         <div class="row">
             <div class="col-md-8 mt-5 offset-md-2">
+                <!-- Heading for the sign-in page -->
                 <h3 class="action-color primary-color">{% trans "Sign In" %}</h3>
 
+                <!-- Text that prompts users to sign up if they haven't already -->
                 <p class="text-color">
                     {% blocktrans %}
                         If you have not created an account yet, then please
                     {% endblocktrans %}
+                    <!-- Link to the sign-up page -->
                     <a href="{% url 'account_signup' %}" class="btn btn-signup text-color action-bg link">{% trans "sign up" %}</a>
                     {% blocktrans %} first.{% endblocktrans %}
                 </p>
             </div>
         </div>
 
+        <!-- Row for the login form -->
         <div class="row">
             <div class="col-md-8 mt-5 offset-md-2">
+                <!-- Login form with POST method to send data to the login URL -->
                 <form class="login" method="POST" action="{% url 'account_login' %}">
+                    <!-- CSRF Token for security to protect against cross-site request forgery -->
                     {% csrf_token %}
+                    
+                    <!-- Rendering the login form fields (e.g., username, password) -->
                     {{ form.as_p }}
+                    
+                    <!-- Handling redirection after login if there's a redirect field -->
                     {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
+                    
+                    <!-- Submit button for the login form -->
                     <button class="btn btn-signup right text-color action-bg" type="submit">{% trans "Sign In" %}</button>
                 </form>
             </div>

@@ -3,10 +3,11 @@
 {% block content %}
 {% load crispy_forms_tags %}
 {% load i18n %}
-<!-- Booking form -->
+
+<!-- Booking Form Section for Updating Appointment -->
 <div id="booking-section" class="container book mt-3">
     <div class="row">
-        <h2 class="text-center">Update an appoinment</h2>
+        <h2 class="text-center">Update an appointment</h2>
         <div class="col-md-8 mt-2 offset-md-2">
             <h3 class="action-color text-center">{% trans "Edit booking" %}</h3>
             <p class="text-color">
@@ -17,16 +18,19 @@
 
     <div class="row">
         <div class="col-md-8 mt-5 offset-md-2">
+            <!-- Form for updating the booking -->
             <form method="post" action="{% url 'edit_booking' booking_id=booking.id %}">
                 {% csrf_token %}
+                <!-- Render the form using crispy-forms for better styling -->
                 {{ form | crispy }}
                 <button class="btn btn-signup right text-color action-bg" type="submit">{% trans "Update" %}</button>
             </form>
         </div>
     </div>
 </div>
+
+<!-- Include external JavaScript file -->
 {% block extra_footer %}
-        <!-- External js link -->
-        <script src="{% static 'js/edit.js' %}"></script>
+    <script src="{% static 'js/edit.js' %}"></script>
 {% endblock %}
 {% endblock %}
