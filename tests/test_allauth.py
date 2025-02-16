@@ -2,11 +2,15 @@ from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
 
+
 class AllAuthTests(TestCase):
     def setUp(self):
         """Setup a test user."""
         self.user = User.objects.create_user(
-            username='testuser', password='testpassword', email='test@example.com')
+            username='testuser',
+            password='testpassword',
+            email='test@example.com'
+        )
 
     def test_signup(self):
         """Test the signup process."""
@@ -43,13 +47,13 @@ class AllAuthTests(TestCase):
         url = reverse('account_signup')
         response = self.client.post(url, {
             'username': 'invaliduser',
-            'email': 'invalidemail',  
+            'email': 'invalidemail',
             'password1': 'short',
             'password2': 'short',
         })
 
-        self.assertEqual(response.status_code, 200) 
-        
+        self.assertEqual(response.status_code, 200)
+
         # Assert email error
         form = response.context['form']
         self.assertTrue(form.errors['email'])
@@ -57,4 +61,7 @@ class AllAuthTests(TestCase):
 
         # Assert password error (update to match the full error message)
         self.assertTrue(form.errors['password1'])
-        self.assertIn('This password is too short. It must contain at least 8 characters.', form.errors['password1'])
+        self.assertIn(
+            'This password is too short. It must contain'
+            ' at least 8 characters.', form.errors['password1']
+        )
