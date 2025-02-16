@@ -6,6 +6,17 @@
 {% endblock head_title %}
 
 {% block content %}
+    <!-- Message container -->
+    <div id="message-container">
+        {% if messages %}
+            {% for message in messages %}
+                <div
+                    class="mt-5 alert {% if message.tags == 'success' %}alert-success{% elif message.tags == 'error' %}alert-danger{% endif %}" style="width: 90%;">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
     <div class="container sign-up-container">
         <div class="row">
             <div class="col-md-8 mt-5 offset-md-2">
@@ -30,6 +41,19 @@
                 <form class="login form-container" method="POST" action="{% url 'account_signup' %}">
                     {% csrf_token %}
                     {{ form.as_p }}
+
+                    <!-- Display form errors -->
+                <div class="form-errors">
+                    {% for field in form %}
+                        {% if field.errors %}
+                            <div class="alert alert-danger mt-3">
+                                <strong>{{ field.name }}:</strong> {{ field.errors }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+                
                     {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
