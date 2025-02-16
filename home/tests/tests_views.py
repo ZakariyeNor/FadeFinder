@@ -4,22 +4,22 @@ from ..models import BarberInfo, ServicesDes
 
 
 # Create your tests here.
-#Home page generic view
+# Home page generic view
+
 class BarberInfoContentTest(TestCase):
-    
+
     def setUp(self):
         # Create a sample BarberInfo object
         BarberInfo.objects.create(
-            title="Barber Shop 1", 
+            title="Barber Shop 1",
             description="Best barber shop in town"
         )
         # Create a sample ServicesDes object
         ServicesDes.objects.create(
-            title="Haircut", 
+            title="Haircut",
             services="Full haircut and shave"
         )
 
-    
     def test_view_url(self):
         # Test that the view URL renders correctly
         url = reverse('home')

@@ -5,7 +5,7 @@ from ..admin import BarberInfoAdmin, ServicesDesAdmin
 
 
 # Create your tests here.
-#Barber admin tests
+# Barber admin tests
 class BarberInfoAdminTest(TestCase):
 
     def test_admin_registration(self):
@@ -15,7 +15,10 @@ class BarberInfoAdminTest(TestCase):
     def test_admin_list_display(self):
         # Verify that list_display is correctly set
         admin_instance = BarberInfoAdmin(BarberInfo, site)
-        self.assertEqual(admin_instance.list_display, ('title', 'created_on', 'updated_on'))
+        self.assertEqual(admin_instance.list_display, (
+            'title', 'created_on', 'updated_on'
+            )
+        )
 
     def test_admin_search_fields(self):
         # Verify that search_fields is correctly set
@@ -28,7 +31,7 @@ class BarberInfoAdminTest(TestCase):
         self.assertEqual(admin_instance.summernote_fields, ('description',))
 
 
-#Service admin test
+# Service admin test
 class ServicesDesAdminTest(TestCase):
 
     def test_admin_registration(self):
@@ -38,7 +41,10 @@ class ServicesDesAdminTest(TestCase):
     def test_admin_list_display(self):
         # Verify that list_display is correctly set
         admin_instance = ServicesDesAdmin(ServicesDes, site)
-        self.assertEqual(admin_instance.list_display, ('title', 'created_on', 'updated_on'))
+        self.assertEqual(admin_instance.list_display, (
+            'title', 'created_on', 'updated_on'
+            )
+        )
 
     def test_admin_search_fields(self):
         # Verify that search_fields is correctly set
