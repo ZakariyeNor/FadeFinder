@@ -51,15 +51,15 @@
                                 aria-current="page" href="{% url 'home' %}">Home</a>
                         </li>
                         {% if bookings %}
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == '/book/form/' %}active{% endif %} text-color-sec"
-                                href="{% url 'book' %}">Booked</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if request.path == '/book/form/' %}active{% endif %} text-color-sec"
+                                    href="{% url 'book' %}">Booked</a>
+                            </li>
                         {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == '/book/form/' %}active{% endif %} text-color-sec"
-                                href="{% url 'book' %}">Book</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if request.path == '/book/form/' %}active{% endif %} text-color-sec"
+                                    href="{% url 'book' %}">Book</a>
+                            </li>
                         {% endif %}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle {% if request.path == '/account/' %}active{% endif %} text-color-sec"
