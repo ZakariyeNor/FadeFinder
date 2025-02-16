@@ -84,8 +84,9 @@
                                 {% endif %}
 
                                 {% if user.is_authenticated %}
-                                <li><a class="dropdown-item text-color-sec" href="{% url 'admin:index' %}"
-                                        target="_blank">Admin</a></li>
+                                    {% if user.is_staff %}
+                                        <li><a class="dropdown-item text-color-sec" href="{% url 'admin:index' %}" target="_blank">Admin</a></li>
+                                    {% endif %}
                                 {% else %}
                                 <li><a href="{% url 'admin:login' %}" class="text-color-sec dropdown-item"
                                         target="_blank">Admin login</a></li>
@@ -136,9 +137,15 @@
                 <h5 class="nav-heading">Navigation</h5>
                 <div class="row nav-links">
                     <div class="col-6">
-                        <ul>
-                            <li><a href="{% url 'book' %}" class="text-color-sec footer-link">Book</a></li>
-                        </ul>
+                        {% if bookings %}
+                            <ul>
+                                <li><a href="{% url 'book' %}" class="text-color-sec footer-link">Booked</a></li>
+                            </ul>
+                        {% else %}
+                            <ul>
+                                <li><a href="{% url 'book' %}" class="text-color-sec footer-link">Book</a></li>
+                            </ul>
+                        {% endif %}
                     </div>
                     <div class="col-6">
                         {% if user.is_authenticated %}
@@ -160,11 +167,18 @@
                     </div>
                     <div class="col-6">
                         {% if user.is_authenticated %}
-                        
-                        <ul>
-                            <li><a href="{% url 'admin:index' %}" class="text-color-sec footer-link"
-                                target="_blank">Admin</a></li>
-                        </ul>
+                            {% if user.is_staff %}
+                                <ul>
+                                    <li><a href="{% url 'admin:index' %}" class="text-color-sec footer-link"
+                                        target="_blank">Admin</a></li>
+                                </ul>
+                            {% else %}
+                                <ul>
+                                    <li>
+                                        <a href="{% url 'about' %}#contact-us" class="text-color-sec footer-link">Contact Us</a>
+                                    </li>
+                                </ul>
+                            {% endif %}
                         {% else %}
                         <ul>
                             <li><a href="{% url 'admin:login' %}" class="text-color-sec footer-link" target="_blank">Admin
@@ -232,9 +246,9 @@
             <a href="{% url 'home' %}" class="text-color-sec"><i class="fa-solid fa-house"></i></a>
             <a href="{% url 'book' %}" class="text-color-sec"><i class="fa-solid fa-calendar-plus"></i></a>
             {% if user.is_authenticated %}
-            <a href="{% url 'account_logout' %}" class="text-color-sec"><i class="fa-solid fa-user"></i></a>
+                <a href="{% url 'account_logout' %}" class="text-color-sec" data-bs-toggle="tooltip" title="Logout"><i class="fa-solid fa-user"></i></a>
             {% else %}
-            <a href="{% url 'account_login' %}" class="text-color-sec"><i class="fa-solid fa-user"></i></a>
+                <a href="{% url 'account_login' %}" class="text-color-sec" data-bs-toggle="tooltip" title="Login"><i class="fa-solid fa-user"></i></a>
             {% endif %}
             <a href="{% url 'about' %}#dot-section" class="text-color-sec"><i class="fa-solid fa-location-dot"></i></a>
         </div>
