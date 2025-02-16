@@ -3,9 +3,11 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
-# Create your models here.
 class BookCover(models.Model):
-    #The cover image for the booking page
+    """
+    The cover image for the booking page, along with an introduction text.
+    """
+
     cover_image = CloudinaryField('image', default='placeholder')
     booking_intro = models.TextField(max_length=200, null=False, blank=False)
 
@@ -14,12 +16,18 @@ class BookCover(models.Model):
         verbose_name_plural = 'Booking Covers'
 
     def __str__(self):
-        #Represent
-        return f'Booking introduction'
+        """
+        String representation of the BookingCover model.
+        """
+        return 'Booking introduction'
 
 
-#Model for barbers
 class Barber(models.Model):
+    """
+    Model representing a barber, including their name, address, phone number,
+    and timestamps for creation and update.
+    """
+
     barber_name = models.CharField(max_length=50)
     barber_address = models.CharField(max_length=200)
     barber_number = models.CharField(max_length=20)
@@ -28,14 +36,23 @@ class Barber(models.Model):
 
     class Meta:
         ordering = ['created_on']
-        
+
     def __str__(self):
+        """
+        String representation of the Barber model.
+        """
         return self.barber_name
 
 
-#Model for barbers'service
 class BarberService(models.Model):
-    barber = models.ForeignKey(Barber, on_delete=models.CASCADE, related_name='services')
+    """
+    Model representing the services offered by a barber, including the service
+    name, price, and timestamps for creation and update.
+    """
+
+    barber = models.ForeignKey(
+        Barber, on_delete=models.CASCADE, related_name='services'
+    )
     service_name = models.CharField(max_length=50)
     service_price = models.DecimalField(max_digits=5, decimal_places=2)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -43,13 +60,21 @@ class BarberService(models.Model):
 
     class Meta:
         ordering = ['created_on']
-    
+
     def __str__(self):
-        return f'{self.service_name}'
+        """
+        String representation of the BarberService model.
+        """
+        return self.service_name
 
 
-#Booking model to store user inputs, the choice of barber and service
 class Booking(models.Model):
+    """
+    Model representing a booking made by a user,
+    including the choice of barber,
+    service, and the selected time for the appointment.
+    """
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     barber = models.ForeignKey(Barber, on_delete=models.CASCADE)
     service = models.ForeignKey(BarberService, on_delete=models.CASCADE)
@@ -60,8 +85,13 @@ class Booking(models.Model):
     class Meta:
         ordering = ['-updated_on']
         constraints = [
-            models.UniqueConstraint(fields=['date', 'time', 'barber'], name='unique_barber_booking')
+            models.UniqueConstraint(
+                fields=['date', 'time', 'barber'], name='unique_barber_booking'
+            )
         ]
 
     def __str__(self):
+        """
+        String representation of the Booking model.
+        """
         return f"Booked by | {self.user}"
