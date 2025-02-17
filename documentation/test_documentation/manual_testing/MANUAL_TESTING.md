@@ -431,7 +431,3 @@ Social links in mobile size must be under the map and  section
 
 ![](manual_testing_screenshots/logout_confirmation_message.png)
 
-- The a
-
-![](manual_testing_screenshots/logout_confirmation_message.png)
-

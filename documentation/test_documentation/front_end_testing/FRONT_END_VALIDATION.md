@@ -169,7 +169,7 @@ This document describes the test cases for the `base.html` template in the Barbe
 - **Expected Outcome**: The "Log-out" option should be present in the response.
 
 The error of the base template test in pep8
-![](template_pep8/base_template_test_err.png)
+![](template_pep8/template_files/base_template_test_err.png)
 
 ### 3. Test nav links for authenticated users
 
@@ -250,14 +250,14 @@ The error of the base template test in pep8
 - **Files Tested**: `base.html`, static CSS (`style.css`), and static JS (`script.js`).
 
 No error of the base template test in pep8
-![](template_pep8/base_template_test_succ.png)
+![](template_pep8/template_files/base_template_test_succ.png)
 
 # Home Template Test Documentation
 
 This document outlines the test cases for the `home.html` template in the Barber Booking app. The tests verify that various elements such as dynamic content, template inheritance, and HTML validation are working correctly.
 
 The error of the home template test in pep8
-![](template_pep8/home_template_tests_err.png)
+![](template_pep8/template_files/home_template_tests_err.png)
 ## Test Cases
 
 ### 1. Test if the `home.html` template renders correctly with barber and service context
@@ -321,7 +321,7 @@ The error of the home template test in pep8
 - **Expected Outcome**: The HTML should be valid, containing the expected structure (title, content, and date).
 
 No error of the booking template test in pep8
-![](template_pep8/booking_template_tests_succ.png)
+![](template_pep8/template_files/booking_template_tests_succ.png)
 
 ## Test Execution Environment
 
@@ -329,14 +329,14 @@ No error of the booking template test in pep8
 - **Template Used**: `home.html`
 - **Files Tested**: `home.html`
 The error of the tempate test in pep8
-![](template_pep8/base_template_test_err.png)
+![](template_pep8/template_files/base_template_test_err.png)
 
 # Booking Page Test Documentation
 
 This document outlines the test cases for the `book.html` template in the Barber Booking app. The tests ensure that an authenticated user can interact with the booking page, view the booking form, and see the booking deletion modal.
 
 The error of the booking template test in pep8
-![](template_pep8/booking_template_test_err.png)
+![](template_pep8/template_files/booking_template_test_err.png)
 
 ## Test Cases
 
@@ -363,7 +363,7 @@ The error of the booking template test in pep8
 - **Expected Outcome**: The HTML should contain the text "Confirm Deletion", indicating that the delete booking modal is visible for the authenticated user.
 
 No error of the booking template test in pep8
-![](template_pep8/booking_template_tests_succ.png)
+![](template_pep8/template_files/booking_template_tests_succ.png)
 
 ## Test Execution Environment
 
@@ -371,3 +371,11 @@ No error of the booking template test in pep8
 - **Template Used**: `book.html`
 - **Files Tested**: `book.html`
 
+
+# The allauth template testing on pep8 
+
+The template testing error 
+![](template_pep8/allauth_files/allauth_test_err.png)
+
+After fixed the issues
+![](template_pep8/allauth_files/allauth_test_succ.png)
