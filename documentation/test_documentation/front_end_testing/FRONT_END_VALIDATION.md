@@ -2,6 +2,9 @@
 
 ## base.html
 
+![](html_validators/base_html_test.png)
+
+
 **Error**:  
 Element `li` not allowed as a child of element `div` in this context.  
 From line 122, column 25; to line 122, column 28
@@ -15,7 +18,7 @@ No errors or warnings to show.
 ---
 
 ## home.html
-
+![](html_validators/home_tests.png)
 **Error**:  
 Bad value for attribute `src` on element `img`: Must be non-empty.  
 From line 111, column 29; to line 111, column 87
@@ -29,7 +32,7 @@ No errors or warnings to show.
 ---
 
 ## book.html
-
+![](html_validators/book_tests.png)
 **Error**:  
 Attribute `today` not allowed on element `input` at this point.  
 From line 145, column 67; to line 145, column 169
@@ -44,7 +47,7 @@ No errors or warnings to show.
 ---
 
 ## edit_booking.html
-
+![](html_validators/book_tests.png)
 **Error**:  
 0 errors.
 
@@ -57,7 +60,7 @@ No errors or warnings to show.
 ---
 
 ## about.html
-
+![](html_validators/about_tests.png)
 **Error**:  
 0 errors.
 
@@ -71,7 +74,7 @@ No errors or warnings to show.
 
 # CSS Validator Results
 ## style.css
-
+![](css_validators/style_validator.png)
 **Error**:  
 0 errors.
 
@@ -84,7 +87,7 @@ No errors found.
 ---
 
 ## booking.css
-
+![](css_validators/booking_css_validation.png)
 **Error**:  
 0 errors.
 
@@ -98,19 +101,44 @@ No errors found.
 
 # Javascript Validator Results
 
-## script.js, maps.js and edit.js (Using JSHint)
-
+## script.js (Using JSHint)
+![](jshint/script_test_error.png)
+![](jshint/script_test_no_error.png)
 **Warnings**:  
 Warnings related to ES6 features like `let`, `const`, arrow functions, and template literals.
-script.js (19)
-maps.js (10)
-edit.js (8)
+script.js (19) 
+![](jshint/script_test_no_error.png)
 
 **Solution**:  
 Added the configuration for ES6:  
 `json
 { "esversion": 6 } `
 
+## maps.js (Using JSHint)
+![](jshint/maps_test_error.png)
+**Warnings**:  
+Warnings related to ES6 features like `let`, `const`, arrow functions, and template literals.
+maps.js (10)
+
+![](jshint/maps_test_no_error.png)
+
+**Solution**:  
+Added the configuration for ES6:  
+`json
+{ "esversion": 6 } `
+
+## edit.js (Using JSHint)
+![](jshint/edit_test_error.png)
+![](jshint/script_test_no_error.png)
+**Warnings**:  
+Warnings related to ES6 features like `let`, `const`, arrow functions, and template literals.
+edit.js (8)
+
+![](jshint/script_test_no_error.png)
+**Solution**:  
+Added the configuration for ES6:  
+`json
+{ "esversion": 6 } `
 
 # Base Template Test Documentation
 
@@ -139,6 +167,9 @@ This document describes the test cases for the `base.html` template in the Barbe
     2. Visit the home page.
     3. Check for the presence of the "Log-out" option.
 - **Expected Outcome**: The "Log-out" option should be present in the response.
+
+The error of the base template test in pep8
+![](template_pep8/base_template_test_err.png)
 
 ### 3. Test nav links for authenticated users
 
@@ -218,11 +249,15 @@ This document describes the test cases for the `base.html` template in the Barbe
 - **Template Used**: `base.html`
 - **Files Tested**: `base.html`, static CSS (`style.css`), and static JS (`script.js`).
 
+No error of the base template test in pep8
+![](template_pep8/base_template_test_succ.png)
 
 # Home Template Test Documentation
 
 This document outlines the test cases for the `home.html` template in the Barber Booking app. The tests verify that various elements such as dynamic content, template inheritance, and HTML validation are working correctly.
 
+The error of the home template test in pep8
+![](template_pep8/home_template_tests_err.png)
 ## Test Cases
 
 ### 1. Test if the `home.html` template renders correctly with barber and service context
@@ -285,15 +320,23 @@ This document outlines the test cases for the `home.html` template in the Barber
     4. Inspect the generated HTML by writing it to a file (`home/tests/output_home`).
 - **Expected Outcome**: The HTML should be valid, containing the expected structure (title, content, and date).
 
+No error of the booking template test in pep8
+![](template_pep8/booking_template_tests_succ.png)
+
 ## Test Execution Environment
 
 - **Testing Framework**: Django's `TestCase` class
 - **Template Used**: `home.html`
 - **Files Tested**: `home.html`
+The error of the tempate test in pep8
+![](template_pep8/base_template_test_err.png)
 
 # Booking Page Test Documentation
 
 This document outlines the test cases for the `book.html` template in the Barber Booking app. The tests ensure that an authenticated user can interact with the booking page, view the booking form, and see the booking deletion modal.
+
+The error of the booking template test in pep8
+![](template_pep8/booking_template_test_err.png)
 
 ## Test Cases
 
@@ -318,6 +361,9 @@ This document outlines the test cases for the `book.html` template in the Barber
     3. Pass the bookings context to the response.
     4. Check that the delete confirmation modal ("Confirm Deletion") is included in the HTML.
 - **Expected Outcome**: The HTML should contain the text "Confirm Deletion", indicating that the delete booking modal is visible for the authenticated user.
+
+No error of the booking template test in pep8
+![](template_pep8/booking_template_tests_succ.png)
 
 ## Test Execution Environment
 

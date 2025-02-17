@@ -364,12 +364,12 @@ I've decomposed my Epics into User Stories for prioritizing and implementing the
 
 > [!NOTE]
 - Documentation of the manual testing, front and back-end testing files.
-> For all testing, you can find them [TESTING.md](documentation/test_documentation) folder.
+> For all testing, you can find them [TESTING.md](documentation/test_documentation/) folder.
 
 > Or for each 
- > [Manual Testing](documentation/test_documentation/manual_testing.md),
- > [Front-end Tests](documentation/test_documentation/Front_end_validation.md),
- > [Back-end Tests](documentation/test_documentation/back_end_tests.md),
+ > [Manual Testing](documentation/test_documentation/manual_testing/MANUAL_TESTING.md),
+ > [Front-end Tests](documentation/test_documentation/front_end_testing/FRONT_END_VALIDATION.md),
+ > [Back-end Tests](documentation/test_documentation/back_end_testing/BACK_END_VALIDATION.md),
 
 - | [![badge](https://img.shields.io/badge/ChatGPT-grey?logo=openai&logoColor=75A99C)](https://chat.openai.com) |
 - I used to output html templates, to validate in HTML validator without templatetags,
