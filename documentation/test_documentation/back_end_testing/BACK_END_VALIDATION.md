@@ -185,6 +185,13 @@ This part tests the forms in the Home app, including their field validation and 
 
 This file contains test cases for the models in the **book** app. These tests ensure the correct functionality of the **BookCover**, **Barber**, **BarberService**, and **Booking** models.
 
+This is the models file in book app test documentation and when I run the models code on pep8 it returned errors
+  ![](book_pep8/app_files/book_model_err.png)
+
+This is after fixing the pep8 errors
+  ![](book_pep8/app_files/book_model_succ.png)
+
+This is what I test pf the models 
 ## Test Cases:
 
 ### BookCover Model
@@ -213,9 +220,24 @@ This file contains test cases for the models in the **book** app. These tests en
 - **test_unique_time**: Ensure that the `time` field is unique by testing with conflicting booking times.
 - **test_ordering**: Verify that the `Booking` model orders objects by the `updated_on` field in descending order.
 
+After that I tested the test file of the model file and it needs to fix some issues
+  ![](book_pep8/test_files/book_test_model_err.png)
+
+This is after fixing the pep8 errors
+  ![](book_pep8/test_files/book_test_model_succ.png)
+
+
 # Book App Tests: Views
 
 This file contains test cases for the views in the **book** app. These tests ensure that the **booking form**, **edit booking view**, and **delete booking view** work correctly.
+
+This is the views file in book app test documentation and when I run the views code on pep8 it returned errors
+  ![](book_pep8/app_files/book_views_err.pngg)
+
+This is after fixing the pep8 errors
+  ![](book_pep8/app_files/book_views_succ.png)
+
+This is the test cases of the views
 
 ## Test Cases:
 
@@ -231,19 +253,21 @@ This file contains test cases for the views in the **book** app. These tests ens
 - **test_delete_booking_view_logged_in**: Test that a logged-in user can delete their booking, which results in a redirect and the booking being removed.
 - **test_delete_booking_view_permission_error**: Test that a user who is not the booking owner cannot delete the booking and is redirected to the booking page.
 
+After that I tested the test file of the views file and it needs to fix some issues
+  ![](book_pep8/test_files/book_test_view_err.png)
+
+This is after fixing the pep8 errors
+  ![](book_pep8/test_files/book_test_view_succ.png)
+
+
 # Book App Tests: Admin  
 
 This document provides an overview of the test cases implemented for various admin functionalities of the `book` app in Django.
 
-## Test Suite Overview
+This is the admin file in book app test documentation and when I run the admin code on pep8 it returned no errors
+  ![](book_pep8/app_files/book_admin.png)
 
-The tests are designed to ensure the correct behavior of the admin interface for the following models:
-- **BookCover**
-- **Barber**
-- **BarberService**
-- **Booking**
-
-Each test ensures that the respective models are registered correctly in the Django admin interface and that various functionalities, such as adding, editing, searching, and listing records, work as expected.
+This is the test cases of the views
 
 ## 1. TestBookCoverAdmin
 
@@ -338,12 +362,25 @@ This test case verifies the admin functionality for the `Booking` model.
 
 This test suite ensures that the admin interface behaves as expected for the `BookCover`, `Barber`, `BarberService`, and `Booking` models, including functionality such as registration, editing, displaying data, and searching records.
 
+After that I tested the test file of the admin file and it needs to fix some issues
+  ![](book_pep8/test_files/book_admin_test_err.png)
+
+This is after fixing the pep8 errors
+  ![](book_pep8/test_files/book_admin_test_succ.png)
+
 
 # Book App Tests: Form 
 
 This documentation provides an overview of the tests for the forms used in the **Book app**. These tests include validation and behavior checks for the **DateInput**, **TimeInput**, and **BookingForm**.
 
 ---
+
+This document provides an overview of the test cases implemented for various admin functionalities of the `book` app in Django.
+
+This is the form file in book app test documentation and when I run the form code on pep8 it returned no errors
+  ![](book_pep8/app_files/book_forms.png)
+
+This is the test cases of the views
 
 ## 1. **Test DateInput Widget**
 
@@ -415,6 +452,11 @@ Test the validation and behavior of the **BookingForm**, ensuring that required 
 - **`setUp` Method**: Runs before each test to create necessary instances (e.g., `Barber`, `BarberService`) for testing.
 - **`tearDown` Method**: Runs after each test to clean up any resources or print messages (used for debugging in this case).
 
+After that I tested the test file of the form file and it needs to fix some issues
+  ![](book_pep8/test_files/book_forms_test_err.png)
+
+This is after fixing the pep8 errors
+  ![](book_pep8/test_files/book_forms_succ.png)
 
 # Book App Tests: URL 
 
@@ -477,7 +519,14 @@ Test the URL resolution for the **delete_booking** view, ensuring the correct `b
 ### Purpose:
 Test the functionality of the `about_me` view, which renders the About page and handles collaboration form submissions.
 
+This is the pep8 test of the views.py file and it needed to change some pep8 errors
+  ![](about_pep8/app_files/about_views_err.png)
+
+This is after fixing the pep8 errors
+  ![](about_pep8/app_files/about_views_err.png)
 ---
+
+This is testcase steps and what to test and how 
 
 ## Test Setup and Teardown
 
@@ -585,6 +634,10 @@ Ensure that the correct context is passed from the view to the template.
 #### Expected Outcome:
 - The context data passed to the template is as expected and includes all required information for rendering the About page.
 
+After finishing the test documentation of the about views.py file, now I need to test the views test file on pep8, and it passed(no error)
+  ![](about_pep8/test_files/about_views_test.png)
+
+
 
 # Test Plan for About App Models
 
@@ -592,6 +645,12 @@ Ensure that the correct context is passed from the view to the template.
 Test the functionality of the `About` and `Collaboration` models to ensure correct data handling, ordering, and validation.
 
 ---
+
+This is the pep8 test of the models.py file and it passed the test (no errors)
+  ![](about_pep8/app_files/about_model.png)
+  
+
+Now I need to doccument how the test is done and step by step
 
 ## 1. **`About` Model Tests**
 
@@ -792,6 +851,14 @@ The form should be invalid, and the phone number field should return an error in
 ## Conclusion
 These tests ensure that the `CollaborationForm` functions as expected, handling both valid and invalid input scenarios. Proper validation for unique collaborations, field formats, and required fields will provide a seamless experience for users submitting collaboration requests.
 
+Then test the test file the models test.py file on pep8
+  ![](about_pep8/test_files/about_models_test_err.png)
+
+This is after fixing the pep8 errors
+  ![](about_pep8/test_files/about_model_test_succ.png)
+---
+
+
 
 # Test Plan for About App Admin
 
@@ -799,6 +866,13 @@ These tests ensure that the `CollaborationForm` functions as expected, handling 
 Test the functionality and customization of the **About** and **Collaboration** models in the Django admin interface.
 
 ---
+
+This is the pep8 test of the admin.py file and it passed(no errors)
+  ![](about_pep8/app_files/about_admin.png)
+
+---
+
+This is testcase steps and what to test and how 
 
 ## 1. **About Model Admin Tests**
 
@@ -911,13 +985,27 @@ Test the registration and functionality of the `Collaboration` model in the Djan
   - Ensure that the search and filter functionality works as expected.
   - Verify that the `readonly_fields` are correctly enforced in the admin interface.
 
+Then I hav eto test the admin test file on pep8 and it faild, it needs to fix the issues so pep8 can return no errors
+  ![](about_pep8/test_files/about_admin_test_err.png)
+
+This is after fixing the pep8 errors
+  ![](about_pep8/test_files/about_admin_test_succ.png)
+---
+
 
 # Test Plan for About App URLs
 
 ### Purpose:
 Test the URL routing and view handling for the **About** app, ensuring that the `about_me` view is correctly mapped to the root URL.
 
+--- 
+
+This is the pep8 test of the urls.py file and it returned no error
+  ![](about_pep8/app_files//about_urls.png)
+
 ---
+
+This is testcase steps and what to test and how 
 
 ## 1. **Testing URL Routing for `about_me` View**
 
@@ -968,3 +1056,16 @@ Ensure that the URL pattern for the `about_me` view is correctly mapped and reso
   - Verify that the root URL (`/`) correctly routes to the `about_me` view.
   - Ensure that the URL pattern is named `about` and resolves correctly with `{% url 'about' %}` in templates or `reverse('about')` in views.
   - Test for 404 errors for undefined URLs to ensure proper routing handling.
+
+This is the pep8 test of the views.py file and it needed to change some pep8 errors
+  ![](about_pep8/test_files/about_urls_test.png)
+
+
+And this is the result of the forms file it passed both the app file and test file tests on pep8
+
+This is the pep8 test of the forms.py file
+  ![](about_pep8/app_files/about_forms.png)
+
+This is the test file of the forms in about app
+  ![](about_pep8/test_files/about_forms_test.png)
+---
