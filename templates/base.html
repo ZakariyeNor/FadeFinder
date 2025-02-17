@@ -86,11 +86,18 @@
                             </a>
                             <ul class="dropdown-menu primary-bg">
                                 {% if user.is_authenticated %}
-                                <li><a class="dropdown-item text-color-sec"
-                                        href="{% url 'account_logout' %}">Log-out</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
+                                    {% if user.is_staff %}
+                                        <li><a class="dropdown-item text-color-sec"
+                                                href="{% url 'account_logout' %}">Admin log-out</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                    {% else %}
+                                        <li><a class="dropdown-item text-color-sec" href="{% url 'account_logout' %}">Log-out</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                    {% endif %}
                                 {% else %}
                                 <li><a class="dropdown-item text-color-sec" href="{% url 'account_login' %}">Login</a>
                                 </li>
