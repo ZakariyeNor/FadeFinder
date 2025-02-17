@@ -5,16 +5,31 @@ To ensure that the **header, footer, navigation, internal and external links, an
 
 ---
 
+![Barber Booking Center](test.png)
+
 
 ## **2. Header Testing**
+This is how the navigation looks when user land on the app
+![Barber Booking Center](desktop_nav_logout.png)
+This is how the navigation looks like for admin user log in 
+![Barber Booking Center](desktop_nav_admin_logiin.png)
+And this is how the navigation looks like when user log in. And it also displays the success massage of the user login
+![Barber Booking Center](desktop_nav_user_login.png)
+
 ### **2.1 Visibility & Layout**
+This the visibility of the nav in mobile or small size screens and it's when user or admin is not logged in 
+![Barber Booking Center](mobile_nav_login.png)
 - **Test Steps:**
-  1. Open **Home, Book, Account and About** pages.
-  2. Verify that the **header appears at the top** of each page.
+1. Open **Home, Book, Account and About** pages.
+  It shows the required navigation links, but based on if it's logged in or not 
+2. Verify that the **header appears at the top** of each page.
+  The header is always at the top of the page, both larger and small screen size devices
+![Barber Booking Center](mobile_nav_login.png)
   3. Ensure that elements like **logo(Barber booking), navigation links, and dropdowns** are correctly aligned.
 
 - **Expected Outcome:**
   - The header should be **visible and consistent** across all pages.
+  it works as it should.
   - All elements should be properly aligned.
 
 ### **2.2 Navigation Links**
