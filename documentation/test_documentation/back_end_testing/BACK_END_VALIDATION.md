@@ -11,7 +11,12 @@ The purpose of these tests is to:
 
 The following sections break down the various test areas of the Home app, explaining what is being tested and how the tests help to maintain the app's quality.
 
+
 ## Test Cases Overview
+
+Now I need to test the the views file of the home app, and it passed on the pep8 no(no error)
+  ![](home_pep8/app_files/home_views_err.png)
+  
 
 # Views Tests
 
@@ -43,11 +48,21 @@ This test case focuses on verifying the functionality of the home page view.
 
 ---
 
+After all of these now I need to test the the test file of the views file on the pep8, and it needs to fix some issues on pep8
+  ![](home_pep8/app_files/home_views_err.png)
+
+After fixing the pep8 issues
+  ![](home_pep8/test_files/home_views_test_succ.png)
+
 
 # URL Tests
 
 ## Introduction
 This section contains test cases related to the URL routing and resolution for the **Home** app. The goal of these tests is to ensure that the URLs are correctly mapped and resolve to the appropriate views.
+
+Now I need to test the the urls file of the home app, and it passed with no error
+  ![](about_pep8/app_files/about_urls.png)
+
 
 ### 2. **BarberInfoContentTest**
 
@@ -64,11 +79,19 @@ This test case checks the URL mapping for the home page.
 
 ---
 
+Now I need to test the the test file of the urls file on the pep8, it passed (no error)
+  ![](home_pep8/test_files/home_urls_test.png)
+
+
 
 # Models Tests
 
 ## Introduction
 This section covers the test cases related to the models in the **Home** app. The tests ensure that the models, `BarberInfo` and `ServicesDes`, function as expected by validating their behavior when interacting with the database. 
+
+The pep8 test of the model file in home app, it returned no error
+  ![](home_pep8/app_files/home_models.png)
+
 
 ### 1. **BarberInfoContentTest**
 This test case focuses on validating the views and context data related to the `BarberInfo` and `ServicesDes` models. These models are used to store information about barbers and the services they offer on the home page.
@@ -98,11 +121,19 @@ This test case focuses on validating the views and context data related to the `
 
 ---
 
+the test the the test file of the model file on the pep8, and it needs passed with no error
+  ![](home_pep8/test_files/home_models_test.png)
+
+
 
 # Admin Tests
 
 ## Introduction
 This section covers the test cases related to the **Django Admin** functionality for the **Home** app. The tests ensure that the `BarberInfoAdmin` and `ServicesDesAdmin` configurations are correctly registered and configured in the Django admin panel.
+
+The test admin file on pep8, it returnes no error
+  ![](home_pep8/app_files/home_admin.png)
+
 
 ### 2. **BarberInfoAdminTest**
 This test case focuses on verifying the configuration of the `BarberInfo` model within the Django admin interface.
@@ -166,17 +197,11 @@ This test case focuses on verifying the configuration of the `ServicesDes` model
 
 ---
 
+After all of these now I need to test the test file of the admin file on the pep8, and it needs to fix some issues on pep8
+  ![](home_pep8/test_files/home_admin_test_err.png)
 
-### 5. **Forms Tests**
-This part tests the forms in the Home app, including their field validation and correct handling of user inputs.
-
----
-
-
-
-
-
-
+After fixing the pep8 issues
+  ![](home_pep8/test_files/home_admin_test_succ.png)
 
 
 # Book App Test Documentation
@@ -985,7 +1010,7 @@ Test the registration and functionality of the `Collaboration` model in the Djan
   - Ensure that the search and filter functionality works as expected.
   - Verify that the `readonly_fields` are correctly enforced in the admin interface.
 
-Then I hav eto test the admin test file on pep8 and it faild, it needs to fix the issues so pep8 can return no errors
+Then I have to test the admin test file on pep8 and it faild, it needs to fix the issues so pep8 can return no errors
   ![](about_pep8/test_files/about_admin_test_err.png)
 
 This is after fixing the pep8 errors
