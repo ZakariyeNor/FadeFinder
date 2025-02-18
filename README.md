@@ -584,6 +584,10 @@ Throughout the development of this project, I have used various resources, tools
 
 - **Images**  
   - [Pexels](https://www.pexels.com) - Free stock images  
+  NOTE: The images used during the development of the app were sourced from Google. These images were used solely for development purposes and are not part of the final deployed application.
+
+  The images that are deployed and submitted as part of the live app are sourced from Pexels, These images have been uploaded to Cloudinary for efficient media management and optimization, ensuring a seamless user experience.
+
 
 - **Text & Content**  
   - Generated using ChatGPT 

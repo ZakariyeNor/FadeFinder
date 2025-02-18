@@ -104,6 +104,10 @@ The images displayed on the homepage are sourced from Pexels, and although they 
 
 The text in the app has been generated with the assistance of ChatGPT to streamline the development process and ensure faster content creation.
 
+NOTE: The images used during the development of the app were sourced from Google. These images were used solely for development purposes and are not part of the final deployed application.
+
+The images that are deployed and submitted as part of the live app are sourced from Pexels, These images have been uploaded to Cloudinary for efficient media management and optimization, ensuring a seamless user experience.
+
 ### 3.1 **Page Content Rendering**
 - **Test Steps:**
   1. Open the Home Page.
