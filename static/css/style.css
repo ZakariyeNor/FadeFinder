@@ -402,7 +402,7 @@ Give positive color if it's update, and danger color if it's delete. */
 /* Mobile footer, show only under 580 media query and hide it over 580.
 Hide desktop footer and show mobile size social links which is in about page in this size */
 
-@media (max-width: 580px) {
+@media (max-width: 600px) {
 
     /* hide desktop footer */
     .desktop-footer {
@@ -448,7 +448,7 @@ Hide desktop footer and show mobile size social links which is in about page in 
 
 /* Media footer for screens from 581 px and up.
 Hide mobiel footer and give space between the footer and the containers */
-@media (min-width: 581px) {
+@media (min-width: 601px) {
     /* hide mobile footer */
     .mobile-footer {
         display: none;
@@ -465,3 +465,34 @@ Hide mobiel footer and give space between the footer and the containers */
         display: none;
     }
 }
+
+/* Media query for tablet size screens. 
+Adjust the footer height, the scissors font size and it's weight
+Then give the internal and external links in the footer 50% of the column
+(barber, social, navigation and visit us)
+Then h2 and h5 fonts.*/
+@media (min-width: 601px) and (max-width: 895px) {
+    
+    /* Set the height of the desktop footer to fit its content */
+    .desktop-footer {
+        height: fit-content;
+    }
+
+    /* Adjust the logo's font size and weight */
+    #logo {
+        font-size: 50px; /* Set font size to 50px */
+        font-weight: 300; /* Set font weight to 300 for a lighter appearance */
+    }
+
+    /* Set the width of each column in the footer to 50% */
+    .desktop-footer .col-12 {
+        width: 50%; /* Each column takes up 50% of the container */
+    }
+
+    /* Adjust the font size and weight of h2 and h5 headers */
+    h2, h5 {
+        font-weight: 600; /* Set font weight to 600 for a bolder appearance */
+        font-size: 1rem; /* Set font size to 1rem */
+    }
+}
+
