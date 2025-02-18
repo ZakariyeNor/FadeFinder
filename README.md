@@ -10,11 +10,12 @@ Description
 
 The Barber Booking App is an online platform that allows users to easily book appointments with barbers. The app provides an intuitive interface for customers to select their preferred barber, choose an appointment slot, and manage their booking details. Barbers can manage their availability and keep track of upcoming appointments.
 
-![screenshot](documentation/mockup.png)
+**Site Mockups**
+
+  ![screenshot](documentation//mockups/amires.png)
 
 source: [FadeFinder amiresponsive](https://ui.dev/amiresponsive?url=https://barber-booking-center-b87a4a734af4.herokuapp.com)
 
-**Site Mockups**
 
 # Wireframes Documentation
 
