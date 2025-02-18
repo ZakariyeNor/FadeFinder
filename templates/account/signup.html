@@ -2,24 +2,10 @@
 {% load i18n %}
 {% load account socialaccount %}
 
-{% block head_title %}
-    <!-- Set the page title to "Sign Up" and make it translatable -->
-    {% trans "Sign Up" %}
+{% block head_title %}{% trans "Sign Up" %}
 {% endblock head_title %}
 
 {% block content %}
-    <!-- Message container for displaying success or error messages -->
-    <div id="message-container">
-        {% if messages %}
-            {% for message in messages %}
-                <!-- Display message with appropriate styling based on message type (success or error) -->
-                <div
-                    class="mt-5 alert {% if message.tags == 'success' %}alert-success{% elif message.tags == 'error' %}alert-danger{% endif %}" style="width: 90%;">
-                    {{ message }}
-                </div>
-            {% endfor %}
-        {% endif %}
-    </div>
 
     <!-- Main container for the sign-up form -->
     <div class="container sign-up-container">
