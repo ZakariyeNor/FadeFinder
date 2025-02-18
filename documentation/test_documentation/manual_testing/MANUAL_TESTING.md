@@ -100,6 +100,10 @@ To ensure that the Home Page (`home`) renders correctly, with all elements.
 
 ## 3. **Content Checks:**
 
+The images displayed on the homepage are sourced from Pexels, and although they are environmental images, they are dynamically uploaded and stored on Cloudinary for efficient media management and optimization. The primary goal is to provide users with the ability to upload their own images, offering an interactive and customizable experience.
+
+The text in the app has been generated with the assistance of ChatGPT to streamline the development process and ensure faster content creation.
+
 ### 3.1 **Page Content Rendering**
 - **Test Steps:**
   1. Open the Home Page.
@@ -154,6 +158,8 @@ To ensure that the Home Page (`home`) renders correctly, with all elements.
 To ensure that the Book Page (`book`) renders correctly, with all elements functioning as expected, including the booking form and integration with the backend functionality.
 
 ---
+
+The cover image in the Book App is an environmental image that is dynamically uploaded and stored using Cloudinary for efficient media management and optimization.
 
   ![](manual_testing_screenshots/desktop_book_cover_section.png)
 
