@@ -46,6 +46,7 @@ CLOUDINARY_URL = env("CLOUDINARY_URL")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# For local and production
 ALLOWED_HOSTS = [
     '.railway.app',
     "127.0.0.1",
