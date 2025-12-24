@@ -28,12 +28,12 @@
                         {% if "placeholder" in barber.image.url %}
                             <img src="{% static 'images/cover.jpg' %}" alt="Placeholder Image" class="img-fluid rounded">
                             <!-- Display the date when the barber's info was created/updated -->
-                            <small class="d-block text-muted mt-2">Updated on: {{ barber.created_on }}</small>
+                            <small class="d-block text-muted mt-2">Updated on: {{ barber.created_on|date:"M. d, Y" }}</small>
                         {% else %}
                             <!-- If a valid image exists, display it -->
                             <img src="{{ barber.image.url }}" alt="{{ barber.title }} Image" class="img-fluid rounded">
                             <!-- Display the date when the barber's info was created/updated -->
-                            <small class="d-block text-muted mt-2">Updated on: {{ barber.created_on }}</small>
+                            <small class="d-block text-muted mt-2">Updated on: {{ barber.created_on|date:"M. d, Y" }}</small>
                         {% endif %}
                     </div>
                 </div>
@@ -55,12 +55,12 @@
                         {% if "placeholder" in service.image.url %}
                             <img src="{% static 'images/cover.jpg' %}" alt="Placeholder Image" class="img-fluid rounded">
                             <!-- Display the date when the service info was created/updated -->
-                            <small class="d-block text-muted mt-2">Updated on: {{ service.created_on }}</small>
+                            <small class="d-block text-muted mt-2">Updated on: {{ service.created_on|date:"M. d, Y" }}</small>
                         {% else %}
                             <!-- If a valid image exists, display it -->
                             <img src="{{ service.image.url }}" alt="{{ service.title }} Image" class="img-fluid rounded">
                             <!-- Display the date when the service info was created/updated -->
-                            <small class="d-block text-muted mt-2">Updated on: {{ service.created_on }}</small>
+                            <small class="d-block text-muted mt-2">Updated on: {{ service.created_on|date:"M. d, Y" }}</small>
                         {% endif %}
                     </div>
                 </div>

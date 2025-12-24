@@ -9,7 +9,7 @@ class BookCover(models.Model):
     """
 
     cover_image = CloudinaryField('image', default='placeholder')
-    booking_intro = models.TextField(max_length=200, null=False, blank=False)
+    booking_intro = models.TextField(max_length=300, null=False, blank=False)
 
     class Meta:
         verbose_name = 'Booking Cover'
