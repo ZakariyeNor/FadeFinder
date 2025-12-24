@@ -382,7 +382,68 @@ I've decomposed my Epics into User Stories for prioritizing and implementing the
 
 ## Deployment
 
-The live deployed application can be found deployed on [Heroku](https://barber-booking-center-b87a4a734af4.herokuapp.com/).
+The live deployed application can be found deployed on [Railway](https://barber-booking-center.up.railway.app/).  
+Historically, the project was first deployed on Heroku.
+
+The migration process followed these steps:
+
+---
+
+### 1. Backup Existing Database (Neon PostgreSQL)
+
+- Create a dump of the existing database:
+
+```bash
+pg_dump --verbose --no-acl --no-owner -h neon_host -U neon_user -d neon_db > fadefinder.dump
+```
+### 2. Set Up Railway Project
+
+- Create a new project on Railway and connect your GitHub repository.
+
+- Add environment variables in Railway to match your `.env` file locally. Example:
+
+| Key                  | Value                              |
+|---------------------|------------------------------------|
+| `DATABASE_URL`       | Railway PostgreSQL database URL    |
+| `CLOUDINARY_URL`     | Cloudinary API URL                 |
+| `GOOGLE_MAPS_API_KEY`| Your Google Maps API key           |
+| `SECRET_KEY`         | Your Django secret key             |
+
+
+### 3. Restore Database on Railway
+
+##### Push the database dump to Railway PostgreSQL:
+
+```bash
+pg_restore --verbose --clean --no-acl --no-owner -h railway_host -U railway_user -d railway_db fadefinder.dump
+```
+
+- Verify that all tables and data are correctly restored.
+
+### 4. Update Django Settings
+
+- In your .env file or Railway environment variables, update:
+
+- DATABASE_PUBLIC_URL=<Railway PostgreSQL Public URL>
+
+Keep DATABASE_PUBLIC_URL for local development if needed.
+
+In settings.py, configure the database:
+
+DATABASES = {
+    "default": dj_database_url.config(
+        default=env("DATABASE_URL"),  # Points to Railway in production
+        conn_max_age=600,
+        ssl_require=True,
+    )
+}
+
+##### Then push the latest code changed in order to deploy on railway:
+
+- Railway automatically deploys the app on push. Verify that:
+- The database connection works
+- Static and media files load correctly
+- Third-party integrations (Cloudinary, Google Maps, Stripe, etc.) function properly
 
 ### Heroku Deployment
 
