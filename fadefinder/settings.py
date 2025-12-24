@@ -13,8 +13,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-if os.path.isfile('env.py'):
-    import env
 import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -36,8 +34,10 @@ CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-zakariyenor-fadefinder-fl5iq7riekk.ws-eu117.gitpod.io','.herokuapp.com']
-
+ALLOWED_HOSTS = [
+    '.railway.app',
+    'localhost',
+]
 
 # Application definition
 
@@ -107,27 +107,21 @@ WSGI_APPLICATION = 'fadefinder.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-#Postgres DB Railway
 DATABASES = {
-    'default': dj_database_url.parse(env('DATABASE_URL'))
+    "default": dj_database_url.config(
+        default=os.environ.get("DATABASE_URL"),
+        conn_max_age=600,
+        ssl_require=True,
+    )
 }
 
 if 'test' in sys.argv:
     DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
 
 
-#Trusted webs 
+# Trusted webs 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-zakariyenor-fadefinder-fl5iq7riekk.ws-eu117.gitpod.io',
-    "https://*.herokuapp.com/",
+    "https://*.railway.app",
 ]
 
 
