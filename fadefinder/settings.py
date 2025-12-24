@@ -13,30 +13,44 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+import environ
 import sys
+
+
+env = environ.Env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+env_file = BASE_DIR / ".env"
+
+# Get environment variables from .env file if it exists
+if env_file.exists():
+    env.read_env(env_file)
+    print("DEBUG: .env file loaded from %s", {env_file})
+else:
+    print("DEBUG: .env file not found")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = env("SECRET_KEY")
 
 #Google maps api key
-API_KEY = os.environ.get("GOOGLE_MAPS_API_KEY")
+API_KEY = env("GOOGLE_MAPS_API_KEY")
 
 #Cloudinary Key access
-CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
+CLOUDINARY_URL = env("CLOUDINARY_URL")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '.railway.app',
-    'localhost',
+    "127.0.0.1",
+    "localhost",
+    "0.0.0.0",
 ]
 
 # Application definition
@@ -109,7 +123,7 @@ WSGI_APPLICATION = 'fadefinder.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 DATABASES = {
     "default": dj_database_url.config(
-        default=os.environ.get("DATABASE_URL"),
+        default=env("DATABASE_PUBLIC_URL"),
         conn_max_age=600,
         ssl_require=True,
     )
@@ -122,6 +136,9 @@ if 'test' in sys.argv:
 # Trusted webs 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.railway.app",
+    "https://barber-booking-center.up.railway.app",
+    "http://127.0.0.1:8000",
+    "http://localhost:8000",
 ]
 
 
