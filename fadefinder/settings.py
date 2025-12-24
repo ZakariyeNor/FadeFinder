@@ -115,9 +115,9 @@ WSGI_APPLICATION = 'fadefinder.wsgi.application'
 #     }
 # }
 
-#Postgres DB
+#Postgres DB Railway
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DB_URL"))
+    'default': dj_database_url.parse(env('DATABASE_URL'))
 }
 
 if 'test' in sys.argv:
